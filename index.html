@@ -957,6 +957,45 @@
             }
         }
     </style>
+    
+    <!-- Client-side currency conversion for GitHub Pages -->
+    <script>
+        // Currency conversion for static GitHub Pages
+        function detectAndSetCurrency() {
+            // Use timezone to detect likely country
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const isUS = timezone.includes('America') || timezone.includes('US') || timezone.includes('New_York') || timezone.includes('Los_Angeles') || timezone.includes('Chicago') || timezone.includes('Denver');
+            
+            if (isUS) {
+                // Convert to USD pricing
+                document.querySelectorAll('.currency-symbol, [id*="currency"]').forEach(el => el.textContent = '$');
+                
+                // Update specific prices
+                const priceElements = [
+                    { selector: '[id*="bundle-price"], .price-amount', ukPrice: 98, usPrice: 129 },
+                    { selector: '.price-family', ukPrice: 249, usPrice: 299 }
+                ];
+                
+                priceElements.forEach(item => {
+                    document.querySelectorAll(item.selector).forEach(el => {
+                        if (el.textContent.includes('98')) el.textContent = '129';
+                        if (el.textContent.includes('249')) el.textContent = '299';
+                    });
+                });
+                
+                // Update text mentions of prices
+                document.body.innerHTML = document.body.innerHTML
+                    .replace(/£98/g, '$129')
+                    .replace(/£249/g, '$299')
+                    .replace(/£40/g, '$52')
+                    .replace(/£69/g, '$89')
+                    .replace(/£99/g, '$125');
+            }
+        }
+        
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', detectAndSetCurrency);
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -1085,7 +1124,7 @@
                     <!-- Step 3 -->
                     <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
                         <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
-                        <img src="Receive your book .jpg" alt="Professional finished memoir book" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
+                        <img src="Receive your book (1).jpg" alt="Professional finished memoir book" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
                         <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Receive Your Book</h3>
                         <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Get your professionally printed A4 hardcover memoir delivered to your door - premium quality with 14mm spine and elegant layout, plus digital versions to share with family.</p>
                     </div>
