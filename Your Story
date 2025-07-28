@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Story - Transform Your Life Into A Beautiful Novel | Memoir Writing Service</title>
+    <meta name="description" content="Transform your life story into a professionally written novel or memoir. AI-powered memoir writing service that preserves family history in beautiful, printed books. Perfect gift for grandparents.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your Story - Transform Your Life Into A Beautiful Novel">
+    <meta property="og:description" content="AI-powered memoir writing service that transforms personal stories into professionally written novels. Perfect for preserving family history.">
+    <meta property="og:url" content="https://yourstory0121.github.io/your-story-website">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Your Story - Transform Your Life Into A Beautiful Novel">
+    <meta property="twitter:description" content="AI-powered memoir writing service that transforms personal stories into professionally written novels.">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Your Story",
+      "description": "AI-powered memoir writing service that transforms personal stories into professionally written novels",
+      "provider": {
+        "@type": "Organization",
+        "name": "Your Story"
+      },
+      "serviceType": "Memoir Writing Service",
+      "areaServed": ["GB", "US"],
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "GBP",
+        "price": "98.00",
+        "description": "Personal story transformation into professional novel"
+      }
+    }
+    </script>
+    
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --sage-50: #f6f7f4;
+            --sage-100: #e8eae3;
+            --sage-200: #d1d6c7;
+            --sage-300: #b4bca1;
+            --sage-400: #94a17a;
+            --sage-500: #7a8a5e;
+            --sage-600: #616f4a;
+            --sage-700: #4e5a3d;
+            --sage-800: #424a35;
+            --sage-900: #3a402f;
+            --taupe-100: #f5f3f0;
+            --taupe-200: #e8e4df;
+            --golden-300: #f4d03f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Typography */
+        .playfair {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sage-600);
+            margin-bottom: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 4rem 0 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-highlight {
+            color: var(--sage-600);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--sage-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(97, 111, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--sage-700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(97, 111, 74, 0.4);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--sage-50);
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: var(--sage-600);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Book Showcase */
+        .book-showcase {
+            padding: 4rem 0;
+            background: var(--sage-50);
+        }
+
+        .book-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .book-image {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .book-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--sage-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--sage-600);
+            color: white;
+            border-radius: 0.5rem;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            padding: 4rem 0;
+            background: var(--sage-50);
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--sage-600);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #4b5563;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--sage-700);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .pricing-card {
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--sage-50);
+            border-radius: 1rem;
+            border: 2px solid var(--sage-600);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sage-600);
+            margin-bottom: 1rem;
+        }
+
+        .price-description {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            color: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button-white {
+            background: white;
+            color: var(--sage-700);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button-white:hover {
+            background: var(--sage-50);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 0 4rem;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo playfair">Your Story</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="playfair">
+                Transform Your Life Into A <span class="hero-highlight">Beautiful Novel</span>
+            </h1>
+            <p class="hero-subtitle">
+                Share your memories through simple conversations. Our AI transforms your stories into a professionally written book that preserves your legacy forever.
+            </p>
+            <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/" class="cta-button">
+                Start Your Story Today
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Share Your Stories</h3>
+                    <p>Tell us about your life through gentle, guided conversations. No writing skills needed - just speak naturally about your experiences.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>AI Transforms</h3>
+                    <p>Our advanced AI crafts your memories into a beautifully written novel, preserving your unique voice and experiences.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Receive Your Book</h3>
+                    <p>Get your professionally printed, hardcover book delivered to your door - a treasured keepsake for generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Showcase -->
+    <section class="book-showcase">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">See Your Story Come to Life</h2>
+            <div class="book-images">
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory0121/your-story-website/main/Professional-Cover-design.jpg" alt="Professional Cover Design" />
+                    <h3>Professional Cover Design</h3>
+                    <p>Beautiful, custom covers designed to reflect your unique story</p>
+                </div>
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory0121/your-story-website/main/Rich-Interior-Layout.jpg" alt="Rich Interior Layout" />
+                    <h3>Rich Interior Layout</h3>
+                    <p>Professionally formatted pages with elegant typography and layout</p>
+                </div>
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory0121/your-story-website/main/Complete-Memoir.webp" alt="Complete Memoir" />
+                    <h3>Complete Memoir</h3>
+                    <p>A finished hardcover book that preserves your legacy forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">Why Choose Your Story?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Professional Quality</h3>
+                    <p>AI-powered writing creates engaging, well-structured narratives that read like professionally authored books.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Perfect Gift</h3>
+                    <p>The most meaningful gift for grandparents, parents, or anyone whose stories deserve to be preserved.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏛️</div>
+                    <h3>Family Legacy</h3>
+                    <p>Transform memories into a lasting family heirloom that future generations will treasure forever.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Easy Process</h3>
+                    <p>No technical skills required. Just share your stories naturally - we handle all the complex writing and formatting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial">
+        <div class="container">
+            <h2 class="playfair" style="color: #1f2937;">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "I gave this to my grandmother for her 85th birthday. She cried when she saw her life transformed into such a beautiful story. It's now our family's most precious possession."
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Granddaughter</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "My parents' 50th anniversary gift was their love story as a romance novel. They've read it together multiple times and shared it with all our relatives."
+                    </p>
+                    <p class="testimonial-author">— Michael T., Son</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "When my grandfather was diagnosed with dementia, we rushed to create his memoir. Now we have his incredible war stories and life lessons preserved forever."
+                    </p>
+                    <p class="testimonial-author">— Emma K., Granddaughter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="playfair" style="color: #1f2937;">Simple, Transparent Pricing</h2>
+            <div class="pricing-card">
+                <div class="price">£98</div>
+                <p class="price-description">Complete package includes novel + memoir versions of your story</p>
+                <ul style="text-align: left; margin-bottom: 2rem; color: #4b5563;">
+                    <li>✓ AI-guided story collection</li>
+                    <li>✓ Professional novel transformation</li>
+                    <li>✓ Memoir version included</li>
+                    <li>✓ Hardcover printing & delivery</li>
+                    <li>✓ Family character illustrations</li>
+                </ul>
+                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="cta-button">
+                    Get Started Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="playfair">Ready to Preserve Your Story?</h2>
+            <p>Join thousands who have transformed their memories into beautiful books</p>
+            <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/" class="cta-button-white">
+                Start Your Story Today
+            </a>
+        </div>
+    </section>
+</body>
+</html>
