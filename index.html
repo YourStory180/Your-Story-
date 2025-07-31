@@ -51,29 +51,57 @@
         }
         
         :root {
-            /* Sage green palette */
-            --sage-50: #f6f8f6;
-            --sage-100: #e7ebe8;
-            --sage-200: #d4dbd6;
-            --sage-300: #b8c4bb;
-            --sage-600: #5a7563;
-            --sage-700: #4a6352;
-            --sage-800: #3a4f42;
-            --sage-900: #2d3d33;
+            /* Pastel color palette inspired by mylifeinabook.com */
+            --pastel-pink-50: #fef7f7;
+            --pastel-pink-100: #fde8e8;
+            --pastel-pink-200: #f8c8c8;
+            --pastel-pink-300: #f3a8a8;
+            --pastel-pink-600: #e85d5d;
+            --pastel-pink-700: #d84545;
+            --pastel-pink-800: #c73333;
+            --pastel-pink-900: #b52222;
             
-            /* Warm accents */
-            --cream-50: #fefcfb;
-            --cream-100: #faf6f0;
-            --warm-50: #fefcfb;
-            --warm-100: #faf6f0;
-            --warm-200: #f1e8d9;
+            /* Pastel green palette */
+            --pastel-green-50: #f0fdf4;
+            --pastel-green-100: #dcfce7;
+            --pastel-green-200: #bbf7d0;
+            --pastel-green-300: #86efac;
+            --pastel-green-600: #16a34a;
+            --pastel-green-700: #15803d;
+            --pastel-green-800: #166534;
+            --pastel-green-900: #14532d;
             
-            /* Gold accents */
-            --gold-500: #d4af37;
-            --gold-600: #b8941f;
+            /* Pastel yellow/cream palette */
+            --pastel-yellow-50: #fffbeb;
+            --pastel-yellow-100: #fef3c7;
+            --pastel-yellow-200: #fde68a;
+            --pastel-yellow-300: #fcd34d;
+            --pastel-yellow-600: #d97706;
+            --pastel-yellow-700: #b45309;
+            
+            /* Warm cream background */
+            --cream-50: #fffbf5;
+            --cream-100: #fef7ed;
+            --warm-50: #fffbf5;
+            --warm-100: #fef7ed;
+            --warm-200: #fed7aa;
+            
+            /* Legacy mappings for compatibility */
+            --sage-50: var(--pastel-green-50);
+            --sage-100: var(--pastel-green-100);
+            --sage-200: var(--pastel-green-200);
+            --sage-300: var(--pastel-green-300);
+            --sage-600: var(--pastel-green-600);
+            --sage-700: var(--pastel-green-700);
+            --sage-800: var(--pastel-green-800);
+            --sage-900: var(--pastel-green-900);
+            
+            /* Gold accents - warmer pastel version */
+            --gold-500: #fbbf24;
+            --gold-600: #f59e0b;
             
             /* Yellow for stars */
-            --yellow-500: #eab308;
+            --yellow-500: #fbbf24;
         }
         
         body {
@@ -137,7 +165,7 @@
         }
         
         .btn-primary {
-            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
+            background: linear-gradient(to right, var(--pastel-pink-600), var(--pastel-pink-700));
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
@@ -147,7 +175,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(232, 93, 93, 0.2);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -160,8 +188,8 @@
         
         .btn-outline {
             background: transparent;
-            color: var(--sage-700);
-            border: 2px solid var(--sage-300);
+            color: var(--pastel-green-700);
+            border: 2px solid var(--pastel-green-300);
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem;
             text-decoration: none;
@@ -174,7 +202,7 @@
         }
         
         .btn-outline:hover {
-            background: var(--sage-50);
+            background: var(--pastel-green-50);
             transform: translateY(-2px);
         }
         
@@ -194,7 +222,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--sage-50), var(--cream-50), var(--sage-100));
+            background: linear-gradient(135deg, var(--pastel-yellow-50), var(--pastel-pink-50), var(--pastel-green-50));
             padding: 8rem 2rem 3rem;
             margin-top: 80px;
             overflow: hidden;
@@ -388,7 +416,7 @@
         /* How It Works Section */
         .how-it-works {
             padding: 6rem 2rem;
-            background: var(--warm-50);
+            background: var(--pastel-yellow-50);
             text-align: center;
         }
         
@@ -597,7 +625,7 @@
         /* Pricing Section */
         .pricing {
             padding: 6rem 2rem;
-            background: var(--sage-50);
+            background: var(--pastel-pink-50);
             text-align: center;
         }
         
@@ -1110,7 +1138,7 @@
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin: 3rem 0;">
                     <!-- Step 1 -->
                     <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--pastel-yellow-600), var(--pastel-yellow-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
                         <img src="voice-recording.PNG" alt="Person sharing their story through voice recording" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
                         <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Just Talk to Us</h3>
                         <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Sit down with a cup of tea and tell us about your life at your own pace, a question a day or as many as you like in one go, your guided questions can be answered using our voice to text feature or you can write them down</p>
@@ -1118,7 +1146,7 @@
                     
                     <!-- Step 2 -->
                     <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--pastel-pink-600), var(--pastel-pink-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
                         <img src="AI Transforms.jpg" alt="AI transforming story into beautiful book content" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
                         <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">We Do the Writing</h3>
                         <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">We then turn your memories into a well written novel in your chosen style, all of the people in your life story become the characters in the story!</p>
@@ -1126,7 +1154,7 @@
                     
                     <!-- Step 3 -->
                     <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--pastel-green-600), var(--pastel-green-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
                         <img src="Receive your book  (1).jpg" alt="Professional finished memoir book" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
                         <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Receive Your Book</h3>
                         <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Get your professionally printed A4 hardcover memoir delivered to your door - premium quality with 14mm spine and elegant layout.</p>
@@ -1137,18 +1165,18 @@
                 <div style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                     <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" style="
                         display: block;
-                        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+                        background: linear-gradient(135deg, var(--pastel-pink-600) 0%, var(--pastel-pink-700) 100%);
                         color: white;
                         padding: 1.75rem 2rem;
                         border-radius: 12px;
                         text-decoration: none;
                         text-align: center;
-                        box-shadow: 0 8px 24px rgba(22, 163, 74, 0.3);
+                        box-shadow: 0 8px 24px rgba(232, 93, 93, 0.3);
                         transition: all 0.3s ease;
-                        border: 2px solid #22c55e;
+                        border: 2px solid var(--pastel-pink-300);
                         position: relative;
                         overflow: hidden;
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(22, 163, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(22, 163, 74, 0.3)'">
+                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(134, 239, 172, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(134, 239, 172, 0.3)'">
                         <div style="
                             position: absolute;
                             top: 8px;
@@ -1226,18 +1254,18 @@
                 <div style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" style="
                         display: block;
-                        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+                        background: linear-gradient(135deg, var(--pastel-green-600) 0%, var(--pastel-green-700) 100%);
                         color: white;
                         padding: 1.5rem 2rem;
                         border-radius: 12px;
                         text-decoration: none;
                         text-align: center;
-                        box-shadow: 0 8px 24px rgba(22, 163, 74, 0.3);
+                        box-shadow: 0 8px 24px rgba(134, 239, 172, 0.3);
                         transition: all 0.3s ease;
-                        border: 2px solid #22c55e;
+                        border: 2px solid var(--pastel-green-300);
                         position: relative;
                         overflow: hidden;
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(22, 163, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(22, 163, 74, 0.3)'">
+                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(134, 239, 172, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(134, 239, 172, 0.3)'">
                         <div style="
                             position: absolute;
                             top: 8px;
@@ -1439,7 +1467,7 @@
                         </div>
                         
                         <!-- Bundle Offer -->
-                        <div style="background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 2px solid #22c55e; color: white; text-align: center;">
+                        <div style="background: linear-gradient(135deg, var(--pastel-yellow-600), var(--pastel-yellow-700)); border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 2px solid var(--pastel-yellow-300); color: white; text-align: center;">
                             <div style="font-weight: 700; font-size: 0.875rem; margin-bottom: 0.5rem; opacity: 0.9;">🎁 Bundle Deal</div>
                             <div style="font-weight: 700; font-size: 1.5rem; margin-bottom: 0.5rem;">Novel + Memoir</div>
                             <p style="font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.9;">Get both your novel AND memoir using the same source material</p>
@@ -1449,38 +1477,38 @@
                         
                         <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 AI-guided story collection with voice recording
                             </li>
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Professional editing and story development
                             </li>
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Premium Hardcover Casebound A4 Book with Full Colour Print
                             </li>
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Custom cover design
                             </li>
 
                             <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Free shipping anywhere in the UK
                             </li>
                             <li style="display: flex; align-items: center; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Fill your story with AI generated characters based on you and your loved ones
@@ -1514,7 +1542,7 @@
                                     <tr style="border-bottom: 1px solid var(--sage-100);">
                                         <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Transform life into a novel</td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
@@ -1532,17 +1560,17 @@
                                     <tr style="border-bottom: 1px solid var(--sage-100);">
                                         <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Create a memoir</td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
@@ -1550,12 +1578,12 @@
                                     <tr style="border-bottom: 1px solid var(--sage-100);">
                                         <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Use voice to answer questions</td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
@@ -1568,7 +1596,7 @@
                                     <tr style="border-bottom: 1px solid var(--sage-100);">
                                         <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Create character images from your pictures</td>
                                         <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg style="width: 1.25rem; height: 1.25rem; color: var(--pastel-green-600);" fill="currentColor" viewBox="0 0 20 20">
                                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                             </svg>
                                         </td>
@@ -1635,25 +1663,25 @@
                         <div style="color: var(--sage-600); margin-bottom: 1rem;">Novel Only</div>
                         <div style="text-align: left; margin-bottom: 1.5rem;">
                             <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 AI-guided novel creation
                             </div>
                             <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 A4 hardcover book
                             </div>
                             <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Digital formats included
                             </div>
                             <div style="display: flex; align-items: center; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
+                                <svg style="width: 1rem; height: 1rem; color: var(--pastel-green-600); margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                                 </svg>
                                 Free UK shipping
