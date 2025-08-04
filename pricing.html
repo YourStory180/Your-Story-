@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Life Story Novel | Memoir & Novel Packages</title>
+    <meta name="description" content="Choose your life story book package: Memoir only (£69), Novel only (£98), or Family Bundle (£249). Professional hardcover books with custom design and fast delivery.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Life Story Book Pricing - Memoir & Novel Packages">
+    <meta property="og:description" content="Transform your life story into professional books. Choose memoir, novel, or bundle packages with hardcover printing and custom design.">
+    <meta property="og:url" content="https://lifestorynovel.com/pricing">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Life Story Book Pricing - Memoir & Novel Packages">
+    <meta property="twitter:description" content="Professional memoir and novel creation from your life story. Multiple package options available.">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Life Story Novel Service",
+      "description": "AI-powered memoir and novel creation from personal life stories",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Memoir Package",
+          "price": "69.00",
+          "priceCurrency": "GBP",
+          "description": "Professional memoir creation from your life story"
+        },
+        {
+          "@type": "Offer",
+          "name": "Novel Package", 
+          "price": "98.00",
+          "priceCurrency": "GBP",
+          "description": "Narrative novel creation from your life experiences"
+        },
+        {
+          "@type": "Offer",
+          "name": "Family Bundle",
+          "price": "249.00", 
+          "priceCurrency": "GBP",
+          "description": "Complete family story package with multiple books"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --sage-50: #f6f7f4;
+            --sage-100: #e8eae3;
+            --sage-200: #d1d6c7;
+            --sage-300: #b4bca1;
+            --sage-400: #94a17a;
+            --sage-500: #7a8a5e;
+            --sage-600: #616f4a;
+            --sage-700: #4e5a3d;
+            --sage-800: #424a35;
+            --sage-900: #3a402f;
+            --taupe-100: #f5f3f0;
+            --taupe-200: #e8e4df;
+            --golden-300: #f4d03f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Typography */
+        .playfair {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sage-100);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sage-600);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-600);
+        }
+
+        .nav-links a.active {
+            color: var(--sage-600);
+            font-weight: 600;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .header-highlight {
+            color: var(--sage-600);
+        }
+
+        .header-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Pricing Grid */
+        .pricing {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--sage-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--sage-600);
+            background: white;
+            box-shadow: 0 8px 25px rgba(97, 111, 74, 0.2);
+        }
+
+        .popular-badge {
+            background: var(--sage-600);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sage-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sage-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .package-currency {
+            font-size: 1.5rem;
+            color: #6b7280;
+        }
+
+        .package-description {
+            color: #6b7280;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sage-600);
+            font-weight: bold;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--sage-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--sage-700);
+            transform: translateY(-2px);
+        }
+
+        /* Delivery Info */
+        .delivery-info {
+            padding: 4rem 0;
+            background: var(--sage-50);
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .delivery-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .delivery-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Add-ons */
+        .addons {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .addon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .addon-card {
+            background: var(--sage-50);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--sage-600);
+        }
+
+        .addon-price {
+            font-weight: 700;
+            color: var(--sage-600);
+            margin-left: auto;
+        }
+
+        .addon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo playfair">Life Story Novel</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/how-it-works">How It Works</a></li>
+                    <li><a href="/pricing" class="active">Pricing</a></li>
+                    <li><a href="/samples">Samples</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="playfair">
+                Choose Your <span class="header-highlight">Life Story Book</span> Package
+            </h1>
+            <p class="header-subtitle">
+                Professional memoir and novel creation with custom cover design, hardcover printing, and fast delivery.
+            </p>
+        </div>
+    </header>
+
+    <!-- Pricing Packages -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">Clear Packages for Every Need</h2>
+            <div class="pricing-grid">
+                
+                <!-- Memoir Package -->
+                <div class="pricing-card">
+                    <div class="package-name">Memoir Only</div>
+                    <div class="package-price">£69<span class="package-currency"></span></div>
+                    <div class="package-description">Perfect factual account of your life story</div>
+                    <ul class="feature-list">
+                        <li>Guided story capture sessions</li>
+                        <li>Professional memoir creation</li>
+                        <li>Custom cover design</li>
+                        <li>A4 hardcover book (200+ pages)</li>
+                        <li>Digital PDF version</li>
+                        <li>Free domestic shipping</li>
+                        <li>4-6 week delivery</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Choose Memoir</a>
+                </div>
+
+                <!-- Novel Package -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="package-name">Novel Only</div>
+                    <div class="package-price">£98<span class="package-currency"></span></div>
+                    <div class="package-description">Narrative storytelling of your life experiences</div>
+                    <ul class="feature-list">
+                        <li>Enhanced story capture process</li>
+                        <li>Professional novel creation</li>
+                        <li>Advanced character development</li>
+                        <li>Premium cover design</li>
+                        <li>A4 hardcover book (250+ pages)</li>
+                        <li>Digital PDF + eBook formats</li>
+                        <li>Free domestic shipping</li>
+                        <li>4-6 week delivery</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Choose Novel</a>
+                </div>
+
+                <!-- Family Bundle -->
+                <div class="pricing-card">
+                    <div class="package-name">Family Bundle</div>
+                    <div class="package-price">£249<span class="package-currency"></span></div>
+                    <div class="package-description">Complete family story preservation</div>
+                    <ul class="feature-list">
+                        <li>Both memoir AND novel formats</li>
+                        <li>Family character generation</li>
+                        <li>Multiple story sessions</li>
+                        <li>Photo integration</li>
+                        <li>3 hardcover copies of each book</li>
+                        <li>Premium packaging</li>
+                        <li>Digital versions for sharing</li>
+                        <li>Priority 3-4 week delivery</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Choose Bundle</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Information -->
+    <section class="delivery-info">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">Delivery & Format Details</h2>
+            <div class="delivery-grid">
+                <div class="delivery-card">
+                    <div class="delivery-icon">📦</div>
+                    <h3>Delivery Format</h3>
+                    <p>Premium A4 hardcover books with dust jacket, professional binding, and high-quality paper.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">⏱️</div>
+                    <h3>Delivery Time</h3>
+                    <p>4-6 weeks for memoir/novel packages, 3-4 weeks priority for family bundle.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">🚚</div>
+                    <h3>Shipping</h3>
+                    <p>Free domestic shipping included. Expedited delivery available for £25 extra.</p>
+                </div>
+                <div class="delivery-card">
+                    <div class="delivery-icon">💾</div>
+                    <h3>Digital Formats</h3>
+                    <p>PDF and eBook versions provided for easy sharing with family members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional Add-ons -->
+    <section class="addons">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">Optional Add-ons</h2>
+            <div class="addon-grid">
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3>Expedited Delivery</h3>
+                        <span class="addon-price">+£25</span>
+                    </div>
+                    <p>Rush delivery in 2-3 weeks instead of standard 4-6 weeks.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3>Extra Book Copies</h3>
+                        <span class="addon-price">+£35 each</span>
+                    </div>
+                    <p>Additional hardcover copies for family members or gifts.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3>Premium Photo Integration</h3>
+                        <span class="addon-price">+£45</span>
+                    </div>
+                    <p>Professional photo placement and restoration throughout your book.</p>
+                </div>
+                <div class="addon-card">
+                    <div class="addon-header">
+                        <h3>Custom Book Presentation Box</h3>
+                        <span class="addon-price">+£30</span>
+                    </div>
+                    <p>Beautiful presentation box perfect for gifting or storage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section style="padding: 4rem 0; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); color: white; text-align: center;">
+        <div class="container">
+            <h2 class="playfair" style="color: white;">Ready to Preserve Your Life Story?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                Choose your package and start creating beautiful books that will be treasured for generations.
+            </p>
+            <a href="https://life-narrative-engine-grace119.replit.app/" style="display: inline-block; background: white; color: var(--sage-700); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 1.125rem; margin: 0 0.5rem; transition: all 0.3s ease;">Start Your Story Today</a>
+            <a href="/faq" style="display: inline-block; background: transparent; color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 1.125rem; margin: 0 0.5rem; transition: all 0.3s ease;">View FAQ</a>
+        </div>
+    </section>
+</body>
+</html>
