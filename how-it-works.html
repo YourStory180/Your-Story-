@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Life Story Novel | Transform Your Memories Into Books</title>
+    <meta name="description" content="Learn how your life story becomes a memoir and novel. Simple 3-step process: capture memories, AI transformation, beautiful book delivery. Start your story today.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How Your Story Becomes a Memoir & Novel - Life Story Novel">
+    <meta property="og:description" content="Simple 3-step process to transform your life story into professionally written memoir and novel. Voice recording, AI transformation, beautiful book delivery.">
+    <meta property="og:url" content="https://lifestorynovel.com/how-it-works">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="How Your Story Becomes a Memoir & Novel">
+    <meta property="twitter:description" content="Simple 3-step process to transform your life story into professionally written memoir and novel.">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How Your Story Becomes a Memoir & Novel",
+      "description": "Transform your life story into professionally written memoir and novel through simple conversation",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Share Your Stories",
+          "text": "Tell us about your life through gentle, guided conversations using voice recording or written form"
+        },
+        {
+          "@type": "HowToStep", 
+          "name": "AI Transforms Your Story",
+          "text": "Our advanced AI crafts your memories into beautifully written memoir and novel formats"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Receive Your Books",
+          "text": "Get professionally printed hardcover books delivered to your door plus digital versions"
+        }
+      ]
+    }
+    </script>
+    
+    <style>
+        /* CSS Variables for consistent theming */
+        :root {
+            --sage-50: #f6f7f4;
+            --sage-100: #e8eae3;
+            --sage-200: #d1d6c7;
+            --sage-300: #b4bca1;
+            --sage-400: #94a17a;
+            --sage-500: #7a8a5e;
+            --sage-600: #616f4a;
+            --sage-700: #4e5a3d;
+            --sage-800: #424a35;
+            --sage-900: #3a402f;
+            --taupe-100: #f5f3f0;
+            --taupe-200: #e8e4df;
+            --golden-300: #f4d03f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #374151;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Typography */
+        .playfair {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--sage-100);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sage-600);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-600);
+        }
+
+        .nav-links a.active {
+            color: var(--sage-600);
+            font-weight: 600;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .header-highlight {
+            color: var(--sage-600);
+        }
+
+        .header-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--sage-50);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: var(--sage-600);
+            color: white;
+            border-radius: 50%;
+            line-height: 80px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Detailed Process */
+        .detailed-process {
+            padding: 4rem 0;
+            background: var(--sage-50);
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .detail-card h3 {
+            color: var(--sage-700);
+            margin-bottom: 1rem;
+        }
+
+        .detail-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .detail-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .detail-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sage-600);
+            font-weight: bold;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--sage-700);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .cta-button:hover {
+            background: var(--sage-50);
+            transform: translateY(-2px);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: var(--sage-700);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo playfair">Life Story Novel</a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/how-it-works" class="active">How It Works</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/samples">Samples</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="playfair">
+                How Your <span class="header-highlight">Life Story</span> Becomes a Memoir & Novel
+            </h1>
+            <p class="header-subtitle">
+                Transform your memories into beautiful books through our simple 3-step process. No writing experience needed.
+            </p>
+        </div>
+    </header>
+
+    <!-- 3 Simple Steps -->
+    <section class="process">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">3 Simple Steps to Capture Your Life Story</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🎤</div>
+                    <h3>Share Your Stories</h3>
+                    <p>Tell us about your life through gentle, guided conversations. Use voice recording, written forms, or photo uploads. Our system captures your unique voice and experiences naturally.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🤖</div>
+                    <h3>AI Transformation</h3>
+                    <p>Our advanced AI crafts your memories into two beautiful formats: a factual memoir preserving your real experiences and a novel bringing your story to life with narrative flair.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📚</div>
+                    <h3>Receive Your Books</h3>
+                    <p>Get professionally printed hardcover books delivered to your door, plus digital versions. Each book includes custom cover design and professional interior layout.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Process -->
+    <section class="detailed-process">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937; margin-bottom: 3rem;">Detailed Process</h2>
+            
+            <div class="detail-card">
+                <h3>Life Story Capture Methods</h3>
+                <p>We offer multiple ways to capture your memories, making it comfortable and convenient for everyone:</p>
+                <ul class="detail-list">
+                    <li><strong>Voice recordings:</strong> Natural conversations guided by our AI prompts</li>
+                    <li><strong>Written forms:</strong> Structured questionnaires you can complete at your own pace</li>
+                    <li><strong>Photo uploads:</strong> Share images that trigger memories and stories</li>
+                    <li><strong>Family sessions:</strong> Include multiple family members in the storytelling process</li>
+                    <li><strong>Interview style:</strong> Professional interview sessions if preferred</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <h3>AI Transformation Process</h3>
+                <p>Our AI technology creates two distinct book formats from your stories:</p>
+                <ul class="detail-list">
+                    <li><strong>Memoir format:</strong> Factual, chronological account of your life experiences</li>
+                    <li><strong>Novel format:</strong> Narrative storytelling with character development and plot structure</li>
+                    <li><strong>Voice preservation:</strong> Maintains your unique speaking style and personality</li>
+                    <li><strong>Professional editing:</strong> Grammar, flow, and structure refinement</li>
+                    <li><strong>Family tree integration:</strong> Character generation for important people in your life</li>
+                </ul>
+            </div>
+
+            <div class="detail-card">
+                <h3>Delivery & Formats</h3>
+                <p>Your completed books come in multiple professional formats:</p>
+                <ul class="detail-list">
+                    <li><strong>Hardcover books:</strong> Premium A4 size with dust jacket and professional binding</li>
+                    <li><strong>Digital versions:</strong> PDF and eBook formats for easy sharing</li>
+                    <li><strong>Custom cover design:</strong> Personalized artwork reflecting your story</li>
+                    <li><strong>Professional layout:</strong> Typography, margins, and formatting optimized for readability</li>
+                    <li><strong>Fast delivery:</strong> Domestic shipping included, expedited options available</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="playfair">Ready to Start Your Story?</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem; opacity: 0.9;">
+                Transform your life experiences into beautiful memoir and novel books that will be treasured for generations.
+            </p>
+            <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Start Your Story Today</a>
+            <a href="/pricing" class="cta-button cta-button-secondary">View Pricing Options</a>
+        </div>
+    </section>
+</body>
+</html>
