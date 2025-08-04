@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Story - Transform Your Life Into A Beautiful Novel | Memoir Writing Service</title>
     <meta name="description" content="Transform your life story into a professionally written novel or memoir. AI-powered memoir writing service that preserves family history in beautiful, printed books. Perfect gift for grandparents.">
-    i 
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Your Story - Transform Your Life Into A Beautiful Novel">
     <meta property="og:description" content="AI-powered memoir writing service that transforms personal stories into professionally written novels. Perfect for preserving family history.">
-    <meta property="og:url" content="https://yourstory180.github.io/Your-Story-/">
+    <meta property="og:url" content="https://lifestorynovel.com/">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -22,11 +22,11 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "name": "Your Story",
+      "name": "Life Story Novel",
       "description": "AI-powered memoir writing service that transforms personal stories into professionally written novels",
       "provider": {
         "@type": "Organization",
-        "name": "Your Story"
+        "name": "Life Story Novel"
       },
       "serviceType": "Memoir Writing Service",
       "areaServed": ["GB", "US"],
@@ -39,1684 +39,542 @@
     }
     </script>
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js" rel="preload" as="script">
-    
     <style>
-        /* Basic Reset and Variables */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        /* CSS Variables for consistent theming */
+        :root {
+            --sage-50: #f6f7f4;
+            --sage-100: #e8eae3;
+            --sage-200: #d1d6c7;
+            --sage-300: #b4bca1;
+            --sage-400: #94a17a;
+            --sage-500: #7a8a5e;
+            --sage-600: #616f4a;
+            --sage-700: #4e5a3d;
+            --sage-800: #424a35;
+            --sage-900: #3a402f;
+            --taupe-100: #f5f3f0;
+            --taupe-200: #e8e4df;
+            --golden-300: #f4d03f;
+        }
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        
-        :root {
-            /* Sage green palette */
-            --sage-50: #f6f8f6;
-            --sage-100: #e7ebe8;
-            --sage-200: #d4dbd6;
-            --sage-300: #b8c4bb;
-            --sage-600: #5a7563;
-            --sage-700: #4a6352;
-            --sage-800: #3a4f42;
-            --sage-900: #2d3d33;
-            
-            /* Warm accents */
-            --cream-50: #fefcfb;
-            --cream-100: #faf6f0;
-            --warm-50: #fefcfb;
-            --warm-100: #faf6f0;
-            --warm-200: #f1e8d9;
-            
-            /* Gold accents */
-            --gold-500: #d4af37;
-            --gold-600: #b8941f;
-            
-            /* Yellow for stars */
-            --yellow-500: #eab308;
-        }
-        
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
-            color: #2d3748;
-            background: #ffffff;
-            min-height: 100vh;
+            color: #374151;
+            background-color: #ffffff;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.025em;
-        }
-        
-        /* Header */
-        .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 219, 214, 0.3);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 50;
-            padding: 1rem 2rem;
-        }
-        
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            height: 60px;
-        }
-        
-        .logo img {
-            height: 50px;
-            width: auto;
-            background: transparent;
-            mix-blend-mode: multiply;
-            filter: hue-rotate(85deg) saturate(0.8) brightness(1.2);
-        }
-        
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-link {
-            color: var(--sage-700);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-link:hover {
-            color: var(--sage-600);
-        }
-        
-        .btn-primary {
-            background: #1f2937;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.025em;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(31, 41, 55, 0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-primary:hover {
-            background: #111827;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 40px rgba(31, 41, 55, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--sage-700);
-            border: 2px solid var(--sage-300);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .btn-outline:hover {
-            background: var(--sage-50);
-            transform: translateY(-2px);
-        }
-        
-        /* Badge */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--sage-100);
-            color: var(--sage-800);
-            border: 1px solid var(--sage-200);
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 1.125rem;
-            font-weight: 500;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--sage-50), var(--cream-50), var(--sage-100));
-            padding: 8rem 2rem 3rem;
-            margin-top: 80px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .hero-content {
-            text-align: left;
-        }
-        
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            color: var(--sage-900);
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-        }
-        
-        .hero h1 .gradient-text {
-            background: linear-gradient(to right, var(--sage-700), var(--sage-600));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-description {
-            font-size: 1.25rem;
-            color: var(--sage-700);
-            margin-bottom: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: flex-start;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 640px) {
-            .hero-buttons {
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-        }
-        
-        .hero-cta {
-            background: var(--sage-700);
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .hero-cta:hover {
-            background: var(--sage-800);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Trust indicators */
-        .trust-indicators {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 2rem;
-            color: var(--sage-600);
-            margin-bottom: 0;
-        }
-        
-        /* Hero Image */
-        .hero-image {
-            position: relative;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 1rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .star-icon {
-            color: var(--yellow-500);
-            fill: currentColor;
-        }
-        
-        /* Features grid */
-        .features-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-        
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .feature-card {
-            position: relative;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 12px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        .feature-card img {
-            width: 100%;
-            height: 16rem;
-            object-fit: cover;
-        }
-        
-        .feature-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-        }
-        
-        .feature-content {
-            position: absolute;
-            bottom: 0.75rem;
-            left: 0.75rem;
-            right: 0.75rem;
-            color: white;
-        }
-        
-        .feature-title {
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .feature-desc {
-            font-size: 0.75rem;
-            opacity: 0.9;
-        }
-        
-        /* Icons */
-        .icon {
-            width: 1.25rem;
-            height: 1.25rem;
-            display: inline-block;
-        }
-        
-        /* Main Content */
-        main {
-            padding: 0;
-        }
-        
+
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-        
-        /* How It Works Section */
-        .how-it-works {
-            padding: 6rem 2rem;
-            background: var(--warm-50);
-            text-align: center;
+
+        /* Typography */
+        .playfair {
+            font-family: 'Playfair Display', Georgia, serif;
         }
-        
-        .how-it-works h2 {
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
             font-size: 2.5rem;
-            color: var(--sage-900);
+            font-weight: 600;
             margin-bottom: 1rem;
         }
-        
-        .how-it-works-subtitle {
-            font-size: 1.125rem;
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--sage-600);
-            margin-bottom: 4rem;
+            margin-bottom: 1rem;
         }
-        
-        .steps-container {
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--sage-50), white);
+            padding: 4rem 0 6rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #1f2937;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero-highlight {
+            color: var(--sage-600);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--sage-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(97, 111, 74, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--sage-700);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(97, 111, 74, 0.4);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .steps-grid {
             display: grid;
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
-        
-        @media (min-width: 768px) {
-            .steps-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
+
         .step-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
             padding: 2rem;
+            background: var(--sage-50);
             border-radius: 1rem;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
-        
+
         .step-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
         }
-        
+
         .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: var(--sage-600);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Book Showcase */
+        .book-showcase {
+            padding: 4rem 0;
+            background: var(--sage-50);
+        }
+
+        .book-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .book-image {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .book-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--sage-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .benefit-icon {
             width: 3rem;
             height: 3rem;
-            border-radius: 50%;
+            background: var(--sage-600);
+            color: white;
+            border-radius: 0.5rem;
+            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        
-        .step-number.step-1 {
-            background: #4285f4;
-        }
-        
-        .step-number.step-2 {
-            background: #34a853;
-        }
-        
-        .step-number.step-3 {
-            background: #9c27b0;
-        }
-        
-        .step-icon {
-            width: 2rem;
-            height: 2rem;
-            color: var(--sage-600);
-            margin-bottom: 1rem;
-        }
-        
-        .step-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--sage-900);
-            margin-bottom: 1rem;
-        }
-        
-        .step-description {
-            font-size: 1rem;
-            color: var(--sage-600);
-            line-height: 1.6;
-        }
-        
-        .process-cta {
-            background: var(--sage-700);
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .process-cta:hover {
-            background: var(--sage-800);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .process-subtitle {
-            font-size: 1rem;
-            color: var(--sage-600);
-            margin-top: 1rem;
-        }
-        
-        /* See Your Story Come to Life Section */
-        .story-showcase {
-            padding: 6rem 2rem;
-            background: white;
+
+        /* Testimonial Section */
+        .testimonial {
+            padding: 4rem 0;
+            background: var(--sage-50);
             text-align: center;
         }
-        
-        .story-showcase h2 {
-            font-size: 2.5rem;
-            color: var(--sage-900);
-            margin-bottom: 1rem;
-        }
-        
-        .story-showcase-subtitle {
-            font-size: 1.125rem;
-            color: var(--sage-600);
-            max-width: 600px;
-            margin: 0 auto 4rem;
-            line-height: 1.6;
-        }
-        
-        .showcase-grid {
+
+        .testimonials-grid {
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-top: 3rem;
         }
-        
-        @media (min-width: 768px) {
-            .showcase-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .showcase-item {
-            background: var(--sage-50);
-            border-radius: 1rem;
+
+        .testimonial-card {
+            background: white;
             padding: 2rem;
-            transition: all 0.3s ease;
-            border: 1px solid var(--sage-200);
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--sage-600);
         }
-        
-        .showcase-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #4b5563;
         }
-        
-        .showcase-image {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .showcase-title {
-            font-size: 1.25rem;
+
+        .testimonial-author {
             font-weight: 600;
-            color: var(--sage-900);
-            margin-bottom: 0.75rem;
+            color: var(--sage-700);
         }
-        
-        .showcase-description {
-            font-size: 0.95rem;
-            color: var(--sage-600);
-            line-height: 1.5;
-        }
-        
-        .showcase-cta {
-            background: #1f2937;
-            color: white;
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-            font-weight: 600;
-            border-radius: 2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .showcase-cta:hover {
-            background: #111827;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 40px rgba(31, 41, 55, 0.3);
-        }
-        
+
         /* Pricing Section */
         .pricing {
-            padding: 6rem 2rem;
-            background: var(--sage-50);
+            padding: 4rem 0;
+            background: white;
             text-align: center;
         }
-        
-        .pricing h2 {
-            font-size: 2.5rem;
-            color: var(--sage-900);
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-subtitle {
-            font-size: 1.125rem;
-            color: var(--sage-600);
-            margin-bottom: 4rem;
-        }
-        
+
         .pricing-card {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-            border: 2px solid var(--sage-300);
+            max-width: 400px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--sage-50);
+            border-radius: 1rem;
+            border: 2px solid var(--sage-600);
         }
-        
-        .pricing-badge {
-            background: var(--sage-700);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-        
-        .pricing-amount {
+
+        .price {
             font-size: 3rem;
             font-weight: 700;
-            color: var(--sage-900);
-            margin-bottom: 0.5rem;
-        }
-        
-        .pricing-period {
             color: var(--sage-600);
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-        
-        .pricing-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .pricing-features .check-icon {
-            color: var(--sage-700);
-            width: 1.25rem;
-            height: 1.25rem;
-        }
-        
-        .memoir-addon-highlight {
-            background: linear-gradient(135deg, #fef7ed 0%, #fff7ed 100%);
-            border: 2px solid #fed7aa;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        
-        .addon-badge {
-            color: #c2410c;
-            font-weight: 600;
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .addon-title {
-            color: #ea580c;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .addon-description {
-            color: #c2410c;
-            font-size: 0.875rem;
-            margin-bottom: 0.75rem;
-        }
-        
-        .addon-total {
-            color: #4a5d5a;
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-        
-        /* Comparison Table */
-        .comparison-table {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 3rem auto;
-        }
-        
-        .comparison-card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            border: 2px solid var(--sage-200);
-            position: relative;
-        }
-        
-        .comparison-card.recommended {
-            border-color: #fed7aa;
-            transform: scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .comparison-card.recommended::before {
-            content: "BEST VALUE";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #ea580c, #f97316);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 2rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-        
-        .comparison-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--sage-900);
-            margin-bottom: 0.5rem;
-            text-align: center;
-        }
-        
-        .comparison-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--sage-800);
-            text-align: center;
             margin-bottom: 1rem;
         }
-        
-        .comparison-card.recommended .comparison-price {
-            color: #ea580c;
+
+        .price-description {
+            color: #6b7280;
+            margin-bottom: 2rem;
         }
-        
-        .comparison-savings {
-            background: #dcfce7;
-            color: #166534;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comparison-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .comparison-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .comparison-features .check-icon {
-            color: var(--sage-700);
-            width: 1.1rem;
-            height: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        .comparison-features .plus-icon {
-            color: #ea580c;
-            width: 1.1rem;
-            height: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        .comparison-cta {
-            width: 100%;
-            background: var(--sage-700);
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
             color: white;
-            border: none;
-            padding: 1rem 1.5rem;
-            border-radius: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
             text-align: center;
         }
-        
-        .comparison-card.recommended .comparison-cta {
-            background: linear-gradient(135deg, #ea580c, #f97316);
-        }
-        
-        .comparison-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        @media (max-width: 768px) {
-            .comparison-table {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .comparison-card.recommended {
-                transform: none;
-            }
-        }
-        
-        /* Footer */
-        .footer {
-            background: var(--sage-800);
+
+        .final-cta h2 {
             color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
-        }
-        
-        .footer h3 {
             margin-bottom: 1rem;
         }
-        
-        .footer p {
+
+        .final-cta p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
-            margin-bottom: 1rem;
         }
-        
-        /* Enhanced Mobile Responsive Design */
+
+        .cta-button-white {
+            background: white;
+            color: var(--sage-700);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button-white:hover {
+            background: var(--sage-50);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation hover effects */
+        nav ul li a:hover {
+            color: var(--sage-600) !important;
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
+            h1 {
+                font-size: 2.5rem;
             }
             
-            .nav-menu {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
+            h2 {
+                font-size: 2rem;
             }
             
-            .hero {
-                padding: 3rem 1rem;
-                text-align: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem !important;
-                line-height: 1.2;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.125rem !important;
-                margin-bottom: 2rem;
-            }
-            
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-            
-            .hero-image {
-                order: -1;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            
-            .trust-indicators {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-                justify-content: center;
+            .container {
+                padding: 0 1rem;
             }
             
             .hero {
-                padding: 6rem 1rem 2rem;
+                padding: 3rem 0 4rem;
             }
             
-            .hero-container {
+            .steps-grid,
+            .book-images {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             
-            .hero-content {
-                text-align: center;
+            nav ul {
+                flex-direction: column;
+                gap: 1rem !important;
             }
             
-            .hero-buttons {
-                align-items: center;
-            }
-            
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .trust-indicators {
-                justify-content: center;
-            }
-            
-            .trust-item {
-                font-size: 0.875rem;
-                padding: 0.5rem 1rem;
-            }
-            
-            .how-it-works,
-            .story-showcase {
-                padding: 3rem 1rem;
-            }
-            
-            .how-it-works h2,
-            .story-showcase h2 {
-                font-size: 2rem !important;
-            }
-            
-            .showcase-item,
-            .step-card {
-                padding: 1.5rem;
-            }
-            
-            .showcase-image {
-                height: 240px !important;
-            }
-            
-            .feature-card {
-                padding: 1.5rem;
-            }
-            
-            .pricing {
-                padding: 3rem 1rem;
-            }
-            
-            .pricing h2 {
-                font-size: 2rem !important;
+            nav div[style*="display: flex"] {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
     
-    <!-- Client-side currency conversion for GitHub Pages -->
-    <script>
-        // Currency conversion for static GitHub Pages
-        function detectAndSetCurrency() {
-            // Use timezone to detect likely country
-            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            const isUS = timezone.includes('America') || timezone.includes('US') || timezone.includes('New_York') || timezone.includes('Los_Angeles') || timezone.includes('Chicago') || timezone.includes('Denver');
-            
-            if (isUS) {
-                // Convert to USD pricing
-                document.querySelectorAll('.currency-symbol, [id*="currency"]').forEach(el => el.textContent = '$');
-                
-                // Update specific prices
-                const priceElements = [
-                    { selector: '[id*="bundle-price"], .price-amount', ukPrice: 98, usPrice: 129 },
-                    { selector: '.price-family', ukPrice: 249, usPrice: 299 }
-                ];
-                
-                priceElements.forEach(item => {
-                    document.querySelectorAll(item.selector).forEach(el => {
-                        if (el.textContent.includes('98')) el.textContent = '129';
-                        if (el.textContent.includes('249')) el.textContent = '299';
-                    });
-                });
-                
-                // Update text mentions of prices
-                document.body.innerHTML = document.body.innerHTML
-                    .replace(/£98/g, '$129')
-                    .replace(/£249/g, '$299')
-                    .replace(/£40/g, '$52')
-                    .replace(/£69/g, '$89')
-                    .replace(/£99/g, '$125');
-            }
-        }
-        
-        // Run on page load
-        document.addEventListener('DOMContentLoaded', detectAndSetCurrency);
-    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <img src="Logo.png" alt="Life Story Novel - Transform Your Life Into A Beautiful Novel" />
-            </div>
-            <nav class="nav-menu">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="btn-primary">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                    </svg>
-                    Start Your Story
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div style="margin-bottom: 1.5rem;">
-                        <div class="badge">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                                <path d="M5 3v4"/>
-                                <path d="M19 17v4"/>
-                                <path d="M3 5h4"/>
-                                <path d="M17 19h4"/>
-                            </svg>
-                            AI-Powered Personal Storytelling
-                        </div>
-                    </div>
-                    
-                    <h1>
-                        Your Life, <span class="gradient-text">Your Novel</span>
-                    </h1>
-                    
-                    <p class="hero-description">
-                        Transform your authentic life experiences into a professionally written novel in your favorite genre. Choose thriller, romance, mystery, or any style - starring you and your real family and friends.
-                    </p>
-
-                    <!-- Primary CTAs -->
-                    <div class="hero-buttons">
-                        <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="hero-cta">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                            </svg>
-                            Start Your Story Now
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14"/>
-                                <path d="m12 5 7 7-7 7"/>
-                            </svg>
-                        </a>
-                        
-                        <a href="#features" class="btn-outline" onclick="smoothScroll('#features')">
-                            Features
-                        </a>
-                        
-                        <a href="#how-it-works" class="btn-outline" onclick="smoothScroll('#how-it-works')">
-                            See How It Works
-                        </a>
-                    </div>
-
-                    <!-- Trust Indicators -->
-                    <div class="trust-indicators">
-                        <div class="trust-item">
-                            <svg class="icon star-icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2">
-                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
-                            </svg>
-                            4.9/5 Customer Rating
-                        </div>
-                        <div class="trust-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7Z"/>
-                            </svg>
-                            Thousands of Stories Created
-                        </div>
-                        <div class="trust-item">
-                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="m9 12 2 2 4-4"/>
-                                <path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 1 0-8.953 8.953c.55-.055.998-.398.998-.95 0-.551-.448-1.006-.999-.95a8 8 0 1 1 7.954-7.954C20.005 11.448 20.449 12 21 12Z"/>
-                            </svg>
-                            Award-Winning AI Technology
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hero Image -->
-                <div class="hero-image">
-                    <img 
-                        src="family-reading.webp.jpeg.JPG"
-                        alt="Multi-generational family reading together - preserving stories and memories"
-                    />
-                </div>
-            </div>
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works">
-            <div class="container">
-                <h2>How It Works</h2>
-                <p class="how-it-works-subtitle">Transform your life story into a beautiful novel in three simple steps</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin: 3rem 0;">
-                    <!-- Step 1 -->
-                    <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
-                        <img src="voice-recording.PNG" alt="Person sharing their story through voice recording" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
-                        <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Share Your Story</h3>
-                        <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Answer guided questions about your life experiences. Use voice recording or typing - whatever feels natural to you.</p>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
-                        <img src="AI Transforms.jpg" alt="AI transforming story into beautiful book content" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
-                        <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">AI Transforms</h3>
-                        <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Our advanced AI crafts your memories into a compelling novel, preserving your authentic voice and experiences.</p>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 60px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 40px rgba(0, 0, 0, 0.1)'">
-                        <div style="width: 60px; height: 60px; background: #1f2937; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
-                        <img src="Receive your book  (1).jpg" alt="Professional finished memoir book" style="width: 100%; max-width: 280px; height: 200px; object-fit: cover; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
-                        <h3 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Receive Your Book</h3>
-                        <p style="color: #6b7280; font-size: 1rem; line-height: 1.6; margin: 0;">Get your high quality full colour printed A4 hardcover novel to enjoy and share your life story with family members, you can also add a beautifully written memoir style book to capture and preserve your wonderful memories</p>
-                    </div>
-                </div>
-                
-                <!-- Memoir Add-On Offer Bar -->
-                <div style="margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" style="
-                        display: block;
-                        background: #1f2937;
-                        color: white;
-                        padding: 1.75rem 2rem;
-                        border-radius: 12px;
-                        text-decoration: none;
-                        text-align: center;
-                        box-shadow: 0 8px 24px rgba(22, 163, 74, 0.3);
-                        transition: all 0.3s ease;
-                        border: 2px solid #22c55e;
-                        position: relative;
-                        overflow: hidden;
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(22, 163, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(22, 163, 74, 0.3)'">
-                        <div style="
-                            position: absolute;
-                            top: 8px;
-                            right: 12px;
-                            background: #dc2626;
-                            color: white;
-                            padding: 0.25rem 0.75rem;
-                            border-radius: 20px;
-                            font-size: 0.75rem;
-                            font-weight: bold;
-                            text-transform: uppercase;
-                            letter-spacing: 0.05em;
-                        ">Limited Time</div>
-                        <div style="font-size: 1.375rem; font-weight: bold; margin-bottom: 0.5rem;">
-                            🎁 Unlock the Complete Bundle: Novel + Memoir
-                        </div>
-                        <div style="font-size: 1.125rem; opacity: 0.95; margin-bottom: 0.75rem;">
-                            Why choose one when you can have both? Get your story as a novel AND memoir for just £98
-                        </div>
-                        <div style="font-size: 0.875rem; font-weight: 600; opacity: 0.9;">
-                            ✓ Save £40 vs individual pricing ✓ Two unique formats ✓ Complete family legacy preservation
-                        </div>
-                    </a>
-                </div>
-                
-                <a href="#" class="process-cta">Start Your Story Today</a>
-                <p class="process-subtitle">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
-            </div>
-        </section>
-        
-        <!-- What's inside your book Section -->
-        <section style="padding: 0; background: white; margin: 0;">
-            <div style="max-width: 100%; margin: 0; padding: 0;">
-                <h2 style="text-align: center; color: var(--sage-900); font-size: 2.5rem; font-weight: 700; margin: 2rem 0 2rem 0; font-family: 'Playfair Display', serif;">What's inside your book</h2>
-                <div style="width: 100%; margin: 0; padding: 0;">
-                    <img 
-                        src="Design - Your Story - design for a website-01.jpg" 
-                        alt="Book interior showcase showing AI character transformations and high-quality full-color pages"
-                        style="width: 100%; height: auto; display: block; margin: 0; padding: 0; max-width: 100%;"
-                    />
-                </div>
-            </div>
-        </section>
-        
-        <!-- See Your Story Come to Life Section -->
-        <section id="story-showcase" class="story-showcase">
-            <div class="container">
-                <h2>See Your Story Come to Life</h2>
-                <p class="story-showcase-subtitle">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
-                
-                <div class="showcase-grid">
-                    <!-- Professional Cover Design -->
-                    <div class="showcase-item">
-                        <img 
-                            src="Professional Cover design.jpg"
-                            alt="Professional book cover design with elegant typography"
-                            class="showcase-image"
-                        />
-                        <h3 class="showcase-title">Custom Cover Design</h3>
-                        <p class="showcase-description">Every book receives a professionally designed cover that reflects your unique story and personality.</p>
-                    </div>
-                    
-                    <!-- Rich Interior Layout -->
-                    <div class="showcase-item">
-                        <img 
-                            src="Rich Interior Layout.jpg"
-                            alt="Beautiful interior page layout with premium typography"
-                            class="showcase-image"
-                        />
-                        <h3 class="showcase-title">Premium Layout</h3>
-                        <p class="showcase-description">Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
-                    </div>
-                    
-                    <!-- Complete Memoir -->
-                    <div class="showcase-item">
-                        <img 
-                            src="Complete Memoir .webp"
-                            alt="Finished memoir book showing professional quality"
-                            class="showcase-image"
-                        />
-                        <h3 class="showcase-title">Your Finished Book</h3>
-                        <p class="showcase-description">A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
-                    </div>
-                </div>
-                
-                <a href="#" class="showcase-cta">Create Your Book Now</a>
-                
-                <!-- Memoir Add-On Offer Bar -->
-                <div style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" style="
-                        display: block;
-                        background: #1f2937;
-                        color: white;
-                        padding: 1.5rem 2rem;
-                        border-radius: 12px;
-                        text-decoration: none;
-                        text-align: center;
-                        box-shadow: 0 8px 24px rgba(22, 163, 74, 0.3);
-                        transition: all 0.3s ease;
-                        border: 2px solid #22c55e;
-                        position: relative;
-                        overflow: hidden;
-                    " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 12px 32px rgba(22, 163, 74, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 24px rgba(22, 163, 74, 0.3)'">
-                        <div style="
-                            position: absolute;
-                            top: 8px;
-                            right: 12px;
-                            background: #dc2626;
-                            color: white;
-                            padding: 0.25rem 0.75rem;
-                            border-radius: 20px;
-                            font-size: 0.75rem;
-                            font-weight: bold;
-                            text-transform: uppercase;
-                            letter-spacing: 0.05em;
-                        ">Limited Time</div>
-                        <div style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">
-                            🎁 Special Bundle Offer: Novel + Memoir
-                        </div>
-                        <div style="font-size: 1rem; opacity: 0.95; margin-bottom: 0.75rem;">
-                            Get BOTH your novel AND memoir for just £98 • Save £40 vs individual pricing
-                        </div>
-                        <div style="font-size: 0.875rem; font-weight: 600;">
-                            Perfect for preserving your legacy in two beautiful formats →
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- AI Character Generation Section -->
-        <section id="ai-transformation" style="padding: 6rem 2rem; background: linear-gradient(135deg, #f0f9ff, #ffffff);">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f3f4f6; color: #374151; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1.5rem;">
-                        ✨ AI Character Generation
-                    </div>
-                    <h2 style="font-size: 2.5rem; font-weight: bold; color: #111827; margin-bottom: 1.5rem; line-height: 1.2;">
-                        Transform Your Photos Into Story Characters
-                    </h2>
-                    <p style="font-size: 1.25rem; color: #6b7280; max-width: 48rem; margin: 0 auto 3rem;">
-                        Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.
-                    </p>
-                </div>
-                
-                <!-- Before/After Comparison -->
-                <div style="max-width: 80rem; margin: 0 auto;">
-                    <div style="background: white; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); padding: 3rem;">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-                            <!-- Before Image -->
-                            <div style="text-align: center;">
-                                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f3f4f6; color: #374151; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1rem;">
-                                    📷 Original Photo
-                                </div>
-                                <div style="aspect-ratio: 3/4; background: #f3f4f6; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-bottom: 1rem;">
-                                    <img src="Before .jpg" alt="Original family photo before AI transformation" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <p style="color: #6b7280; font-weight: 500; margin: 0;">Your authentic family photo</p>
-                            </div>
-                            
-                            <!-- After Image -->
-                            <div style="text-align: center;">
-                                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: #f3e8ff; color: #7c3aed; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; margin-bottom: 1rem;">
-                                    ✨ Fantasy Character
-                                </div>
-                                <div style="aspect-ratio: 3/4; background: #f3e8ff; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-bottom: 1rem;">
-                                    <img src="Wizard.png" alt="AI-transformed fantasy wizard character" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <p style="color: #7c3aed; font-weight: 500; margin: 0;">AI-generated fantasy wizard</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Features List -->
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; padding-top: 3rem; border-top: 1px solid #e5e7eb;">
-                            <div style="text-align: center;">
-                                <div style="background: var(--sage-100); padding: 0.75rem; border-radius: 0.75rem; width: fit-content; margin: 0 auto 1rem;">
-                                    👤 
-                                </div>
-                                <h4 style="font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Facial Identity Preserved</h4>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin: 0;">Advanced AI maintains recognizable features while applying magical transformations</p>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="background: #f3e8ff; padding: 0.75rem; border-radius: 0.75rem; width: fit-content; margin: 0 auto 1rem;">
-                                    🎨
-                                </div>
-                                <h4 style="font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Genre-Specific Styling</h4>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin: 0;">Characters match your story's genre - fantasy, romance, thriller, or historical</p>
-                            </div>
-                            <div style="text-align: center;">
-                                <div style="background: #fef3c7; padding: 0.75rem; border-radius: 0.75rem; width: fit-content; margin: 0 auto 1rem;">
-                                    👑
-                                </div>
-                                <h4 style="font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Professional Quality</h4>
-                                <p style="font-size: 0.875rem; color: #6b7280; margin: 0;">High-resolution character portraits perfect for your published novel</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Call to Action -->
-                        <div style="text-align: center; margin-top: 3rem;">
-                            <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" 
-                               style="background: var(--sage-600); color: white; padding: 1rem 2rem; font-size: 1.125rem; font-weight: 600; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s;">
-                                ✨ Start Your Story Journey
-                            </a>
-                            <p style="font-size: 0.875rem; color: #6b7280; margin-top: 1rem; margin-bottom: 0;">Transform your memories into magical characters • No design skills needed</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mobile Responsive Styles -->
-                <style>
-                    @media (max-width: 768px) {
-                        #ai-transformation .container > div:first-child {
-                            margin-bottom: 2rem !important;
-                        }
-                        #ai-transformation h2 {
-                            font-size: 2rem !important;
-                        }
-                        #ai-transformation .container > div:nth-child(2) > div {
-                            padding: 1.5rem !important;
-                        }
-                        #ai-transformation .container > div:nth-child(2) > div > div:first-child {
-                            grid-template-columns: 1fr !important;
-                            gap: 2rem !important;
-                        }
-                        #ai-transformation .container > div:nth-child(2) > div > div:last-child {
-                            grid-template-columns: 1fr !important;
-                        }
-                    }
-                </style>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section id="features" style="padding: 4rem 0; background: var(--sage-50);">
-            <div class="container">
-                <h2 style="text-align: center; color: var(--sage-900); font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Key Features</h2>
-                <p style="text-align: center; color: var(--sage-700); font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem auto;">Discover what makes Your Story the perfect way to preserve and transform your life experiences</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0;">
-                    <!-- Feature 1 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">🤖</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">AI-Powered Story Transformation</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Advanced AI technology transforms your personal stories into professionally written novels while preserving your unique voice and experiences.</p>
-                    </div>
-                    
-                    <!-- Feature 2 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">📖</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Professional Quality Writing</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Get engaging, well-structured narratives that read like professionally authored books with proper pacing, dialogue, and literary techniques.</p>
-                    </div>
-                    
-                    <!-- Feature 3 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">📚</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Beautiful Hardcover Books</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Premium A4 hardcover books with professional cover design, quality paper, and elegant typography that becomes a treasured family heirloom.</p>
-                    </div>
-                    
-                    <!-- Feature 4 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">🏛️</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Family Heritage Preservation</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Transform memories into lasting family legacy that future generations will treasure, preserving stories that would otherwise be lost.</p>
-                    </div>
-                    
-                    <!-- Feature 5 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">🎭</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Multiple Genre Options</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Choose from romance, thriller, mystery, literary fiction, fantasy, and memoir formats to match your storytelling preferences.</p>
-                    </div>
-                    
-                    <!-- Feature 6 -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); text-align: center; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto; font-size: 1.5rem;">📸</div>
-                        <h3 style="color: var(--sage-900); font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">AI Character Upload Facility</h3>
-                        <p style="color: var(--sage-700); line-height: 1.6;">Upload family photos and watch AI transform them into story characters while preserving facial features and identity across different genres and time periods.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing">
-            <div class="container">
-                <h2>Simple, Transparent Pricing</h2>
-                <p class="pricing-subtitle">Everything included - no hidden fees, no subscriptions</p>
-                
-<!-- Side-by-side Layout: Purchase Box + Comparison Table -->
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin: 3rem 0; align-items: start;">
-                    
-                    <!-- Left Column: Complete Package -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
-                        <h3 style="color: var(--sage-900); font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Your Complete Package</h3>
-                        
-                        <!-- Bundle Package -->
-                        <div style="text-align: center; margin-bottom: 1.5rem;">
-                            <div style="color: var(--sage-600); font-size: 0.875rem; margin-bottom: 0.5rem;">Individual Pricing:</div>
-                            <div style="color: var(--sage-700); font-size: 1rem; margin-bottom: 0.25rem;">Novel: £69 + Memoir: £69 = £138</div>
-                        </div>
-                        
-                        <!-- Bundle Offer -->
-                        <div style="background: #1f2937; border-radius: 0.75rem; padding: 1.5rem; margin-bottom: 1.5rem; border: 2px solid #1f2937; color: white; text-align: center;">
-                            <div style="font-weight: 700; font-size: 0.875rem; margin-bottom: 0.5rem; opacity: 0.9;">🎁 Bundle Deal</div>
-                            <div style="font-weight: 700; font-size: 1.5rem; margin-bottom: 0.5rem;">Novel + Memoir</div>
-                            <p style="font-size: 0.9rem; margin-bottom: 1rem; opacity: 0.9;">Get both your novel AND memoir using the same source material</p>
-                            <div style="font-weight: 700; font-size: 1.5rem; margin-bottom: 0.25rem;">£98</div>
-                            <div style="font-weight: 700; font-size: 1rem;">(Save £40!)</div>
-                        </div>
-                        
-                        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0;">
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                AI-guided story collection with voice recording
-                            </li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Professional editing and story development
-                            </li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Premium Hardcover Casebound A4 Book with Full Colour Print
-                            </li>
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Custom cover design
-                            </li>
-
-                            <li style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Free shipping anywhere in the UK
-                            </li>
-                            <li style="display: flex; align-items: center; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Fill your story with AI generated characters based on you and your loved ones
-                            </li>
-                        </ul>
-                        
-                        <div style="text-align: center;">
-                            <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" style="background: var(--sage-600); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; display: inline-block; margin-bottom: 1rem;">Get Both Novel & Memoir - £98</a>
-                            <p style="font-size: 0.875rem; color: var(--sage-600); margin: 0;">30-day money-back guarantee • Secure payment • No recurring charges</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Column: Comparison Table -->
-                    <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
-                        <h3 style="text-align: center; font-size: 1.5rem; color: var(--sage-900); margin-bottom: 2rem;">Compare Your Options</h3>
-                        
-                        <div style="overflow-x: auto;">
-                            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
-                                <thead>
-                                    <tr style="border-bottom: 2px solid var(--sage-200);">
-                                        <th style="text-align: left; padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 600;"></th>
-                                        <th style="text-align: center; padding: 0.75rem 0.5rem; background: linear-gradient(135deg, #fef7ed, #fff7ed); border-radius: 0.5rem 0.5rem 0 0; position: relative;">
-
-                                            <div style="color: #ea580c; font-weight: 700; font-size: 1rem; margin-top: 0.5rem;">Your Story</div>
-                                        </th>
-                                        <th style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 600;">Remento</th>
-                                        <th style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 600;">StoryWorth</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Transform life into a novel</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #dc2626;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #dc2626;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Create a memoir</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Use voice to answer questions</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #dc2626;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Create character images from your pictures</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #16a34a;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #dc2626;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem;">
-                                            <svg style="width: 1.25rem; height: 1.25rem; color: #dc2626;" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                            </svg>
-                                        </td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Weekly prompts delivered via</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed; font-weight: 600; color: #ea580c;">Email & SMS</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">Email & SMS</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">Email</td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Size of book</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed; font-weight: 600; color: #ea580c;">A4 (8.3" × 11.7")</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">8" × 10"</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">6" × 9"</td>
-                                    </tr>
-                                    <tr style="border-bottom: 1px solid var(--sage-100);">
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Price</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed; font-weight: 700; color: #ea580c; font-size: 1.1rem;">£98 (2 books)</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600); font-weight: 600;">£99</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600); font-weight: 600;">£99</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 0.75rem 0.5rem; color: var(--sage-700); font-weight: 500;">Price for additional copy of book</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; background: #fef7ed; font-weight: 600; color: #ea580c;">£45</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">£69</td>
-                                        <td style="text-align: center; padding: 0.75rem 0.5rem; color: var(--sage-600);">£79</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Mobile responsive CSS -->
-                <style>
-                    @media (max-width: 768px) {
-                        div[style*="grid-template-columns: 1fr 1fr"] {
-                            display: block !important;
-                        }
-                        div[style*="grid-template-columns: 1fr 1fr"] > div {
-                            margin-bottom: 2rem;
-                        }
-                    }
-                </style>
-                
-                <!-- Novel-Only Purchase Section -->
-                <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: linear-gradient(135deg, #f0f4f8, #e6f3ff); border-radius: 1rem; border: 2px solid var(--sage-200);">
-                    <h3 style="color: var(--sage-800); font-size: 1.5rem; margin-bottom: 1rem;">Prefer Just a Novel?</h3>
-                    <p style="color: var(--sage-700); font-size: 1rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">If you'd rather have just the novel format, you can purchase the novel-only version of our service.</p>
-                    
-                    <div style="background: white; border-radius: 0.75rem; padding: 1.5rem; margin: 1.5rem auto; max-width: 400px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);">
-                        <div style="font-size: 2rem; font-weight: 700; color: var(--sage-800); margin-bottom: 0.5rem;">£69</div>
-                        <div style="color: var(--sage-600); margin-bottom: 1rem;">Novel Only</div>
-                        <div style="text-align: left; margin-bottom: 1.5rem;">
-                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                AI-guided novel creation
-                            </div>
-                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                A4 hardcover book
-                            </div>
-                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Digital formats included
-                            </div>
-                            <div style="display: flex; align-items: center; font-size: 0.9rem;">
-                                <svg style="width: 1rem; height: 1rem; color: #16a34a; margin-right: 0.75rem;" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg>
-                                Free UK shipping
-                            </div>
-                        </div>
-                        <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase?novel-only=true" style="background: var(--sage-600); color: white; padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; display: inline-block;">Order Novel Only - £69</a>
-                    </div>
-                    
-                    <p style="color: var(--sage-600); font-size: 0.875rem; margin-top: 1rem;">Experience your life story transformed into your favorite genre</p>
-                </div>
-                
-                <div style="text-align: center; margin: 3rem 0; padding: 2rem; background: var(--sage-100); border-radius: 1rem;">
-                    <h3 style="color: var(--sage-800); font-size: 1.5rem; margin-bottom: 1rem;">Why Choose Your Story?</h3>
-                    <p style="color: var(--sage-700); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Get TWO books (novel + memoir) for less than competitors charge for just one memoir. Plus, experience your life as fiction in thriller, romance, mystery, or any genre you love!</p>
-                </div>
-                
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Navigation -->
+    <nav style="background: white; padding: 1rem 0; border-bottom: 1px solid var(--sage-100);">
         <div class="container">
-            <h3>Your Story</h3>
-            <p>Transforming lives into literature, one story at a time.</p>
-            <p>&copy; 2025 Your Story. All rights reserved.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo playfair">Life Story Novel</div>
+                <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
+                    <li><a href="/" style="color: var(--sage-600); text-decoration: none; font-weight: 600;">Home</a></li>
+                    <li><a href="/how-it-works.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">How It Works</a></li>
+                    <li><a href="/pricing.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Pricing</a></li>
+                    <li><a href="/samples.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Samples</a></li>
+                    <li><a href="/faq.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">FAQ</a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="playfair">
+                Transform Your Life Into A <span class="hero-highlight">Beautiful Novel</span>
+            </h1>
+            <p class="hero-subtitle">
+                Share your memories through simple conversations. Our AI transforms your stories into a professionally written memoir and personalised novel that preserves your legacy forever.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">
+                    Start Your Story Today
+                </a>
+                <a href="/how-it-works.html" style="background: transparent; color: var(--sage-600); border: 2px solid var(--sage-600); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: all 0.3s ease; display: inline-block;">
+                    Learn How It Works
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">How It Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Share Your Stories</h3>
+                    <p>Tell us about your life through gentle, guided conversations. No writing skills needed - just speak naturally about your experiences.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>AI Transforms</h3>
+                    <p>Our advanced AI crafts your memories into a beautifully written novel, preserving your unique voice and experiences.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Receive Your Book</h3>
+                    <p>Get your professionally printed, hardcover book delivered to your door - a treasured keepsake for generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Showcase -->
+    <section class="book-showcase">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">See Your Story Come to Life</h2>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 3rem; font-size: 1.125rem;">
+                Professional memoir and novel books created from real life stories. <a href="/samples.html" style="color: var(--sage-600); text-decoration: none; font-weight: 600;">View more samples →</a>
+            </p>
+            <div class="book-images">
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Professional-Cover-design.jpg" alt="Professional memoir cover design showing elegant typography and personal photography integration for life story book" />
+                    <h3>Professional Cover Design</h3>
+                    <p>Beautiful, custom covers designed to reflect your unique story</p>
+                </div>
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Rich-Interior-Layout.jpg" alt="Rich interior book layout with professional typography, chapter headings, and elegant page design for life story memoir" />
+                    <h3>Rich Interior Layout</h3>
+                    <p>Professionally formatted pages with elegant typography and layout</p>
+                </div>
+                <div class="book-image">
+                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Complete-Memoir.webp" alt="Complete finished memoir book showing hardcover binding, dust jacket, and professional presentation of family life story" />
+                    <h3>Complete Memoir</h3>
+                    <p>A finished hardcover book that preserves your legacy forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="playfair" style="text-align: center; color: #1f2937;">Why Choose Your Story?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📚</div>
+                    <h3>Professional Quality</h3>
+                    <p>AI-powered writing creates engaging, well-structured narratives that read like professionally authored books.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3>Perfect Gift</h3>
+                    <p>The most meaningful gift for grandparents, parents, or anyone whose stories deserve to be preserved.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏛️</div>
+                    <div class="benefit-icon">🏛️</div>
+                    <h3>Family Legacy</h3>
+                    <p>Transform memories into a lasting family heirloom that future generations will treasure forever.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Easy Process</h3>
+                    <p>No technical skills required. Just share your stories naturally - we handle all the complex writing and formatting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial">
+        <div class="container">
+            <h2 class="playfair" style="color: #1f2937;">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "I gave this to my grandmother for her 85th birthday. She cried when she saw her life transformed into such a beautiful story. It's now our family's most precious possession."
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Granddaughter</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "My parents' 50th anniversary gift was their love story as a romance novel. They've read it together multiple times and shared it with all our relatives."
+                    </p>
+                    <p class="testimonial-author">— Michael T., Son</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "When my grandfather was diagnosed with dementia, we rushed to create his memoir. Now we have his incredible war stories and life lessons preserved forever."
+                    </p>
+                    <p class="testimonial-author">— Emma K., Granddaughter</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="playfair" style="color: #1f2937;">Simple, Transparent Pricing</h2>
+            <div class="pricing-card">
+                <div class="price">£98</div>
+                <p class="price-description">Complete package includes novel + memoir versions of your story</p>
+                <ul style="text-align: left; margin-bottom: 2rem; color: #4b5563;">
+                    <li>✓ AI-guided story collection</li>
+                    <li>✓ Professional novel transformation</li>
+                    <li>✓ Memoir version included</li>
+                    <li>✓ Hardcover printing & delivery</li>
+                    <li>✓ Family character generation</li>
+                    <li>✓ Professional cover design</li>
+                </ul>
+                <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Start Your Story - £98</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="playfair">Ready to Preserve Your Legacy?</h2>
+            <p>Join thousands of families who have transformed their stories into beautiful books that will be treasured for generations.</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button-white">Begin Your Story Journey</a>
+        </div>
+    </section>
 
     <script>
-        // Smooth scrolling function
-        function smoothScroll(target) {
-            event.preventDefault();
-            document.querySelector(target).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1731,12 +589,14 @@
             });
         });
 
-        // Add click handlers for CTA buttons - redirect to your real purchase page
-        document.querySelectorAll('.btn-primary, .hero-cta').forEach(button => {
+        // Add click handlers for CTA buttons
+        document.querySelectorAll('.cta-button, .cta-button-white').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                // Redirect to your backend purchase page
-                window.location.href = 'https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase';
+                // Allow normal navigation to Replit app
+                if (this.href.includes('replit.dev')) {
+                    window.open(this.href, '_blank');
+                    e.preventDefault();
+                }
             });
         });
     </script>
