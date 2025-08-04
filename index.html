@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Story - Transform Your Life Into A Beautiful Novel | Memoir Writing Service</title>
+    <title>Life Story Novel - Transform Your Life Into A Beautiful Novel | AI Memoir Writing</title>
     <meta name="description" content="Transform your life story into a professionally written novel or memoir. AI-powered memoir writing service that preserves family history in beautiful, printed books. Perfect gift for grandparents.">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Your Story - Transform Your Life Into A Beautiful Novel">
+    <meta property="og:title" content="Life Story Novel - Transform Your Life Into A Beautiful Novel">
     <meta property="og:description" content="AI-powered memoir writing service that transforms personal stories into professionally written novels. Perfect for preserving family history.">
     <meta property="og:url" content="https://lifestorynovel.com/">
+    <meta property="og:image" content="https://lifestorynovel.com/Before_1753184941962.jpg">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Your Story - Transform Your Life Into A Beautiful Novel">
+    <meta property="twitter:title" content="Life Story Novel - Transform Your Life Into A Beautiful Novel">
     <meta property="twitter:description" content="AI-powered memoir writing service that transforms personal stories into professionally written novels.">
+    <meta property="twitter:image" content="https://lifestorynovel.com/Before_1753184941962.jpg">
     
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -39,6 +41,11 @@
     }
     </script>
     
+    <!-- Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* CSS Variables for consistent theming */
         :root {
@@ -54,9 +61,15 @@
             --sage-900: #3a402f;
             --taupe-100: #f5f3f0;
             --taupe-200: #e8e4df;
+            --taupe-300: #d7cfc4;
             --golden-300: #f4d03f;
+            --golden-400: #f1c40f;
+            --golden-500: #d4af37;
+            --cream: #faf9f7;
+            --warm-white: #fefefe;
         }
 
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -64,118 +77,485 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: #374151;
-            background-color: #ffffff;
+            background-color: var(--warm-white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--sage-900);
+            line-height: 1.2;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 20px;
         }
 
-        /* Typography */
-        .playfair {
-            font-family: 'Playfair Display', Georgia, serif;
+        .section-spacing {
+            padding: 80px 0;
         }
 
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+        .section-spacing-lg {
+            padding: 120px 0;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Header */
+        /* Header Styles */
         .header {
-            background: linear-gradient(135deg, var(--sage-50), white);
-            padding: 2rem 0;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            padding: 10px;
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(122, 138, 94, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.05);
+        }
+
+        .logo h1 {
+            font-size: 1.75rem;
             font-weight: 700;
-            color: var(--sage-600);
-            margin-bottom: 1rem;
+            color: var(--sage-800);
+            margin: 0;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a:hover {
+            color: var(--sage-700);
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--sage-600);
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(122, 138, 94, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(122, 138, 94, 0.4);
+            color: white;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--sage-700);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--sage-100);
+            color: var(--sage-800);
+            text-decoration: none;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--sage-50), white);
-            padding: 4rem 0 6rem;
+            background: linear-gradient(135deg, var(--sage-50) 0%, var(--taupe-100) 50%, var(--cream) 100%);
+            padding: 120px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23616f4a" opacity="0.1"/><circle cx="80" cy="80" r="1" fill="%23616f4a" opacity="0.1"/><circle cx="40" cy="60" r="1" fill="%23616f4a" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>') repeat;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
-            color: #1f2937;
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .hero-highlight {
-            color: var(--sage-600);
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--sage-900);
+            margin-bottom: 24px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #6b7280;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--sage-600);
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-cta {
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
+            padding: 18px 36px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.125rem;
+            font-size: 1.1rem;
+            display: inline-block;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(97, 111, 74, 0.3);
+            box-shadow: 0 6px 25px rgba(122, 138, 94, 0.3);
         }
 
-        .cta-button:hover {
-            background: var(--sage-700);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(97, 111, 74, 0.4);
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(122, 138, 94, 0.4);
+            color: white;
         }
 
-        /* How It Works Section */
-        .how-it-works {
-            padding: 4rem 0;
+        .hero-cta-secondary {
+            background: transparent;
+            color: var(--sage-700);
+            padding: 18px 36px;
+            border: 2px solid var(--sage-600);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta-secondary:hover {
+            background: var(--sage-600);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Trust Indicators */
+        .trust-indicators {
             background: white;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--sage-100);
+        }
+
+        .trust-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--sage-700);
+            font-weight: 500;
+        }
+
+        .trust-icon {
+            width: 24px;
+            height: 24px;
+            color: var(--golden-500);
+        }
+
+        /* AI Transformation Showcase */
+        .showcase {
+            background: var(--sage-50);
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--sage-900);
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--sage-600), var(--golden-500));
+            border-radius: 2px;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .showcase-item {
+            text-align: center;
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            max-width: 300px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .showcase-item h3 {
+            color: var(--sage-800);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .showcase-item p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--sage-100);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(122, 138, 94, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--sage-300);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 8px 25px rgba(122, 138, 94, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--sage-800);
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            background: linear-gradient(135deg, var(--sage-50), var(--taupe-100));
+            padding: 100px 0;
         }
 
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .step-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
             text-align: center;
-            padding: 2rem;
-            background: var(--sage-50);
-            border-radius: 1rem;
-            transition: transform 0.3s ease;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
 
         .step-card:hover {
@@ -183,422 +563,1422 @@
         }
 
         .step-number {
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: var(--sage-600);
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
             color: white;
             border-radius: 50%;
-            line-height: 60px;
-            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 25px rgba(122, 138, 94, 0.3);
         }
 
-        /* Book Showcase */
-        .book-showcase {
-            padding: 4rem 0;
-            background: var(--sage-50);
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--sage-800);
         }
 
-        .book-images {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .book-image {
-            text-align: center;
-            background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .book-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            margin-bottom: 1rem;
+        .step-card p {
+            color: #6b7280;
+            line-height: 1.7;
         }
 
         /* Benefits Section */
         .benefits {
-            padding: 4rem 0;
+            padding: 100px 0;
             background: white;
         }
 
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
         .benefit-card {
             background: var(--sage-50);
-            padding: 2rem;
-            border-radius: 1rem;
+            padding: 35px 25px;
+            border-radius: 16px;
             text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .benefit-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--sage-600);
-            color: white;
-            border-radius: 0.5rem;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+        .benefit-card:hover {
+            border-color: var(--sage-300);
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
-        /* Testimonial Section */
-        .testimonial {
-            padding: 4rem 0;
-            background: var(--sage-50);
-            text-align: center;
+        .benefit-emoji {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--sage-800);
+        }
+
+        .benefit-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--sage-50), var(--taupe-100));
+            padding: 100px 0;
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .testimonial-card {
             background: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--sage-600);
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 30px;
+            font-size: 6rem;
+            color: var(--sage-200);
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .testimonial-text {
             font-style: italic;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            color: #4b5563;
+            margin-bottom: 25px;
+            color: #374151;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
         }
 
         .testimonial-author {
             font-weight: 600;
+            color: var(--sage-800);
+            font-size: 1rem;
+        }
+
+        .testimonial-role {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Sample Showcase */
+        .samples-showcase {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .sample-card {
+            background: var(--sage-50);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .sample-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .sample-card:hover .sample-image {
+            transform: scale(1.05);
+        }
+
+        .sample-content {
+            padding: 30px;
+        }
+
+        .sample-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--sage-800);
+        }
+
+        .sample-content p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .sample-link {
+            color: var(--sage-600);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .sample-link:hover {
             color: var(--sage-700);
         }
 
         /* Pricing Section */
         .pricing {
-            padding: 4rem 0;
-            background: white;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--sage-50), var(--taupe-100));
+        }
+
+        .pricing-container {
             text-align: center;
+            margin-top: 60px;
         }
 
         .pricing-card {
-            max-width: 400px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: var(--sage-50);
-            border-radius: 1rem;
-            border: 2px solid var(--sage-600);
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--sage-200);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--sage-400);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, var(--sage-600), var(--golden-500));
+        }
+
+        .pricing-badge {
+            background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
         .price {
-            font-size: 3rem;
+            font-size: 4rem;
             font-weight: 700;
-            color: var(--sage-600);
-            margin-bottom: 1rem;
+            color: var(--sage-800);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price-currency {
+            font-size: 2.5rem;
+            vertical-align: top;
         }
 
         .price-description {
+            font-size: 1.2rem;
             color: #6b7280;
-            margin-bottom: 2rem;
+            margin-bottom: 40px;
         }
 
-        /* Final CTA Section */
-        .final-cta {
-            padding: 4rem 0;
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin: 40px 0;
+            padding: 0;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            color: #374151;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid var(--sage-100);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-check {
+            color: var(--sage-600);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pricing-cta {
             background: linear-gradient(135deg, var(--sage-600), var(--sage-700));
             color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(122, 138, 94, 0.3);
+            margin-top: 20px;
+        }
+
+        .pricing-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(122, 138, 94, 0.4);
+            color: white;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--sage-200);
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 25px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--sage-800);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--sage-600);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+            padding-bottom: 25px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Call to Action Section */
+        .final-cta {
+            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 50%, var(--sage-800) 100%);
+            color: white;
+            padding: 100px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23stars)"/></svg>') repeat;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
             color: white;
-            margin-bottom: 1rem;
         }
 
         .final-cta p {
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
             opacity: 0.9;
         }
 
-        .cta-button-white {
+        .final-cta .hero-cta {
             background: white;
             color: var(--sage-700);
-            padding: 1rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+            font-size: 1.2rem;
+            padding: 20px 40px;
         }
 
-        .cta-button-white:hover {
-            background: var(--sage-50);
+        .final-cta .hero-cta:hover {
+            background: var(--cream);
+            color: var(--sage-800);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--sage-900);
+            color: white;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-section h3 {
+            color: var(--sage-100);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            color: #d1d5db;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--sage-700);
+            padding-top: 40px;
+            text-align: center;
+            color: #d1d5db;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #d1d5db;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: white;
             transform: translateY(-2px);
         }
 
-        /* Navigation hover effects */
-        nav ul li a:hover {
-            color: var(--sage-600) !important;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            h1 {
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .section-title {
                 font-size: 2.5rem;
             }
             
-            h2 {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
                 font-size: 2rem;
             }
             
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                padding: 3rem 0 4rem;
-            }
-            
+            .features-grid,
+            .showcase-grid,
             .steps-grid,
-            .book-images {
+            .testimonials-grid,
+            .samples-grid {
                 grid-template-columns: 1fr;
             }
             
-            nav ul {
-                flex-direction: column;
-                gap: 1rem !important;
+            .price {
+                font-size: 3rem;
             }
             
-            nav div[style*="display: flex"] {
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-bottom {
                 flex-direction: column;
-                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-spacing,
+            .section-spacing-lg {
+                padding: 60px 0;
+            }
+            
+            .feature-card,
+            .step-card,
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+            
+            .pricing-card {
+                padding: 40px 25px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Pulse Animation for CTA */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 6px 25px rgba(122, 138, 94, 0.3);
+            }
+            50% {
+                box-shadow: 0 6px 25px rgba(122, 138, 94, 0.5);
+            }
+            100% {
+                box-shadow: 0 6px 25px rgba(122, 138, 94, 0.3);
             }
         }
     </style>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav style="background: white; padding: 1rem 0; border-bottom: 1px solid var(--sage-100);">
+    <!-- Header -->
+    <header class="header" id="header">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo playfair">Life Story Novel</div>
-                <ul style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
-                    <li><a href="/" style="color: var(--sage-600); text-decoration: none; font-weight: 600;">Home</a></li>
-                    <li><a href="/how-it-works.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">How It Works</a></li>
-                    <li><a href="/pricing.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Pricing</a></li>
-                    <li><a href="/samples.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">Samples</a></li>
-                    <li><a href="/faq.html" style="color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease;">FAQ</a></li>
-                </ul>
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h1>Life Story Novel</h1>
+                </a>
+                <nav class="nav">
+                    <a href="#how-it-works">How it works</a>
+                    <a href="#samples">Samples</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="cta-button">Start Your Story</a>
+                </nav>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#how-it-works" onclick="closeMobileMenu()">How it works</a>
+                <a href="#samples" onclick="closeMobileMenu()">Samples</a>
+                <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+                <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase" onclick="closeMobileMenu()">Start Your Story</a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="playfair">
-                Transform Your Life Into A <span class="hero-highlight">Beautiful Novel</span>
-            </h1>
-            <p class="hero-subtitle">
-                Share your memories through simple conversations. Our AI transforms your stories into a professionally written memoir and personalised novel that preserves your legacy forever.
-            </p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">
-                    Start Your Story Today
-                </a>
-                <a href="/how-it-works.html" style="background: transparent; color: var(--sage-600); border: 2px solid var(--sage-600); padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 1.125rem; transition: all 0.3s ease; display: inline-block;">
-                    Learn How It Works
-                </a>
+            <div class="hero-content fade-in">
+                <h1>Transform Your Life<br>Into A Beautiful Novel</h1>
+                <p class="hero-subtitle">Share your memories through gentle conversation. Our AI transforms your stories into professionally written novels and memoirs that preserve your legacy forever.</p>
+                <div class="hero-cta-group">
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="hero-cta pulse">Begin Your Story Today</a>
+                    <a href="#how-it-works" class="hero-cta-secondary">Learn How It Works</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="how-it-works">
+    <!-- Trust Indicators -->
+    <section class="trust-indicators">
         <div class="container">
-            <h2 class="playfair" style="text-align: center; color: #1f2937;">How It Works</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3>Share Your Stories</h3>
-                    <p>Tell us about your life through gentle, guided conversations. No writing skills needed - just speak naturally about your experiences.</p>
+            <div class="trust-content">
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                    <span>1000+ Stories Transformed</span>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <span>Professional Quality Guaranteed</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    <span>Secure & Private</span>
+                </div>
+                <div class="trust-item">
+                    <svg class="trust-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <span>UK Delivery Included</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Transformation Showcase -->
+    <section class="showcase" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">Watch Your Story Transform</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item slide-in-left">
+                    <img src="Before_1753184941962.jpg" alt="Before AI transformation - raw personal story and memories from family conversations">
+                    <h3>Your Raw Story</h3>
+                    <p>Share your memories through conversation, voice recordings, or simple writing. No technical skills needed - just speak naturally about your life experiences and cherished moments.</p>
+                </div>
+                <div class="showcase-item fade-in">
+                    <img src="AI Transforms_1753271461626.jpg" alt="AI processing and transforming life stories into professional narrative with advanced algorithms">
                     <h3>AI Transforms</h3>
-                    <p>Our advanced AI crafts your memories into a beautifully written novel, preserving your unique voice and experiences.</p>
+                    <p>Our advanced AI crafts your memories into beautifully written prose, maintaining your unique voice while creating engaging, novel-quality storytelling that captures the essence of your experiences.</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3>Receive Your Book</h3>
-                    <p>Get your professionally printed, hardcover book delivered to your door - a treasured keepsake for generations.</p>
+                <div class="showcase-item slide-in-right">
+                    <img src="Receive your book _1753271456999.jpg" alt="Professional hardcover novel and memoir books delivered to your door">
+                    <h3>Beautiful Books</h3>
+                    <p>Receive professionally printed hardcover books and digital versions. Each book is crafted with attention to detail, featuring custom covers and elegant interior layouts worthy of any bookshelf.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Book Showcase -->
-    <section class="book-showcase">
+    <!-- Process Steps -->
+    <section class="process-steps" id="process">
         <div class="container">
-            <h2 class="playfair" style="text-align: center; color: #1f2937;">See Your Story Come to Life</h2>
-            <p style="text-align: center; color: #6b7280; margin-bottom: 3rem; font-size: 1.125rem;">
-                Professional memoir and novel books created from real life stories. <a href="/samples.html" style="color: var(--sage-600); text-decoration: none; font-weight: 600;">View more samples →</a>
-            </p>
-            <div class="book-images">
-                <div class="book-image">
-                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Professional-Cover-design.jpg" alt="Professional memoir cover design showing elegant typography and personal photography integration for life story book" />
-                    <h3>Professional Cover Design</h3>
-                    <p>Beautiful, custom covers designed to reflect your unique story</p>
+            <h2 class="section-title fade-in">Simple 3-Step Process</h2>
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3>Share Your Stories</h3>
+                    <p>Tell us about your life through gentle, guided conversations. No writing skills needed - just speak naturally about your experiences, family history, and memorable moments.</p>
                 </div>
-                <div class="book-image">
-                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Rich-Interior-Layout.jpg" alt="Rich interior book layout with professional typography, chapter headings, and elegant page design for life story memoir" />
-                    <h3>Rich Interior Layout</h3>
-                    <p>Professionally formatted pages with elegant typography and layout</p>
+                <div class="step-card fade-in">
+                    <div class="step-number">2</div>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                            <path d="M13 12h1"></path>
+                        </svg>
+                    </div>
+                    <h3>AI Transforms</h3>
+                    <p>Our advanced AI crafts your memories into a beautifully written novel, preserving your unique voice and experiences while creating engaging, professional-quality storytelling.</p>
                 </div>
-                <div class="book-image">
-                    <img src="https://raw.githubusercontent.com/YourStory180/Your-Story-/main/Complete-Memoir.webp" alt="Complete finished memoir book showing hardcover binding, dust jacket, and professional presentation of family life story" />
-                    <h3>Complete Memoir</h3>
-                    <p>A finished hardcover book that preserves your legacy forever</p>
+                <div class="step-card fade-in">
+                    <div class="step-number">3</div>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Receive Your Book</h3>
+                    <p>Get your professionally printed, hardcover book delivered to your door - a treasured keepsake for generations. Digital versions included for easy sharing with family.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title fade-in">Features That Make Your Story Special</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </div>
+                    <h3>Voice Recording</h3>
+                    <p>Simply speak your story - no typing required. Our platform accepts voice recordings, making it perfect for those who prefer talking to writing. Share your memories naturally and comfortably.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                            <path d="M13 12h1"></path>
+                        </svg>
+                    </div>
+                    <h3>AI Character Creation</h3>
+                    <p>Transform family photos into vivid story characters with AI-generated descriptions. Bring your loved ones to life on the page with detailed character profiles and memorable scenes.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Professional Quality</h3>
+                    <p>Novel-grade storytelling with professional editing, layout, and hardcover printing. Every book meets publishing industry standards with elegant typography and durable binding.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                            <line x1="16" y1="8" x2="2" y2="22"></line>
+                            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3>Multiple Genres</h3>
+                    <p>Choose from romance, thriller, mystery, literary fiction, or fantasy adaptations of your story. Each genre maintains your authentic experiences while adding narrative excitement.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14,2 14,8 20,8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10,9 9,9 8,9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Custom Cover Design</h3>
+                    <p>Professionally designed covers that reflect your unique story. Choose from memoir-style designs or novel-inspired artwork, each tailored to capture the essence of your narrative.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Family Integration</h3>
+                    <p>Include multiple family perspectives and generational stories. Create interconnected narratives that celebrate your entire family's legacy and shared experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
-            <h2 class="playfair" style="text-align: center; color: #1f2937;">Why Choose Your Story?</h2>
+            <h2 class="section-title fade-in">Why Choose Life Story Novel?</h2>
             <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">📚</div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">📚</span>
                     <h3>Professional Quality</h3>
-                    <p>AI-powered writing creates engaging, well-structured narratives that read like professionally authored books.</p>
+                    <p>AI-powered writing creates engaging, well-structured narratives that read like professionally authored books, preserving your stories with literary excellence.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">❤️</div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">❤️</span>
                     <h3>Perfect Gift</h3>
-                    <p>The most meaningful gift for grandparents, parents, or anyone whose stories deserve to be preserved.</p>
+                    <p>The most meaningful gift for grandparents, parents, or anyone whose stories deserve to be preserved. A treasured keepsake that celebrates their life journey.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏛️</div>
-                    <div class="benefit-icon">🏛️</div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">🏛️</span>
                     <h3>Family Legacy</h3>
-                    <p>Transform memories into a lasting family heirloom that future generations will treasure forever.</p>
+                    <p>Transform memories into a lasting family heirloom that future generations will treasure forever. Preserve wisdom, experiences, and family history for posterity.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">🎯</span>
                     <h3>Easy Process</h3>
-                    <p>No technical skills required. Just share your stories naturally - we handle all the complex writing and formatting.</p>
+                    <p>No technical skills required. Just share your stories naturally - we handle all the complex writing, editing, and formatting to create a beautiful finished product.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">⚡</span>
+                    <h3>Fast Turnaround</h3>
+                    <p>Receive your completed book within 2-4 weeks. Our efficient AI-powered process ensures quick delivery without compromising on quality or attention to detail.</p>
+                </div>
+                <div class="benefit-card fade-in">
+                    <span class="benefit-emoji">🎨</span>
+                    <h3>Beautiful Design</h3>
+                    <p>Elegant typography, professional layout, and stunning cover designs. Every book is crafted to library-quality standards with attention to visual aesthetics.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonial">
+    <!-- Sample Showcase -->
+    <section class="samples-showcase" id="samples">
         <div class="container">
-            <h2 class="playfair" style="color: #1f2937;">What Our Customers Say</h2>
+            <h2 class="section-title fade-in">See Sample Transformations</h2>
+            <div class="samples-grid">
+                <div class="sample-card slide-in-left">
+                    <img src="Professional Cover design_1752776185288.jpg" alt="Professional memoir cover design sample showing elegant typography and personal branding" class="sample-image">
+                    <div class="sample-content">
+                        <h3>Professional Covers</h3>
+                        <p>Custom-designed covers that reflect your unique story. Each design is crafted to capture the essence of your narrative with professional typography and meaningful imagery.</p>
+                        <a href="#pricing" class="sample-link">
+                            View More Samples
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="sample-card fade-in">
+                    <img src="Rich Interior Layout_1752776214295.jpg" alt="Rich interior layout of memoir book pages showing professional typography and chapter design" class="sample-image">
+                    <div class="sample-content">
+                        <h3>Beautiful Interior</h3>
+                        <p>Elegant typography and layout worthy of any bookshelf. Professional formatting with carefully chosen fonts, spacing, and chapter designs for optimal reading experience.</p>
+                        <a href="#pricing" class="sample-link">
+                            Start Your Book
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="sample-card slide-in-right">
+                    <img src="Complete Memoir _1752826255094.webp" alt="Complete memoir book showing final hardcover product with dust jacket" class="sample-image">
+                    <div class="sample-content">
+                        <h3>Complete Package</h3>
+                        <p>Hardcover book plus digital versions for easy sharing. Each package includes both memoir and novel versions, professionally printed and beautifully bound.</p>
+                        <a href="#pricing" class="sample-link">
+                            Get Started Today
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Customers Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "I gave this to my grandmother for her 85th birthday. She cried when she saw her life transformed into such a beautiful story. It's now our family's most precious possession."
-                    </p>
-                    <p class="testimonial-author">— Sarah M., Granddaughter</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">I gave this to my grandmother for her 85th birthday. She cried when she saw her life transformed into such a beautiful story. It's now our family's most precious possession.</p>
+                    <div class="testimonial-author">Sarah M.</div>
+                    <div class="testimonial-role">Granddaughter</div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "My parents' 50th anniversary gift was their love story as a romance novel. They've read it together multiple times and shared it with all our relatives."
-                    </p>
-                    <p class="testimonial-author">— Michael T., Son</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">My parents' 50th anniversary gift was their love story as a romance novel. They've read it together multiple times and shared it with all our relatives.</p>
+                    <div class="testimonial-author">Michael T.</div>
+                    <div class="testimonial-role">Son</div>
                 </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-text">
-                        "When my grandfather was diagnosed with dementia, we rushed to create his memoir. Now we have his incredible war stories and life lessons preserved forever."
-                    </p>
-                    <p class="testimonial-author">— Emma K., Granddaughter</p>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">When my grandfather was diagnosed with dementia, we rushed to create his memoir. Now we have his incredible war stories and life lessons preserved forever.</p>
+                    <div class="testimonial-author">Emma K.</div>
+                    <div class="testimonial-role">Granddaughter</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">The AI captured my mother's voice perfectly. Reading the novel version felt like listening to her tell stories by the fireplace. Absolutely magical experience.</p>
+                    <div class="testimonial-author">James R.</div>
+                    <div class="testimonial-role">Son</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">We created a family legacy book with three generations of stories. The way they wove everything together was incredible - it reads like a masterpiece.</p>
+                    <div class="testimonial-author">Lisa M.</div>
+                    <div class="testimonial-role">Family Coordinator</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">The quality exceeded all expectations. Professional binding, beautiful cover design, and the story itself was so well-written. Worth every penny.</p>
+                    <div class="testimonial-author">Robert H.</div>
+                    <div class="testimonial-role">Husband</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="pricing">
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
         <div class="container">
-            <h2 class="playfair" style="color: #1f2937;">Simple, Transparent Pricing</h2>
-            <div class="pricing-card">
-                <div class="price">£98</div>
-                <p class="price-description">Complete package includes novel + memoir versions of your story</p>
-                <ul style="text-align: left; margin-bottom: 2rem; color: #4b5563;">
-                    <li>✓ AI-guided story collection</li>
-                    <li>✓ Professional novel transformation</li>
-                    <li>✓ Memoir version included</li>
-                    <li>✓ Hardcover printing & delivery</li>
-                    <li>✓ Family character generation</li>
-                    <li>✓ Professional cover design</li>
-                </ul>
-                <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button">Start Your Story - £98</a>
+            <h2 class="section-title fade-in">Simple, Transparent Pricing</h2>
+            <div class="pricing-container">
+                <div class="pricing-card fade-in">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="price">
+                        <span class="price-currency">£</span>98
+                    </div>
+                    <p class="price-description">Complete package includes novel + memoir versions of your story</p>
+                    <ul class="pricing-features">
+                        <li>
+                            <span class="feature-check">✓</span>
+                            AI-guided story collection process
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Professional novel transformation
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Traditional memoir version included
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Hardcover printing & UK delivery
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Digital versions (PDF & ePub)
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Family character generation
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Professional cover design
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Multiple revision rounds
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Priority customer support
+                        </li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="pricing-cta">
+                        Start Your Story - £98
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does the process take?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        The complete process typically takes 2-4 weeks from initial conversation to receiving your printed book. This includes story collection, AI transformation, editing, design, printing, and delivery.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What if I'm not happy with the result?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        We offer multiple revision rounds to ensure you're completely satisfied. Our team works with you to refine the story until it perfectly captures your voice and experiences.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How does the AI maintain my personal voice?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Our AI analyzes your speech patterns, vocabulary choices, and storytelling style from your conversations to maintain authenticity while enhancing narrative flow and structure.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I include photos in my book?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes! We can integrate family photos throughout your book and use them to create detailed character descriptions. Photos can be incorporated into both the memoir and novel versions.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What's the difference between memoir and novel versions?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        The memoir version preserves your story exactly as it happened, while the novel version adds narrative techniques like dialogue, scene-setting, and dramatic structure while maintaining factual accuracy.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is my personal information secure?
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6,9 12,15 18,9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely. We use bank-level encryption for all data transmission and storage. Your stories are never shared with third parties and are securely deleted after project completion if requested.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
     <section class="final-cta">
         <div class="container">
-            <h2 class="playfair">Ready to Preserve Your Legacy?</h2>
-            <p>Join thousands of families who have transformed their stories into beautiful books that will be treasured for generations.</p>
-            <a href="https://life-narrative-engine-grace119.replit.app/" class="cta-button-white">Begin Your Story Journey</a>
+            <div class="final-cta-content fade-in">
+                <h2>Ready to Preserve Your Legacy?</h2>
+                <p>Join thousands of families who have transformed their stories into beautiful books that will be treasured for generations.</p>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="hero-cta">Begin Your Story Journey</a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Life Story Novel</h3>
+                    <p>Transforming personal stories into beautiful novels and memoirs through the power of AI. Preserving legacies, one story at a time.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#samples">Samples</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="https://life-narrative-engine-grace119.replit.app/purchase">Start Your Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:support@lifestorynovel.com">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Contact Support
+                            </a>
+                        </li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Press Kit</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Life Story Novel. All rights reserved.</p>
+                <div class="social-links">
+                    <span>Follow us:</span>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('.header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animation elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            animationElements.forEach(el => observer.observe(el));
+        });
+
+        // Loading State for CTA Buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButtons = document.querySelectorAll('.hero-cta, .pricing-cta');
+            
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Add loading state
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<span class="loading-spinner"></span> Processing...';
+                    this.style.pointerEvents = 'none';
+                    
+                    // Reset after 3 seconds (in case of navigation issues)
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.pointerEvents = 'auto';
+                    }, 3000);
+                });
+            });
+        });
+
+        // Enhanced Analytics Tracking
+        function trackEvent(eventName, properties = {}) {
+            // Google Analytics 4 event tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    custom_map: properties
+                });
+            }
+            
+            // Console log for debugging
+            console.log('Event tracked:', eventName, properties);
+        }
+
+        // Track CTA clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButtons = document.querySelectorAll('.hero-cta, .pricing-cta, .sample-link');
+            
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const buttonText = this.textContent.trim();
+                    const section = this.closest('section')?.className || 'unknown';
+                    
+                    trackEvent('cta_click', {
+                        button_text: buttonText,
+                        section: section,
+                        page_location: window.location.href
+                    });
+                });
+            });
+        });
+
+        // Track scroll depth
+        let scrollDepthTracked = [];
+        
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            
+            [25, 50, 75, 90].forEach(threshold => {
+                if (scrollPercent >= threshold && !scrollDepthTracked.includes(threshold)) {
+                    scrollDepthTracked.push(threshold);
+                    trackEvent('scroll_depth', {
+                        percent: threshold
                     });
                 }
             });
         });
 
-        // Add click handlers for CTA buttons
-        document.querySelectorAll('.cta-button, .cta-button-white').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Allow normal navigation to Replit app
-                if (this.href.includes('replit.dev')) {
-                    window.open(this.href, '_blank');
-                    e.preventDefault();
-                }
+        // Track FAQ interactions
+        function trackFAQClick(question) {
+            trackEvent('faq_interaction', {
+                question: question.textContent.trim()
             });
-        });
+        }
+
+        // Enhanced FAQ function with tracking
+        function toggleFAQ(button) {
+            trackFAQClick(button);
+            
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
     </script>
 </body>
 </html>
