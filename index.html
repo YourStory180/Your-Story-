@@ -413,21 +413,16 @@
         
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            color: var(--sage-900);
-            margin-bottom: 1.5rem;
             font-weight: 700;
-            line-height: 1.1;
+            color: var(--sage-800);
+            margin-bottom: 1.5rem;
         }
         
-        .hero-subtitle {
-            font-size: 1.2rem;
+        .hero .subtitle {
+            font-size: 1.25rem;
             color: var(--sage-700);
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             font-weight: 400;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.5;
         }
         
         .hero-buttons {
@@ -435,11 +430,11 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
         
         .primary-button {
-            background: var(--sage-700);
+            background: var(--sage-600);
             color: white;
             padding: 1rem 2rem;
             border-radius: 30px;
@@ -447,98 +442,77 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(90, 117, 99, 0.2);
         }
         
         .primary-button:hover {
-            background: var(--sage-800);
+            background: var(--sage-700);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(90, 117, 99, 0.35);
+            box-shadow: 0 8px 25px rgba(90, 117, 99, 0.3);
         }
         
         .secondary-button {
             background: transparent;
             color: var(--sage-700);
-            border: 2px solid var(--sage-300);
             padding: 1rem 2rem;
+            border: 2px solid var(--sage-300);
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
         }
         
         .secondary-button:hover {
             background: var(--sage-50);
-            border-color: var(--sage-400);
-            transform: translateY(-2px);
+            border-color: var(--sage-600);
+            color: var(--sage-800);
         }
         
-        /* Stats Row */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
-        .stat {
+        .proof-item {
             text-align: center;
-            padding: 1rem;
         }
         
-        .stat-number {
-            font-size: 2rem;
+        .proof-number {
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--sage-800);
-            font-family: 'Playfair Display', serif;
+            display: block;
         }
         
-        .stat-label {
-            color: var(--sage-600);
+        .proof-label {
             font-size: 0.9rem;
-            margin-top: 0.5rem;
+            color: var(--sage-600);
+            margin-top: 0.25rem;
         }
         
-        /* Family Image Section */
-        .family-section {
-            padding: 80px 2rem;
-            background: var(--warm-50);
-            text-align: center;
+        /* Hero Image */
+        .hero-image {
+            margin-top: 3rem;
+            position: relative;
         }
         
-        .family-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .family-image {
+        .hero-image img {
             width: 100%;
-            max-width: 700px;
+            max-width: 600px;
             height: auto;
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            margin-bottom: 2rem;
+            box-shadow: 0 20px 60px rgba(90, 117, 99, 0.15);
         }
         
-        .family-quote {
-            font-size: 1.5rem;
+        .hero-quote {
             font-style: italic;
             color: var(--sage-700);
-            font-family: 'Playfair Display', serif;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.4;
+            margin-top: 2rem;
+            font-size: 1.1rem;
         }
         
         /* Features Section */
@@ -552,63 +526,49 @@
             margin: 0 auto;
         }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--sage-900);
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--sage-600);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--sage-800);
+            margin-bottom: 3rem;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
         }
         
         .feature-card {
             background: var(--sage-50);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            border: 1px solid var(--sage-200);
+            border: 1px solid rgba(212, 219, 214, 0.3);
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-            background: white;
+            box-shadow: 0 15px 40px rgba(90, 117, 99, 0.1);
         }
         
         .feature-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: block;
         }
         
         .feature-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--sage-800);
             margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
         }
         
         .feature-description {
-            color: var(--sage-600);
-            line-height: 1.6;
+            color: var(--sage-700);
+            line-height: 1.7;
         }
         
         /* How It Works Section */
@@ -622,31 +582,37 @@
             margin: 0 auto;
         }
         
-        .steps {
+        .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 3rem;
             margin-top: 3rem;
         }
         
-        .step {
+        .step-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
             text-align: center;
             position: relative;
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.1);
         }
         
         .step-number {
-            background: var(--sage-700);
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: var(--sage-600);
             color: white;
-            width: 3rem;
-            height: 3rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             font-weight: 700;
-            margin: 0 auto 2rem;
-            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
         }
         
         .step-image {
@@ -655,151 +621,191 @@
             object-fit: cover;
             border-radius: 15px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
         .step-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: var(--sage-800);
             margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
         }
         
         .step-description {
-            color: var(--sage-600);
-            line-height: 1.6;
+            color: var(--sage-700);
+            line-height: 1.7;
         }
         
         /* Bundle Offer Section */
         .bundle-offer {
-            background: linear-gradient(135deg, var(--sage-700) 0%, var(--sage-800) 100%);
+            padding: 60px 2rem;
+            background: var(--sage-600);
             color: white;
-            padding: 4rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
         
         .bundle-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
         
         .bundle-badge {
             background: var(--gold-500);
             color: var(--sage-800);
             padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
             display: inline-block;
+            margin-bottom: 1.5rem;
         }
         
         .bundle-title {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
         }
         
-        .bundle-description {
-            font-size: 1.1rem;
+        .bundle-subtitle {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.95;
-            line-height: 1.5;
-        }
-        
-        .bundle-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .bundle-feature {
-            font-weight: 600;
-            padding: 0.5rem;
             opacity: 0.9;
         }
         
+        .bundle-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .bundle-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        
         .bundle-button {
-            background: var(--gold-500);
-            color: var(--sage-800);
-            padding: 1.2rem 2.5rem;
+            background: white;
+            color: var(--sage-600);
+            padding: 1rem 2.5rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            display: inline-block;
             transition: all 0.3s ease;
-            margin-top: 1rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
         }
         
         .bundle-button:hover {
-            background: var(--gold-600);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: var(--cream-50);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
-        /* Gallery Section */
-        .gallery {
+        .bundle-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Showcase Section */
+        .showcase {
             padding: 80px 2rem;
             background: white;
         }
         
-        .gallery-content {
+        .showcase-content {
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        .gallery-grid {
+        .showcase-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
             margin-top: 3rem;
         }
         
-        .gallery-item {
+        .showcase-item {
             text-align: center;
-            background: var(--sage-50);
-            padding: 1.5rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
         }
         
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .gallery-image {
+        .showcase-image {
             width: 100%;
-            height: 200px;
+            height: 300px;
             object-fit: cover;
             border-radius: 15px;
             margin-bottom: 1.5rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.15);
         }
         
-        .gallery-title {
-            font-size: 1.2rem;
+        .showcase-title {
+            font-size: 1.3rem;
             color: var(--sage-800);
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
         }
         
-        .gallery-description {
+        .showcase-description {
+            color: var(--sage-700);
+            line-height: 1.7;
+        }
+        
+        .showcase-cta {
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        /* Bundle Pricing Section */
+        .bundle-pricing {
+            padding: 60px 2rem;
+            background: var(--sage-50);
+            text-align: center;
+        }
+        
+        .bundle-pricing-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pricing-badge {
+            background: var(--gold-500);
+            color: var(--sage-800);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-title {
+            font-size: 2.2rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-subtitle {
+            font-size: 1.1rem;
+            color: var(--sage-700);
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-highlight {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.1);
+        }
+        
+        .pricing-arrow {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--sage-600);
-            line-height: 1.6;
-            font-size: 0.95rem;
         }
         
         /* Character Generation Section */
-        .character-section {
+        .character-generation {
             padding: 80px 2rem;
-            background: var(--warm-50);
+            background: var(--cream-50);
         }
         
         .character-content {
@@ -808,12 +814,23 @@
             text-align: center;
         }
         
-        .character-showcase {
+        .character-title {
+            font-size: 2.5rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .character-subtitle {
+            font-size: 1.2rem;
+            color: var(--sage-700);
+            margin-bottom: 3rem;
+        }
+        
+        .character-demo {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
-            margin: 3rem 0;
-            align-items: center;
+            margin-bottom: 3rem;
         }
         
         .character-item {
@@ -826,38 +843,29 @@
             object-fit: cover;
             border-radius: 15px;
             margin: 0 auto 1rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.15);
         }
         
         .character-label {
-            background: var(--sage-100);
-            color: var(--sage-700);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
+            font-size: 1.1rem;
+            color: var(--sage-800);
             font-weight: 600;
             margin-bottom: 0.5rem;
-            display: inline-block;
-            font-size: 0.9rem;
         }
         
-        .character-title {
-            font-size: 1rem;
-            color: var(--sage-800);
-            margin-bottom: 2rem;
+        .character-description {
+            color: var(--sage-700);
+            font-size: 0.9rem;
         }
         
         .character-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
         
         .character-feature {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
         
@@ -870,20 +878,44 @@
         .character-feature-title {
             font-size: 1.1rem;
             color: var(--sage-800);
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
         }
         
         .character-feature-description {
-            color: var(--sage-600);
-            line-height: 1.5;
+            color: var(--sage-700);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .character-cta {
+            background: var(--sage-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .character-cta:hover {
+            background: var(--sage-700);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 117, 99, 0.3);
+        }
+        
+        .character-note {
+            color: var(--sage-700);
             font-size: 0.9rem;
         }
         
         /* Pricing Section */
         .pricing {
             padding: 80px 2rem;
-            background: var(--cream-50);
+            background: white;
         }
         
         .pricing-content {
@@ -891,52 +923,53 @@
             margin: 0 auto;
         }
         
-        .pricing-cards {
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-bottom: 3rem;
         }
         
         .pricing-card {
-            background: white;
+            background: var(--sage-50);
+            padding: 2.5rem;
             border-radius: 20px;
-            padding: 2rem;
             text-align: center;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
             transition: all 0.3s ease;
+        }
+        
+        .pricing-card.featured {
+            background: var(--sage-600);
+            color: white;
+            border-color: var(--sage-600);
+            transform: scale(1.05);
         }
         
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 40px rgba(90, 117, 99, 0.15);
         }
         
-        .pricing-card.featured {
-            background: linear-gradient(135deg, var(--sage-700) 0%, var(--sage-800) 100%);
-            color: white;
-            transform: scale(1.05);
-            border: 3px solid var(--gold-500);
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
         }
         
-        .pricing-badge {
-            background: var(--gold-500);
-            color: var(--sage-800);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .pricing-title {
+        .pricing-package-title {
             font-size: 1.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
+        }
+        
+        .pricing-description {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
         }
         
         .pricing-price {
@@ -945,64 +978,68 @@
             margin-bottom: 0.5rem;
         }
         
-        .pricing-period {
-            opacity: 0.7;
+        .pricing-note {
+            font-size: 0.9rem;
             margin-bottom: 2rem;
+            opacity: 0.8;
         }
         
         .pricing-features {
             list-style: none;
             margin-bottom: 2rem;
+            text-align: left;
         }
         
         .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
             margin-bottom: 0.75rem;
-            padding-left: 1.5rem;
-            position: relative;
+            font-size: 0.9rem;
         }
         
         .pricing-features li::before {
             content: '✓';
-            position: absolute;
-            left: 0;
             color: var(--sage-600);
-            font-weight: 700;
+            font-weight: 600;
+            flex-shrink: 0;
         }
         
         .pricing-card.featured .pricing-features li::before {
-            color: var(--gold-500);
+            color: white;
         }
         
         .pricing-button {
-            background: var(--sage-700);
+            background: var(--sage-600);
             color: white;
             padding: 1rem 2rem;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-block;
-            width: 100%;
-        }
-        
-        .pricing-button:hover {
-            background: var(--sage-800);
-            transform: translateY(-2px);
+            display: block;
+            margin-bottom: 1rem;
         }
         
         .pricing-card.featured .pricing-button {
-            background: var(--gold-500);
-            color: var(--sage-800);
+            background: white;
+            color: var(--sage-600);
         }
         
-        .pricing-card.featured .pricing-button:hover {
-            background: var(--gold-600);
+        .pricing-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 117, 99, 0.3);
+        }
+        
+        .pricing-guarantee {
+            font-size: 0.8rem;
+            opacity: 0.8;
         }
         
         /* Comparison Table */
         .comparison {
             padding: 60px 2rem;
-            background: white;
+            background: var(--sage-50);
         }
         
         .comparison-content {
@@ -1011,18 +1048,20 @@
         }
         
         .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.1);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
         }
         
         .comparison-table th,
         .comparison-table td {
-            padding: 1rem 1.5rem;
+            padding: 1rem;
             text-align: left;
             border-bottom: 1px solid var(--sage-200);
         }
@@ -1033,19 +1072,102 @@
             color: var(--sage-800);
         }
         
-        .comparison-table tr:hover {
-            background: var(--sage-50);
+        .comparison-table tr:last-child td {
+            border-bottom: none;
         }
         
         .comparison-table .checkmark {
             color: var(--sage-600);
+            font-weight: 600;
+        }
+        
+        /* Novel Only Section */
+        .novel-only {
+            padding: 60px 2rem;
+            background: var(--cream-50);
+            text-align: center;
+        }
+        
+        .novel-only-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .novel-only-title {
+            font-size: 2rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .novel-only-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(90, 117, 99, 0.1);
+        }
+        
+        .novel-only-price {
+            font-size: 2.5rem;
             font-weight: 700;
+            color: var(--sage-600);
+            margin-bottom: 1rem;
+        }
+        
+        .novel-only-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .novel-only-features li {
+            margin-bottom: 0.5rem;
+            color: var(--sage-700);
+        }
+        
+        .novel-only-button {
+            background: var(--sage-600);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .novel-only-button:hover {
+            background: var(--sage-700);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(90, 117, 99, 0.3);
+        }
+        
+        .novel-only-note {
+            color: var(--sage-700);
+            font-size: 0.9rem;
+        }
+        
+        .value-proposition {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--sage-50);
+            border-radius: 15px;
+        }
+        
+        .value-proposition-title {
+            font-size: 1.5rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .value-proposition-description {
+            color: var(--sage-700);
+            line-height: 1.7;
         }
         
         /* FAQ Section */
         .faq {
             padding: 80px 2rem;
-            background: var(--cream-50);
+            background: white;
         }
         
         .faq-content {
@@ -1053,23 +1175,33 @@
             margin: 0 auto;
         }
         
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--sage-800);
+            margin-bottom: 1rem;
+        }
+        
+        .faq-subtitle {
+            text-align: center;
+            color: var(--sage-700);
+            margin-bottom: 3rem;
+        }
+        
         .faq-list {
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         
         .faq-item {
-            background: white;
-            border-radius: 15px;
+            border-bottom: 1px solid var(--sage-200);
             margin-bottom: 1rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
         }
         
         .faq-question {
             width: 100%;
+            padding: 1.5rem 0;
             background: none;
             border: none;
-            padding: 1.5rem 2rem;
             text-align: left;
             font-size: 1.1rem;
             font-weight: 600;
@@ -1078,16 +1210,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
         }
         
         .faq-question:hover {
-            background: var(--sage-50);
+            color: var(--sage-600);
         }
         
         .faq-icon {
+            font-size: 1.5rem;
             transition: transform 0.3s ease;
-            color: var(--sage-600);
         }
         
         .faq-item.active .faq-icon {
@@ -1095,20 +1227,61 @@
         }
         
         .faq-answer {
-            padding: 0 2rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.3s ease;
         }
         
         .faq-item.active .faq-answer {
-            padding: 0 2rem 1.5rem;
-            max-height: 500px;
+            max-height: 200px;
         }
         
         .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: var(--sage-700);
+            line-height: 1.7;
+        }
+        
+        /* Final CTA Section */
+        .cta-section {
+            padding: 80px 2rem;
+            background: var(--sage-600);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button-large {
+            background: white;
             color: var(--sage-600);
-            line-height: 1.6;
+            padding: 1.25rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-button-large:hover {
+            background: var(--cream-50);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         /* Footer */
@@ -1116,12 +1289,12 @@
             background: var(--sage-800);
             color: white;
             padding: 3rem 2rem 2rem;
-            text-align: center;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
         }
         
         .footer-links {
@@ -1133,19 +1306,23 @@
         }
         
         .footer-links a {
-            color: var(--sage-200);
+            color: white;
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--sage-300);
         }
         
         .footer-bottom {
-            border-top: 1px solid var(--sage-600);
             padding-top: 2rem;
+            border-top: 1px solid var(--sage-700);
+        }
+        
+        .footer-bottom p {
             color: var(--sage-300);
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
@@ -1155,10 +1332,6 @@
             }
             
             .nav {
-                gap: 1rem;
-            }
-            
-            .nav a {
                 display: none;
             }
             
@@ -1166,46 +1339,86 @@
                 padding: 100px 1rem 60px;
             }
             
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .stats {
+            .features,
+            .how-it-works,
+            .pricing,
+            .faq {
+                padding: 60px 1rem;
+            }
+            
+            .features-grid,
+            .steps-grid,
+            .pricing-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .social-proof {
+                gap: 1.5rem;
+            }
+            
+            .bundle-features {
+                flex-direction: column;
                 gap: 1rem;
             }
             
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .steps {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .pricing-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
+            .section-title {
+                font-size: 2rem;
             }
             
             .comparison-table {
-                font-size: 0.9rem;
+                overflow-x: auto;
             }
             
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.75rem 0.5rem;
+            .comparison-table table {
+                min-width: 600px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card,
+            .step-card {
+                padding: 1.5rem;
+            }
+            
+            .pricing-card {
+                padding: 1.5rem;
+            }
+            
+            .bundle-title,
+            .pricing-title,
+            .cta-title {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
-
 <body>
     <!-- Header -->
     <header class="header">
@@ -1215,8 +1428,7 @@
                 <a href="#features">Features</a>
                 <a href="#how-it-works">How It Works</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#faq">FAQ</a>
-                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="cta-button">Start Your Story</a>
+                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="cta-button">Start Your Story Now</a>
             </nav>
         </div>
     </header>
@@ -1225,7 +1437,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Your Life, <em>Your Novel</em></h1>
-            <p class="hero-subtitle">Transform your authentic life experiences into a professionally written novel in your favorite genre. Choose thriller, romance, mystery, or any style - starring you and your real family and friends.</p>
+            <p class="subtitle">Transform your authentic life experiences into a professionally written novel in your favorite genre. Choose thriller, romance, mystery, or any style - starring you and your real family and friends.</p>
             
             <div class="hero-buttons">
                 <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="primary-button">Start Your Story Now</a>
@@ -1233,38 +1445,33 @@
                 <a href="#how-it-works" class="secondary-button">See How It Works</a>
             </div>
             
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">4.9/5</div>
-                    <div class="stat-label">Customer Rating</div>
+            <div class="social-proof">
+                <div class="proof-item">
+                    <span class="proof-number">4.9/5</span>
+                    <span class="proof-label">Customer Rating</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">Thousands</div>
-                    <div class="stat-label">Stories Created</div>
+                <div class="proof-item">
+                    <span class="proof-number">Thousands</span>
+                    <span class="proof-label">Stories Created</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">Award-Winning</div>
-                    <div class="stat-label">AI Technology</div>
+                <div class="proof-item">
+                    <span class="proof-number">Award-Winning</span>
+                    <span class="proof-label">AI Technology</span>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Family Image Section -->
-    <section class="family-section">
-        <div class="family-content">
-            <img src="family-reading.webp.jpeg.JPG" alt="Multi-generational family reading together - preserving stories and memories" class="family-image">
-            <p class="family-quote">"Every family has a story worth telling. We help you tell yours beautifully."</p>
+            
+            <div class="hero-image">
+                <img src="family-reading.webp.jpeg.JPG" alt="Multi-generational family reading together - preserving stories and memories">
+                <p class="hero-quote">"Every family has a story worth telling. We help you tell yours beautifully."</p>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section class="features" id="features">
         <div class="features-content">
-            <div class="section-header">
-                <h2 class="section-title">Key Features</h2>
-                <p class="section-subtitle">Discover what makes Your Story the perfect way to preserve and transform your life experiences</p>
-            </div>
+            <h2 class="section-title">Key Features</h2>
+            <p style="text-align: center; color: var(--sage-700); font-size: 1.1rem; margin-bottom: 2rem;">Discover what makes Your Story the perfect way to preserve and transform your life experiences</p>
             
             <div class="features-grid">
                 <div class="feature-card">
@@ -1307,29 +1514,27 @@
     </section>
 
     <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
         <div class="how-it-works-content">
-            <div class="section-header">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Transform your life story into a beautiful novel in three simple steps</p>
-            </div>
+            <h2 class="section-title">How It Works</h2>
+            <p style="text-align: center; color: var(--sage-700); font-size: 1.1rem; margin-bottom: 2rem;">Transform your life story into a beautiful novel in three simple steps</p>
             
-            <div class="steps">
-                <div class="step">
+            <div class="steps-grid">
+                <div class="step-card">
                     <div class="step-number">1</div>
                     <img src="voice-recording.PNG" alt="Person sharing their story through voice recording" class="step-image">
                     <h3 class="step-title">Share Your Story</h3>
                     <p class="step-description">Answer guided questions about your life experiences. Use voice recording or typing - whatever feels natural to you.</p>
                 </div>
                 
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">2</div>
                     <img src="AI Transforms.jpg" alt="AI transforming story into beautiful book content" class="step-image">
                     <h3 class="step-title">AI Transforms</h3>
                     <p class="step-description">Our advanced AI crafts your memories into a compelling novel, preserving your authentic voice and experiences.</p>
                 </div>
                 
-                <div class="step">
+                <div class="step-card">
                     <div class="step-number">3</div>
                     <img src="Receive your book (1).jpg" alt="Professional finished memoir book" class="step-image">
                     <h3 class="step-title">Receive Your Book</h3>
@@ -1344,7 +1549,7 @@
         <div class="bundle-content">
             <div class="bundle-badge">Limited Time</div>
             <h2 class="bundle-title">🎁 Unlock the Complete Bundle: Novel + Memoir</h2>
-            <p class="bundle-description">Why choose one when you can have both? Get your story as a novel AND memoir for just $129</p>
+            <p class="bundle-subtitle">Why choose one when you can have both? Get your story as a novel AND memoir for just $129</p>
             
             <div class="bundle-features">
                 <div class="bundle-feature">✓ Save $52 vs individual pricing</div>
@@ -1353,122 +1558,115 @@
             </div>
             
             <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="bundle-button">Start Your Story Today</a>
-            
-            <p style="margin-top: 1rem; opacity: 0.8;">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
+            <p class="bundle-note">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery">
-        <div class="gallery-content">
-            <div class="section-header">
-                <h2 class="section-title">See Your Story Come to Life</h2>
-                <p class="section-subtitle">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
-            </div>
+    <!-- Showcase Section -->
+    <section class="showcase">
+        <div class="showcase-content">
+            <h2 class="section-title">See Your Story Come to Life</h2>
+            <p style="text-align: center; color: var(--sage-700); font-size: 1.1rem; margin-bottom: 2rem;">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
             
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="Professional Cover design.jpg" alt="Professional book cover design with elegant typography" class="gallery-image">
-                    <h3 class="gallery-title">Custom Cover Design</h3>
-                    <p class="gallery-description">Every book receives a professionally designed cover that reflects your unique story and personality.</p>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="Professional Cover design.jpg" alt="Professional book cover design with elegant typography" class="showcase-image">
+                    <h3 class="showcase-title">Custom Cover Design</h3>
+                    <p class="showcase-description">Every book receives a professionally designed cover that reflects your unique story and personality.</p>
                 </div>
                 
-                <div class="gallery-item">
-                    <img src="Rich Interior Layout.jpg" alt="Beautiful interior page layout with premium typography" class="gallery-image">
-                    <h3 class="gallery-title">Premium Layout</h3>
-                    <p class="gallery-description">Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
+                <div class="showcase-item">
+                    <img src="Rich Interior Layout.jpg" alt="Beautiful interior page layout with premium typography" class="showcase-image">
+                    <h3 class="showcase-title">Premium Layout</h3>
+                    <p class="showcase-description">Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
                 </div>
                 
-                <div class="gallery-item">
-                    <img src="Complete Memoir .webp" alt="Finished memoir book showing professional quality" class="gallery-image">
-                    <h3 class="gallery-title">Your Finished Book</h3>
-                    <p class="gallery-description">A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
+                <div class="showcase-item">
+                    <img src="Complete Memoir .webp" alt="Finished memoir book showing professional quality" class="showcase-image">
+                    <h3 class="showcase-title">Your Finished Book</h3>
+                    <p class="showcase-description">A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
+            <div class="showcase-cta">
                 <a href="#" class="primary-button">Create Your Book Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Second Bundle CTA -->
-    <section class="bundle-offer">
-        <div class="bundle-content">
-            <div class="bundle-badge">Limited Time</div>
-            <h2 class="bundle-title">🎁 Special Bundle Offer: Novel + Memoir</h2>
-            <p class="bundle-description">Get BOTH your novel AND memoir for just $129 • Save $52 vs individual pricing</p>
-            <p style="margin-bottom: 2rem;">Perfect for preserving your legacy in two beautiful formats →</p>
+    <!-- Bundle Pricing Section -->
+    <section class="bundle-pricing">
+        <div class="bundle-pricing-content">
+            <div class="pricing-badge">Limited Time</div>
+            <h2 class="pricing-title">🎁 Special Bundle Offer: Novel + Memoir</h2>
+            <p class="pricing-subtitle">Get BOTH your novel AND memoir for just $129 • Save $52 vs individual pricing</p>
+            <p class="pricing-subtitle">Perfect for preserving your legacy in two beautiful formats →</p>
+            
             <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="bundle-button">Get Both Novel & Memoir - $129</a>
         </div>
     </section>
 
     <!-- Character Generation Section -->
-    <section class="character-section">
+    <section class="character-generation">
         <div class="character-content">
-            <div class="section-header">
-                <h2 class="section-title">✨ AI Character Generation</h2>
-                <p class="section-subtitle">Transform Your Photos Into Story Characters</p>
-                <p style="margin-top: 1rem; color: var(--sage-600);">Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.</p>
-            </div>
+            <h2 class="character-title">✨ AI Character Generation</h2>
+            <p class="character-subtitle">Transform Your Photos Into Story Characters</p>
+            <p style="color: var(--sage-700); margin-bottom: 3rem;">Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.</p>
             
-            <div class="character-showcase">
+            <div class="character-demo">
                 <div class="character-item">
                     <div class="character-label">📷 Original Photo</div>
                     <img src="Before .jpg" alt="Original family photo before AI transformation" class="character-image">
-                    <p class="character-title">Your authentic family photo</p>
+                    <p class="character-description">Your authentic family photo</p>
                 </div>
                 
                 <div class="character-item">
                     <div class="character-label">✨ Fantasy Character</div>
                     <img src="Wizard.png" alt="AI-transformed fantasy wizard character" class="character-image">
-                    <p class="character-title">AI-generated fantasy wizard</p>
+                    <p class="character-description">AI-generated fantasy wizard</p>
                 </div>
             </div>
             
             <div class="character-features">
                 <div class="character-feature">
-                    <div class="character-feature-icon">👤</div>
+                    <span class="character-feature-icon">👤</span>
                     <h4 class="character-feature-title">Facial Identity Preserved</h4>
                     <p class="character-feature-description">Advanced AI maintains recognizable features while applying magical transformations</p>
                 </div>
                 
                 <div class="character-feature">
-                    <div class="character-feature-icon">🎨</div>
+                    <span class="character-feature-icon">🎨</span>
                     <h4 class="character-feature-title">Genre-Specific Styling</h4>
                     <p class="character-feature-description">Characters match your story's genre - fantasy, romance, thriller, or historical</p>
                 </div>
                 
                 <div class="character-feature">
-                    <div class="character-feature-icon">👑</div>
+                    <span class="character-feature-icon">👑</span>
                     <h4 class="character-feature-title">Professional Quality</h4>
                     <p class="character-feature-description">High-resolution character portraits perfect for your published novel</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="primary-button">✨ Start Your Story Journey</a>
-                <p style="margin-top: 1rem; color: var(--sage-600);">Transform your memories into magical characters • No design skills needed</p>
-            </div>
+            <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="character-cta">✨ Start Your Story Journey</a>
+            <p class="character-note">Transform your memories into magical characters • No design skills needed</p>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
+    <section class="pricing" id="pricing">
         <div class="pricing-content">
-            <div class="section-header">
-                <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Everything included - no hidden fees, no subscriptions</p>
+            <div class="pricing-header">
+                <h2 class="pricing-title">Simple, Transparent Pricing</h2>
+                <p class="pricing-subtitle">Everything included - no hidden fees, no subscriptions</p>
             </div>
             
-            <div class="pricing-cards">
+            <div class="pricing-grid">
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Your Complete Package</h3>
-                    <p style="margin-bottom: 1rem; color: var(--sage-600);">Individual Pricing:</p>
-                    <p style="font-size: 0.9rem; margin-bottom: 1rem; text-decoration: line-through; opacity: 0.7;">Novel: $89 + Memoir: $89 = £138</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 10px; margin-bottom: 2rem;">
-                        <p style="font-weight: 600; color: var(--sage-700);">🎁 Bundle Deal</p>
-                    </div>
+                    <h3 class="pricing-package-title">Your Complete Package</h3>
+                    <p class="pricing-description">Individual Pricing:</p>
+                    <p class="pricing-description">Novel: $89 + Memoir: $89 = £138</p>
+                    <div class="pricing-price">🎁</div>
+                    <p class="pricing-note">Bundle Deal</p>
                     <ul class="pricing-features">
                         <li>AI-guided story collection with voice recording</li>
                         <li>Professional editing and story development</li>
@@ -1482,10 +1680,10 @@
                 
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Best Value</div>
-                    <h3 class="pricing-title">Novel + Memoir</h3>
-                    <p style="margin-bottom: 1rem; opacity: 0.9;">Get both your novel AND memoir using the same source material</p>
+                    <h3 class="pricing-package-title">Novel + Memoir</h3>
+                    <p class="pricing-description">Get both your novel AND memoir using the same source material</p>
                     <div class="pricing-price">$129</div>
-                    <p class="pricing-period">(Save $52!)</p>
+                    <p class="pricing-note">(Save $52!)</p>
                     <ul class="pricing-features">
                         <li>AI-guided story collection with voice recording</li>
                         <li>Professional editing and story development</li>
@@ -1495,108 +1693,113 @@
                         <li>Fill your story with AI generated characters based on you and your loved ones</li>
                     </ul>
                     <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="pricing-button">Get Both Novel & Memoir - $129</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">30-day money-back guarantee • Secure payment • No recurring charges</p>
+                    <p class="pricing-guarantee">30-day money-back guarantee • Secure payment • No recurring charges</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Section -->
+    <!-- Comparison Table -->
     <section class="comparison">
         <div class="comparison-content">
-            <div class="section-header">
-                <h2 class="section-title">Compare Your Options</h2>
+            <h2 class="section-title">Compare Your Options</h2>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Your Story</th>
+                            <th>Remento</th>
+                            <th>StoryWorth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Transform life into a novel</td>
+                            <td class="checkmark">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Create a memoir</td>
+                            <td class="checkmark">✓</td>
+                            <td class="checkmark">✓</td>
+                            <td class="checkmark">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Use voice to answer questions</td>
+                            <td class="checkmark">✓</td>
+                            <td class="checkmark">✓</td>
+                            <td class="checkmark">✓</td>
+                        </tr>
+                        <tr>
+                            <td>Create character images from your pictures</td>
+                            <td class="checkmark">✓</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Weekly prompts delivered via</td>
+                            <td>Email & SMS</td>
+                            <td>Email & SMS</td>
+                            <td>Email</td>
+                        </tr>
+                        <tr>
+                            <td>Size of book</td>
+                            <td>A4 (8.3" × 11.7")</td>
+                            <td>8" × 10"</td>
+                            <td>6" × 9"</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>$129 (2 books)</td>
+                            <td>$125</td>
+                            <td>$125</td>
+                        </tr>
+                        <tr>
+                            <td>Price for additional copy of book</td>
+                            <td>£45</td>
+                            <td>$89</td>
+                            <td>£79</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novel Only Section -->
+    <section class="novel-only">
+        <div class="novel-only-content">
+            <h3 class="novel-only-title">Prefer Just a Novel?</h3>
+            <p style="color: var(--sage-700); margin-bottom: 2rem;">If you'd rather have just the novel format, you can purchase the novel-only version of our service.</p>
+            
+            <div class="novel-only-card">
+                <div class="novel-only-price">$89</div>
+                <h4 class="pricing-package-title">Novel Only</h4>
+                <ul class="novel-only-features">
+                    <li>AI-guided novel creation</li>
+                    <li>A4 hardcover book</li>
+                    <li>Digital formats included</li>
+                    <li>Free UK shipping</li>
+                </ul>
+                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase?novel-only=true" class="novel-only-button">Order Novel Only - $89</a>
+                <p class="novel-only-note">Experience your life story transformed into your favorite genre</p>
             </div>
             
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Your Story</th>
-                        <th>Remento</th>
-                        <th>StoryWorth</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Transform life into a novel</td>
-                        <td class="checkmark">✓</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Create a memoir</td>
-                        <td class="checkmark">✓</td>
-                        <td class="checkmark">✓</td>
-                        <td class="checkmark">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Use voice to answer questions</td>
-                        <td class="checkmark">✓</td>
-                        <td class="checkmark">✓</td>
-                        <td class="checkmark">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Create character images from your pictures</td>
-                        <td class="checkmark">✓</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Weekly prompts delivered via</td>
-                        <td>Email & SMS</td>
-                        <td>Email & SMS</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>Size of book</td>
-                        <td>A4 (8.3" × 11.7")</td>
-                        <td>8" × 10"</td>
-                        <td>6" × 9"</td>
-                    </tr>
-                    <tr>
-                        <td>Price</td>
-                        <td>$129 (2 books)</td>
-                        <td>$125</td>
-                        <td>$125</td>
-                    </tr>
-                    <tr>
-                        <td>Price for additional copy of book</td>
-                        <td>£45</td>
-                        <td>$89</td>
-                        <td>£79</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <div style="background: var(--sage-50); padding: 2rem; border-radius: 15px; display: inline-block; max-width: 500px;">
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Prefer Just a Novel?</h3>
-                    <p style="margin-bottom: 1rem; color: var(--sage-600);">If you'd rather have just the novel format, you can purchase the novel-only version of our service.</p>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--sage-800); margin-bottom: 1rem;">$89</div>
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Novel Only</h4>
-                        <p style="font-size: 0.9rem; color: var(--sage-600);">AI-guided novel creation<br>A4 hardcover book<br>Digital formats included<br>Free UK shipping</p>
-                    </div>
-                    <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase?novel-only=true" class="pricing-button" style="display: inline-block; width: auto; background: var(--sage-700);">Order Novel Only - $89</a>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--sage-600);">Experience your life story transformed into your favorite genre</p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem; text-align: center; background: var(--cream-50); padding: 2rem; border-radius: 15px;">
-                <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Why Choose Your Story?</h3>
-                <p style="color: var(--sage-600);">Get TWO books (novel + memoir) for less than competitors charge for just one memoir. Plus, experience your life as fiction in thriller, romance, mystery, or any genre you love!</p>
+            <div class="value-proposition">
+                <h4 class="value-proposition-title">Why Choose Your Story?</h4>
+                <p class="value-proposition-description">Get TWO books (novel + memoir) for less than competitors charge for just one memoir. Plus, experience your life as fiction in thriller, romance, mystery, or any genre you love!</p>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq">
+    <section class="faq" id="faq">
         <div class="faq-content">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about transforming your life story into a beautiful novel</p>
-            </div>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Everything you need to know about transforming your life story into a beautiful novel</p>
             
             <div class="faq-list">
                 <div class="faq-item">
@@ -1616,15 +1819,13 @@
                     </button>
                     <div class="faq-answer">
                         <p>Your complete package includes:</p>
-                        <ul style="margin: 1rem 0; padding-left: 1.5rem;">
-                            <li>AI-guided story collection with voice recording support</li>
-                            <li>Professional novel version in your chosen genre (thriller, romance, etc.)</li>
-                            <li>Traditional memoir version using the same content</li>
-                            <li>Premium A4 hardcover book with professional cover design</li>
-                            <li>Digital formats (PDF & ePub) for easy sharing</li>
-                            <li>Unlimited revisions until you're completely satisfied</li>
-                            <li>Free UK shipping (or discounted international shipping)</li>
-                        </ul>
+                        <p>- AI-guided story collection with voice recording support<br>
+                        - Professional novel version in your chosen genre (thriller, romance, etc.)<br>
+                        - Traditional memoir version using the same content<br>
+                        - Premium A4 hardcover book with professional cover design<br>
+                        - Digital formats (PDF & ePub) for easy sharing<br>
+                        - Unlimited revisions until you're completely satisfied<br>
+                        - Free UK shipping (or discounted international shipping)</p>
                     </div>
                 </div>
                 
@@ -1755,92 +1956,40 @@
                     }
                 });
             });
-            
-            // Header scroll effect
-            let lastScrollTop = 0;
-            const header = document.querySelector('.header');
-            
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // Scrolling down
-                    header.style.transform = 'translateY(-100%)';
-                } else {
-                    // Scrolling up
-                    header.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-            
-            // Currency detection and pricing conversion
+
+            // Currency conversion based on user location
             function detectUserRegion() {
-                // Detect user region based on timezone and locale
+                // Detect user's region based on timezone and locale
                 const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                const locale = navigator.language || navigator.userLanguage;
+                const locale = navigator.language || navigator.languages[0];
                 
-                // Check if user is in UK/Europe
+                // Check if user is likely from UK/Europe
                 const isUK = timezone.includes('London') || 
-                           timezone.includes('Europe') || 
-                           locale.includes('en-GB') ||
-                           locale.includes('en-UK');
+                            timezone.includes('Europe') || 
+                            locale.includes('en-GB') ||
+                            locale.includes('en-IE');
                 
-                console.log('Detected region:', isUK ? 'UK' : 'US', 'Timezone:', timezone, 'Locale:', locale);
+                console.log('Detected timezone:', timezone);
+                console.log('Detected locale:', locale);
+                console.log('Is UK user:', isUK);
                 
                 if (isUK) {
-                    // Convert all USD prices to GBP for UK users
-                    // Single Novel: $89 → £69
-                    // Novel + Memoir Bundle: $129 → £98
-                    // Family Bundle: $299 → £249
-                    
-                    // Update all price elements
-                    document.querySelectorAll('.pricing-amount, .bundle-price, .cta-price').forEach(el => {
-                        let text = el.textContent;
-                        
-                        // Convert specific prices
-                        if (text.includes('$89')) {
-                            el.textContent = text.replace('$89', '£69');
-                        }
-                        if (text.includes('$129')) {
-                            el.textContent = text.replace('$129', '£98');
-                        }
-                        if (text.includes('$299')) {
-                            el.textContent = text.replace('$299', '£249');
-                        }
-                        
-                        // Convert any remaining $ symbols to £
-                        if (text.includes('$') && !text.includes('£')) {
-                            el.textContent = text.replace(/\$/g, '£');
+                    // Convert USD to GBP pricing
+                    document.querySelectorAll('.pricing-price').forEach(priceEl => {
+                        if (priceEl.textContent === '$129') {
+                            priceEl.textContent = '£98';
+                        } else if (priceEl.textContent === '$89') {
+                            priceEl.textContent = '£69';
                         }
                     });
                     
-                    // Update currency symbols in text content
+                    // Update text mentions of pricing
                     document.querySelectorAll('*').forEach(el => {
-                        // Only process text nodes, avoid script/style tags
-                        if (el.tagName && !['SCRIPT', 'STYLE', 'META'].includes(el.tagName)) {
-                            const walker = document.createTreeWalker(
-                                el,
-                                NodeFilter.SHOW_TEXT,
-                                null,
-                                false
-                            );
-                            
-                            let textNode;
-                            const textNodesToUpdate = [];
-                            
-                            while (textNode = walker.nextNode()) {
-                                if (textNode.textContent.includes('$') && !textNode.textContent.includes('£')) {
-                                    textNodesToUpdate.push(textNode);
-                                }
-                            }
-                            
-                            textNodesToUpdate.forEach(node => {
-                                node.textContent = node.textContent
-                                    .replace(/\$89/g, '£69')
-                                    .replace(/\$129/g, '£98')
-                                    .replace(/\$299/g, '£249');
-                            });
+                        if (el.textContent && el.textContent.includes('$129')) {
+                            el.textContent = el.textContent.replace(/\$129/g, '£98');
+                        }
+                        if (el.textContent && el.textContent.includes('$89')) {
+                            el.textContent = el.textContent.replace(/\$89/g, '£69');
                         }
                     });
                     
@@ -1876,5 +2025,6 @@
     </script>
 </body>
 </html>
+
 
 
