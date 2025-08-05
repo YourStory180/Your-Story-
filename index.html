@@ -136,57 +136,6 @@
         .nav-link:hover {
             color: var(--sage-600);
         }
-
-        /* Mobile Navigation */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--sage-700);
-            margin: 3px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            border-top: 1px solid var(--sage-100);
-        }
-
-        .mobile-nav.active {
-            display: block;
-        }
-
-        .mobile-nav a {
-            display: block;
-            padding: 1rem 0;
-            color: var(--sage-700);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid var(--sage-100);
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav a:hover {
-            color: var(--sage-600);
-        }
-
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
         
         .btn-primary {
             background: linear-gradient(to right, var(--sage-700), var(--sage-600));
@@ -907,11 +856,9 @@
             }
             
             .nav-menu {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .hero {
@@ -1056,12 +1003,9 @@
         <div class="header-content">
             <a href="#" class="logo">Your Story</a>
             <nav class="nav-menu">
-                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#features" class="nav-link">Features</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#story-showcase" class="nav-link">Samples</a>
-                <a href="#testimonials" class="nav-link">Reviews</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="btn-primary">
+                <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase" class="btn-primary">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
@@ -1069,20 +1013,6 @@
                     Start Your Story
                 </a>
             </nav>
-            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <nav class="mobile-nav" id="mobileNav">
-            <a href="#how-it-works">How It Works</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#story-showcase">Samples</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#faq">FAQ</a>
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase" class="btn-primary" style="margin-top: 1rem;">Start Your Story</a>
-        </nav>
         </div>
     </header>
 
@@ -1743,115 +1673,6 @@
                 
             </div>
         </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" style="background: var(--sage-50); padding: 6rem 2rem;">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: 4rem;">
-                    <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--sage-900); margin-bottom: 1rem;">Frequently Asked Questions</h2>
-                    <p style="font-size: 1.25rem; color: #6b7280; max-width: 600px; margin: 0 auto;">Everything you need to know about transforming your life story into a beautiful novel</p>
-                </div>
-
-                <div style="max-width: 800px; margin: 0 auto;">
-                    <!-- FAQ Item 1 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">How long does the process take?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">The complete process typically takes 4-5 weeks from your first conversation to receiving your finished books. This includes story collection (1-2 weeks), AI transformation and writing (1-2 weeks), your review and revisions (1 week), and printing/shipping (1 week).</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">What's included in the £98 bundle package?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6; margin-bottom: 1rem;">Your complete package includes:</p>
-                            <ul style="color: #6b7280; line-height: 1.6; margin-left: 1.5rem;">
-                                <li>AI-guided story collection with voice recording support</li>
-                                <li>Professional novel version in your chosen genre (thriller, romance, etc.)</li>
-                                <li>Traditional memoir version using the same content</li>
-                                <li>Premium A4 hardcover book with professional cover design</li>
-                                <li>Digital formats (PDF & ePub) for easy sharing</li>
-                                <li>Unlimited revisions until you're completely satisfied</li>
-                                <li>Free UK shipping (or discounted international shipping)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">How does the AI story collection work?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">Our AI guides you through gentle, conversational questions about your life experiences. You can respond by typing, voice recording, or uploading existing documents. The AI asks follow-up questions to capture important details, emotions, and relationships, ensuring no precious memories are missed.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">Can I choose different genres for my story?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">Absolutely! You can transform your life story into any genre: romance, thriller, mystery, fantasy, literary fiction, or family saga. Each genre version maintains the core truth of your experiences while adapting the storytelling style to match your preferred reading experience.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 5 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">What if I'm not satisfied with the final result?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">We offer unlimited revisions until your story is perfect. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 6 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">Is my personal information secure and private?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">Absolutely. Your stories and personal information are encrypted and stored securely. We never share your content with third parties, and you retain full ownership of your story. Our AI processing happens in secure environments with enterprise-grade protection.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 7 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">Can I order additional copies for family members?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">Yes! Once your book is complete, you can order additional printed copies at cost (typically £15-25 per book depending on length). Digital versions can be shared unlimited with family members at no extra charge.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 8 -->
-                    <div style="background: white; border-radius: 1rem; margin-bottom: 1.5rem; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);">
-                        <button class="faq-toggle" style="width: 100%; padding: 2rem; text-align: left; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
-                            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; color: var(--sage-800); margin: 0;">What makes this different from traditional memoir services?</h3>
-                            <span class="faq-icon" style="font-size: 1.5rem; color: var(--sage-600); transition: transform 0.3s;">+</span>
-                        </button>
-                        <div class="faq-content" style="display: none; padding: 0 2rem 2rem 2rem;">
-                            <p style="color: #6b7280; line-height: 1.6;">Traditional memoir services give you one format at high cost (£200-500). We provide both novel AND memoir versions for £98, with AI-guided collection that makes the process enjoyable rather than overwhelming. Plus, your family gets an exciting story they'll actually want to read alongside the traditional memoir.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
@@ -1864,12 +1685,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('active');
-        }
-
         // Smooth scrolling function
         function smoothScroll(target) {
             event.preventDefault();
@@ -1890,36 +1705,15 @@
                         block: 'start'
                     });
                 }
-                // Close mobile menu if open
-                const mobileNav = document.getElementById('mobileNav');
-                if (mobileNav) {
-                    mobileNav.classList.remove('active');
-                }
             });
         });
-
-        // FAQ toggle functionality
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('.faq-icon');
-            
-            if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                icon.textContent = '-';
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                content.style.display = 'none';
-                icon.textContent = '+';
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
 
         // Add click handlers for CTA buttons - redirect to your real purchase page
         document.querySelectorAll('.btn-primary, .hero-cta').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Redirect to your backend purchase page
-                window.location.href = 'https://life-narrative-engine-grace119.replit.app/purchase';
+                window.location.href = 'https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase';
             });
         });
     </script>
