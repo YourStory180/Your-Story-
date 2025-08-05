@@ -1418,7 +1418,7 @@
                 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <img src="Receive your book .jpg" alt="Professional finished memoir book" class="step-image">
+                    <img src="Receive your book (1).jpg" alt="Professional finished memoir book" class="step-image">
                     <h3 class="step-title">Receive Your Book</h3>
                     <p class="step-description">Get your professionally printed A4 hardcover memoir delivered to your door - premium quality with 14mm spine and elegant layout, plus digital versions to share with family.</p>
                 </div>
@@ -1860,20 +1860,100 @@
                 lastScrollTop = scrollTop;
             });
             
-            // Currency detection (simple example)
+            // Currency detection and pricing conversion
             function detectUserRegion() {
-                // This is a simplified version - in production you'd use geolocation API or IP detection
+                // Detect user region based on timezone and locale
                 const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                const isUK = timezone.includes('London') || timezone.includes('Europe');
+                const locale = navigator.language || navigator.userLanguage;
+                
+                // Check if user is in UK/Europe
+                const isUK = timezone.includes('London') || 
+                           timezone.includes('Europe') || 
+                           locale.includes('en-GB') ||
+                           locale.includes('en-UK');
+                
+                console.log('Detected region:', isUK ? 'UK' : 'US', 'Timezone:', timezone, 'Locale:', locale);
                 
                 if (isUK) {
-                    // Update pricing display for UK users
-                    document.querySelectorAll('.pricing-price').forEach(el => {
-                        if (el.textContent.includes('$129')) {
-                            el.textContent = '£98';
+                    // Convert all USD prices to GBP for UK users
+                    // Single Novel: $89 → £69
+                    // Novel + Memoir Bundle: $129 → £98
+                    // Family Bundle: $299 → £249
+                    
+                    // Update all price elements
+                    document.querySelectorAll('.pricing-amount, .bundle-price, .cta-price').forEach(el => {
+                        let text = el.textContent;
+                        
+                        // Convert specific prices
+                        if (text.includes('$89')) {
+                            el.textContent = text.replace('$89', '£69');
+                        }
+                        if (text.includes('$129')) {
+                            el.textContent = text.replace('$129', '£98');
+                        }
+                        if (text.includes('$299')) {
+                            el.textContent = text.replace('$299', '£249');
+                        }
+                        
+                        // Convert any remaining $ symbols to £
+                        if (text.includes('$') && !text.includes('£')) {
+                            el.textContent = text.replace(/\$/g, '£');
                         }
                     });
+                    
+                    // Update currency symbols in text content
+                    document.querySelectorAll('*').forEach(el => {
+                        // Only process text nodes, avoid script/style tags
+                        if (el.tagName && !['SCRIPT', 'STYLE', 'META'].includes(el.tagName)) {
+                            const walker = document.createTreeWalker(
+                                el,
+                                NodeFilter.SHOW_TEXT,
+                                null,
+                                false
+                            );
+                            
+                            let textNode;
+                            const textNodesToUpdate = [];
+                            
+                            while (textNode = walker.nextNode()) {
+                                if (textNode.textContent.includes('$') && !textNode.textContent.includes('£')) {
+                                    textNodesToUpdate.push(textNode);
+                                }
+                            }
+                            
+                            textNodesToUpdate.forEach(node => {
+                                node.textContent = node.textContent
+                                    .replace(/\$89/g, '£69')
+                                    .replace(/\$129/g, '£98')
+                                    .replace(/\$299/g, '£249');
+                            });
+                        }
+                    });
+                    
+                    // Update purchase links to include region parameter
+                    document.querySelectorAll('a[href*="purchase"]').forEach(link => {
+                        const url = new URL(link.href);
+                        url.searchParams.set('region', 'UK');
+                        url.searchParams.set('currency', 'GBP');
+                        link.href = url.toString();
+                    });
+                    
+                    console.log('Pricing converted to GBP for UK market');
+                } else {
+                    // US market - ensure USD pricing is displayed
+                    document.querySelectorAll('a[href*="purchase"]').forEach(link => {
+                        const url = new URL(link.href);
+                        url.searchParams.set('region', 'US');
+                        url.searchParams.set('currency', 'USD');
+                        link.href = url.toString();
+                    });
+                    
+                    console.log('Displaying USD pricing for US market');
                 }
+                
+                // Store the detected region for future use
+                sessionStorage.setItem('detectedRegion', isUK ? 'UK' : 'US');
+                sessionStorage.setItem('detectedCurrency', isUK ? 'GBP' : 'USD');
             }
             
             // Call currency detection
