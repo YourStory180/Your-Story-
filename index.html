@@ -954,11 +954,10 @@
             display: none;
             padding: 1.5rem;
             background: white;
-            transition: all 0.3s ease;
         }
         
-        .faq-answer.active {
-            display: block !important;
+        .faq-answer.show {
+            display: block;
         }
         
         .faq-answer p {
@@ -1774,13 +1773,13 @@
             </div>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <button class="faq-question">How long does the process take?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">How long does the process take?</button>
                     <div class="faq-answer">
                         <p>The complete process typically takes 4-5 weeks from your first conversation to receiving your finished books. This includes story collection (1-2 weeks), AI transformation and writing (1-2 weeks), your review and revisions (1 week), and printing/shipping (1 week).</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What's included in the £98 bundle package?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">What's included in the £98 bundle package?</button>
                     <div class="faq-answer">
                         <p>Your complete package includes:<br><br>
                         - AI-guided story collection with voice recording support<br>
@@ -1793,37 +1792,37 @@
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">How does the AI story collection work?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">How does the AI story collection work?</button>
                     <div class="faq-answer">
                         <p>Our AI guides you through gentle, conversational questions about your life experiences. You can respond by typing, voice recording, or uploading existing documents. The AI asks follow-up questions to capture important details, emotions, and relationships, ensuring no precious memories are missed.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Can I choose different genres for my story?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">Can I choose different genres for my story?</button>
                     <div class="faq-answer">
                         <p>Absolutely! You can transform your life story into any genre: romance, thriller, mystery, fantasy, literary fiction, or family saga. Each genre version maintains the core truth of your experiences while adapting the storytelling style to match your preferred reading experience.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What if I'm not satisfied with the final result?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">What if I'm not satisfied with the final result?</button>
                     <div class="faq-answer">
                         <p>We offer unlimited revisions until your story is perfect, plus a 30-day money-back guarantee. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. If you're not satisfied within 30 days, we'll provide a full refund. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Is my personal information secure and private?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">Is my personal information secure and private?</button>
                     <div class="faq-answer">
                         <p>Absolutely. Your stories and personal information are encrypted and stored securely. We never share your content with third parties, and you retain full ownership of your story. Our AI processing happens in secure environments with enterprise-grade protection.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">Can I order additional copies for family members?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">Can I order additional copies for family members?</button>
                     <div class="faq-answer">
                         <p>Yes! Once your book is complete, you can order additional printed copies at cost (typically £15-25 per book depending on length). Digital versions can be shared unlimited with family members at no extra charge.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question">What makes this different from traditional memoir services?</button>
+                    <button class="faq-question" onclick="toggleFAQ(this)">What makes this different from traditional memoir services?</button>
                     <div class="faq-answer">
                         <p>Traditional memoir services give you one format at high cost (£200-500). We provide both novel AND memoir versions for £98, with AI-guided collection that makes the process enjoyable rather than overwhelming. Plus, your family gets an exciting story they'll actually want to read alongside the traditional memoir.</p>
                     </div>
@@ -1861,56 +1860,22 @@
     </footer>
 
     <script>
-        // FAQ Functionality - Simplified approach
-        function initializeFAQ() {
-            console.log('Starting FAQ initialization...');
+        // Simple FAQ toggle function
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
             
-            const faqItems = document.querySelectorAll('.faq-item');
-            console.log('Found FAQ items:', faqItems.length);
+            // Close all other FAQs
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            const allButtons = document.querySelectorAll('.faq-question');
             
-            faqItems.forEach((item, index) => {
-                const button = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                
-                if (button && answer) {
-                    console.log(`Setting up FAQ ${index + 1}: ${button.textContent.trim()}`);
-                    
-                    button.addEventListener('click', function() {
-                        console.log('FAQ button clicked:', button.textContent.trim());
-                        
-                        // Close all other FAQ items
-                        faqItems.forEach(otherItem => {
-                            const otherButton = otherItem.querySelector('.faq-question');
-                            const otherAnswer = otherItem.querySelector('.faq-answer');
-                            if (otherItem !== item) {
-                                otherButton.classList.remove('active');
-                                otherAnswer.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current item
-                        const isCurrentlyActive = button.classList.contains('active');
-                        if (isCurrentlyActive) {
-                            button.classList.remove('active');
-                            answer.classList.remove('active');
-                            console.log('FAQ closed');
-                        } else {
-                            button.classList.add('active');
-                            answer.classList.add('active');
-                            console.log('FAQ opened');
-                        }
-                    });
-                }
-            });
+            allAnswers.forEach(a => a.classList.remove('show'));
+            allButtons.forEach(b => b.classList.remove('active'));
             
-            console.log('FAQ initialization complete');
-        }
-        
-        // Initialize when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializeFAQ);
-        } else {
-            initializeFAQ();
+            // Toggle current FAQ
+            if (!answer.classList.contains('show')) {
+                answer.classList.add('show');
+                button.classList.add('active');
+            }
         }
         
         // Smooth scrolling for navigation links
