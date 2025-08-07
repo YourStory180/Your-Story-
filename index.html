@@ -955,11 +955,13 @@
             max-height: 0;
             overflow: hidden;
             transition: all 0.3s ease;
+            background: white;
         }
         
         .faq-answer.active {
-            padding: 1.5rem;
-            max-height: 1000px;
+            padding: 1.5rem !important;
+            max-height: 1000px !important;
+            overflow: visible !important;
         }
         
         .faq-answer p {
@@ -1581,7 +1583,7 @@
                     <a href="https://24cc8c73-8aff-495e-abec-1c1560d7c0c8-00-3rt0wknkxtq74.spock.replit.dev/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; display: block; text-align: center; background: var(--gold-500); color: var(--sage-800);">Get Both Novel & Memoir - £98</a>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--sage-700);">30-day money-back guarantee • Secure payment • No recurring charges</p>
+            <p style="text-align: center; margin-top: 2rem; color: var(--sage-700); font-weight: 600;">✓ 30-day money-back guarantee • ✓ Secure payment • ✓ No recurring charges</p>
         </div>
     </section>
 
@@ -1719,7 +1721,7 @@
                 <div class="faq-item">
                     <button class="faq-question">What if I'm not satisfied with the final result?</button>
                     <div class="faq-answer">
-                        <p>We offer unlimited revisions until your story is perfect. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
+                        <p>We offer unlimited revisions until your story is perfect, plus a 30-day money-back guarantee. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. If you're not satisfied within 30 days, we'll provide a full refund. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1775,28 +1777,40 @@
     <script>
         // Wait for DOM to be fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing FAQ functionality...');
+            
             // FAQ Functionality
-            document.querySelectorAll('.faq-question').forEach(button => {
-                button.addEventListener('click', () => {
-                    const answer = button.nextElementSibling;
-                    const isActive = button.classList.contains('active');
+            const faqButtons = document.querySelectorAll('.faq-question');
+            console.log('Found FAQ buttons:', faqButtons.length);
+            
+            faqButtons.forEach((button, index) => {
+                console.log('Setting up button', index, ':', button.textContent);
+                
+                button.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const isActive = this.classList.contains('active');
                     
-                    console.log('FAQ clicked:', button.textContent, 'Currently active:', isActive);
+                    console.log('FAQ clicked:', this.textContent.trim(), 'Currently active:', isActive);
+                    console.log('Answer element found:', !!answer);
                     
-                    // Close all FAQ items
-                    document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
-                    document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                    // Close all FAQ items first
+                    document.querySelectorAll('.faq-question').forEach(q => {
+                        q.classList.remove('active');
+                    });
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        a.classList.remove('active');
+                    });
                     
                     // Open clicked item if it wasn't active
-                    if (!isActive) {
-                        button.classList.add('active');
+                    if (!isActive && answer) {
+                        this.classList.add('active');
                         answer.classList.add('active');
-                        console.log('FAQ opened:', button.textContent);
+                        console.log('FAQ opened successfully');
                     }
                 });
             });
             
-            console.log('FAQ functionality initialized. Found', document.querySelectorAll('.faq-question').length, 'FAQ items');
+            console.log('FAQ functionality setup complete');
         });
         
         // Smooth scrolling for navigation links
@@ -1882,6 +1896,7 @@
     </script>
 </body>
 </html>
+
 
 
 
