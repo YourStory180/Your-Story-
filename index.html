@@ -275,29 +275,29 @@
         }
         
         :root {
-            /* Vibrant blue primary palette */
-            --sage-50: #eff6ff;
-            --sage-100: #dbeafe;
-            --sage-200: #bfdbfe;
-            --sage-300: #93c5fd;
-            --sage-600: #2563eb;
-            --sage-700: #1d4ed8;
-            --sage-800: #1e40af;
-            --sage-900: #1e3a8a;
+            /* Bright pastel green primary palette */
+            --sage-50: #f0fdf4;
+            --sage-100: #dcfce7;
+            --sage-200: #bbf7d0;
+            --sage-300: #86efac;
+            --sage-600: #16a34a;
+            --sage-700: #15803d;
+            --sage-800: #166534;
+            --sage-900: #14532d;
             
-            /* Bright orange accents */
-            --cream-50: #fff7ed;
-            --cream-100: #ffedd5;
-            --warm-50: #fff7ed;
-            --warm-100: #ffedd5;
-            --warm-200: #fed7aa;
+            /* Bright pastel pink accents */
+            --cream-50: #fdf2f8;
+            --cream-100: #fce7f3;
+            --warm-50: #fdf2f8;
+            --warm-100: #fce7f3;
+            --warm-200: #fbcfe8;
             
-            /* Vibrant gold/orange accents */
-            --gold-500: #f97316;
-            --gold-600: #ea580c;
+            /* Bright pastel yellow accents */
+            --gold-500: #facc15;
+            --gold-600: #eab308;
             
             /* Bright yellow for stars */
-            --yellow-500: #fbbf24;
+            --yellow-500: #fde047;
         }
         
         body {
@@ -364,7 +364,7 @@
         
         .cta-button {
             background: linear-gradient(135deg, var(--gold-500), var(--gold-600));
-            color: white;
+            color: #166534;
             padding: 0.75rem 1.5rem;
             border-radius: 0.5rem;
             text-decoration: none;
@@ -372,13 +372,13 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+            box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
         }
         
         .cta-button:hover {
-            background: linear-gradient(135deg, var(--gold-600), #c2410c);
+            background: linear-gradient(135deg, var(--gold-600), #ca8a04);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.6);
+            box-shadow: 0 10px 30px rgba(250, 204, 21, 0.6);
         }
         
         /* Hero Section */
@@ -398,8 +398,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(250, 204, 21, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(134, 239, 172, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(251, 207, 232, 0.15) 0%, transparent 50%);
             pointer-events: none;
         }
         
@@ -498,7 +499,7 @@
             border-radius: 1rem;
             text-align: center;
             border-left: 4px solid var(--sage-600);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 8px 30px rgba(134, 239, 172, 0.2);
             transition: all 0.3s ease;
         }
         
