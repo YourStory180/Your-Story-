@@ -951,17 +951,14 @@
         }
         
         .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            display: none;
+            padding: 1.5rem;
             background: white;
+            transition: all 0.3s ease;
         }
         
         .faq-answer.active {
-            padding: 1.5rem !important;
-            max-height: 1000px !important;
-            overflow: visible !important;
+            display: block !important;
         }
         
         .faq-answer p {
@@ -1775,43 +1772,57 @@
     </footer>
 
     <script>
-        // Wait for DOM to be fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Initializing FAQ functionality...');
+        // FAQ Functionality - Simplified approach
+        function initializeFAQ() {
+            console.log('Starting FAQ initialization...');
             
-            // FAQ Functionality
-            const faqButtons = document.querySelectorAll('.faq-question');
-            console.log('Found FAQ buttons:', faqButtons.length);
+            const faqItems = document.querySelectorAll('.faq-item');
+            console.log('Found FAQ items:', faqItems.length);
             
-            faqButtons.forEach((button, index) => {
-                console.log('Setting up button', index, ':', button.textContent);
+            faqItems.forEach((item, index) => {
+                const button = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
                 
-                button.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const isActive = this.classList.contains('active');
+                if (button && answer) {
+                    console.log(`Setting up FAQ ${index + 1}: ${button.textContent.trim()}`);
                     
-                    console.log('FAQ clicked:', this.textContent.trim(), 'Currently active:', isActive);
-                    console.log('Answer element found:', !!answer);
-                    
-                    // Close all FAQ items first
-                    document.querySelectorAll('.faq-question').forEach(q => {
-                        q.classList.remove('active');
+                    button.addEventListener('click', function() {
+                        console.log('FAQ button clicked:', button.textContent.trim());
+                        
+                        // Close all other FAQ items
+                        faqItems.forEach(otherItem => {
+                            const otherButton = otherItem.querySelector('.faq-question');
+                            const otherAnswer = otherItem.querySelector('.faq-answer');
+                            if (otherItem !== item) {
+                                otherButton.classList.remove('active');
+                                otherAnswer.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle current item
+                        const isCurrentlyActive = button.classList.contains('active');
+                        if (isCurrentlyActive) {
+                            button.classList.remove('active');
+                            answer.classList.remove('active');
+                            console.log('FAQ closed');
+                        } else {
+                            button.classList.add('active');
+                            answer.classList.add('active');
+                            console.log('FAQ opened');
+                        }
                     });
-                    document.querySelectorAll('.faq-answer').forEach(a => {
-                        a.classList.remove('active');
-                    });
-                    
-                    // Open clicked item if it wasn't active
-                    if (!isActive && answer) {
-                        this.classList.add('active');
-                        answer.classList.add('active');
-                        console.log('FAQ opened successfully');
-                    }
-                });
+                }
             });
             
-            console.log('FAQ functionality setup complete');
-        });
+            console.log('FAQ initialization complete');
+        }
+        
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeFAQ);
+        } else {
+            initializeFAQ();
+        }
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -1896,6 +1907,7 @@
     </script>
 </body>
 </html>
+
 
 
 
