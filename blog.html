@@ -159,9 +159,10 @@
         /* Blog Grid */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-bottom: 4rem;
+            min-height: auto;
         }
         
         .blog-card {
@@ -301,16 +302,30 @@
             <!-- Blog Grid -->
             <div class="blog-grid" id="blog">
                 
+                <!-- Featured Blog Post - NEW -->
+                <article class="blog-card" style="grid-column: 1 / -1; border: 2px solid var(--gold-500); background: linear-gradient(135deg, #fefcfb 0%, #faf6f0 100%);">
+                    <div class="blog-image" style="background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%); color: white;">📚</div>
+                    <div class="blog-content">
+                        <div class="blog-category" style="color: var(--gold-600); display: flex; align-items: center; gap: 0.5rem;"><span>⭐ FEATURED</span> • Writing Guide</div>
+                        <h2 class="blog-post-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Why Turn Your Life Story Into a Novel Instead of Writing a Memoir?</h2>
+                        <p class="blog-excerpt" style="font-size: 1.1rem;">Discover why transforming your life story into a novel offers more creative freedom, privacy protection, and market appeal than traditional memoirs. Learn the key differences and benefits of autobiographical fiction in 2025.</p>
+                        <div class="blog-meta" style="margin-top: 1.5rem;">
+                            <span style="color: var(--sage-600);">8 min read • January 15, 2025</span>
+                            <a href="life-story-novel-vs-memoir-blog-post.html" class="read-more" style="color: var(--gold-600); font-weight: 700;">Read Full Article →</a>
+                        </div>
+                    </div>
+                </article>
+                
                 <!-- Blog Post 1 -->
                 <article class="blog-card">
                     <div class="blog-image">📝</div>
                     <div class="blog-content">
-                        <div class="blog-category">Writing Tips</div>
-                        <h2 class="blog-post-title">50 Memoir Writing Prompts to Unlock Your Life Story</h2>
-                        <p class="blog-excerpt">Discover powerful questions that will help you remember forgotten moments and find the golden threads connecting your life experiences into a compelling memoir.</p>
+                        <div class="blog-category">Writing Prompts</div>
+                        <h2 class="blog-post-title">50 Life Story Writing Prompts That Unlock Your Most Powerful Memories</h2>
+                        <p class="blog-excerpt">Discover categorized writing prompts designed to help you uncover the most compelling stories from your life experiences. Perfect for memoir writing and personal storytelling.</p>
                         <div class="blog-meta">
-                            <span>8 min read</span>
-                            <a href="50-memoir-writing-prompts.html" class="read-more">Read More →</a>
+                            <span>6 min read</span>
+                            <a href="50-memoir-writing-prompts-2025.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
@@ -320,11 +335,11 @@
                     <div class="blog-image">🤖</div>
                     <div class="blog-content">
                         <div class="blog-category">AI Writing</div>
-                        <h2 class="blog-post-title">AI-Assisted Memoir Writing: The Complete 2025 Guide</h2>
-                        <p class="blog-excerpt">Discover how artificial intelligence is revolutionizing memoir writing, making it easier than ever to transform your memories into compelling narratives while preserving your authentic voice.</p>
+                        <h2 class="blog-post-title">AI vs. Traditional Memoir Writing: Which Creates Better Life Stories in 2025?</h2>
+                        <p class="blog-excerpt">Compare AI-assisted memoir writing with traditional methods. Discover the pros, cons, costs, and results of each approach to help you choose the best method for your story.</p>
                         <div class="blog-meta">
                             <span>10 min read</span>
-                            <a href="ai-memoir-writing-2025.html" class="read-more">Read More →</a>
+                            <a href="ai-memoir-writing-guide-2025.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
