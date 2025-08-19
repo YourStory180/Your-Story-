@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Life Story Novel - Start Your Journey</title>
-    <meta http-equiv="refresh" content="0; url=https://lifestorynovel.com/landing.html">
-    <link rel="canonical" href="https://lifestorynovel.com/landing.html">
+    <title>Your Life Story as Both a Memoir & Novel | Life Story Novel</title>
+    <meta name="description" content="Turn your memories into both a classic memoir and captivating novel. Choose your genre, upload photos for character creation. Two books for the price of one.">
     
-    <!-- Google Ads Conversion Tracking -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17491922940"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,16 +14,341 @@
       gtag('js', new Date());
       gtag('config', 'AW-17491922940');
     </script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1424182345532872');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1424182345532872&ev=PageView&noscript=1"
+    /></noscript>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        
+        .hero-image {
+            background: #f5f5f5;
+            height: 300px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .book-showcase {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .book-cover {
+            width: 120px;
+            height: 160px;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            transform: perspective(600px) rotateY(-15deg);
+        }
+        
+        .book-cover.memoir {
+            background: linear-gradient(135deg, #8B9DC3 0%, #DFE3EE 100%);
+            border: 1px solid #ccc;
+        }
+        
+        .book-cover.novel {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            transform: perspective(600px) rotateY(15deg);
+        }
+        
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 4px;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            background: #90C695;
+            color: #2C5530;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #7AB67F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(144, 198, 149, 0.4);
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            margin-bottom: 80px;
+        }
+        
+        .problem-title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            max-width: 600px;
+        }
+        
+        .problem-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 32px;
+            max-width: 580px;
+            line-height: 1.5;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .step-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        /* USP Section */
+        .usp-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            margin: 0 -20px 80px -20px;
+            text-align: center;
+        }
+        
+        .usp-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .final-cta h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+            
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .problem-title {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .book-cover {
+                width: 80px;
+                height: 110px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-        <h1>Redirecting to your Life Story journey...</h1>
-        <p>If you're not automatically redirected, <a href="https://lifestorynovel.com/landing.html">click here</a>.</p>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-text">
+                <h1>Your Life Story, Written as Both a Memoir & a Novel</h1>
+                <p>Unlike other services, you'll receive two books for the price of one — a classic memoir and a captivating novel.</p>
+                <a href="https://life-narrative-engine-grace119.replit.app/?utm_source=google&utm_medium=cpc&utm_campaign=adwords" class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-17491922940/CONVERSION_ACTION'}); fbq('track', 'Lead');">Start Your Story Today</a>
+            </div>
+            <div class="hero-image">
+                <div class="book-showcase">
+                    <div class="book-cover memoir"></div>
+                    <div class="book-cover novel"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem-section">
+            <h2 class="problem-title">Most people want to preserve their stories, but don't know how to start — and memoir services are often expensive and limited.</h2>
+            <p class="problem-description">We make it easy and affordable and you'll receive both a memoir and a novel — something no one else offers.</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/how-it-works?utm_source=google&utm_medium=cpc&utm_campaign=adwords" class="cta-button">See How It Works</a>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-icon">💬</div>
+                    <h3 class="step-title">We Ask the Right Questions</h3>
+                    <p class="step-description">Natural conversations about your life experiences</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">✍️</div>
+                    <h3 class="step-title">We Write & Edit Your Story</h3>
+                    <p class="step-description">Professional writing in both memoir and novel formats</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">📚</div>
+                    <h3 class="step-title">You Receive Two Books</h3>
+                    <p class="step-description">Beautiful printed books delivered to your door</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- USP Section -->
+        <section class="usp-section">
+            <div class="container">
+                <h2 class="usp-title">Others give you a memoir. We give you a memoir and a novel — at no extra cost</h2>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Don't let your story fade.</h2>
+            <p>Get your memoir and novel started today.</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/?utm_source=google&utm_medium=cpc&utm_campaign=adwords" class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-17491922940/CONVERSION_ACTION'}); fbq('track', 'Lead');">Start My Story</a>
+        </section>
     </div>
-    
-    <script>
-        // Immediate redirect
-        window.location.href = "https://lifestorynovel.com/landing.html";
-    </script>
 </body>
 </html>
