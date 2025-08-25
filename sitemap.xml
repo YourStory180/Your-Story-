@@ -2,32 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lifestorynovel.com/</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/index.html</loc>
+        <lastmod>2025-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://lifestorynovel.com/blog.html</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-08-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://lifestorynovel.com/life-story-novel-vs-memoir-blog-post.html</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://lifestorynovel.com/50-memoir-writing-prompts-2025.html</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://lifestorynovel.com/ai-memoir-writing-guide-2025.html</loc>
-        <lastmod>2025-08-15</lastmod>
+        <lastmod>2025-08-25</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/memoir-writing-cost-guide-2025.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/novel-and-memoir-bundle-benefits.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/how-to-start-writing-life-story-guide.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/how-it-works.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/pricing.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/faq.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://lifestorynovel.com/samples.html</loc>
+        <lastmod>2025-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>
