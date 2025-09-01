@@ -296,67 +296,189 @@
             --sage-700: #15803d;
             --sage-800: #166534;
             --sage-900: #14532d;
-
-            /* Warm taupe supporting colors */
-            --warm-50: #faf9f7;
-            --warm-100: #f4f2ee;
-            --warm-200: #e6e1da;
-            --warm-300: #d2c9bd;
-            --warm-600: #8b7355;
-            --warm-700: #6d5a44;
-            --warm-800: #544434;
-
-            /* Golden accents */
-            --gold-50: #fffef7;
-            --gold-100: #fffbeb;
-            --gold-200: #fef3c7;
-            --gold-300: #fde68a;
-            --gold-600: #d97706;
-            --gold-700: #b45309;
-        }
-        
-        html {
-            scroll-behavior: smooth;
+            
+            /* Bright pastel pink accents */
+            --cream-50: #fdf2f8;
+            --cream-100: #fce7f3;
+            --warm-50: #fdf2f8;
+            --warm-100: #fce7f3;
+            --warm-200: #fbcfe8;
+            
+            /* Bright pastel yellow accents */
+            --gold-500: #facc15;
+            --gold-600: #eab308;
+            
+            /* Bright yellow for stars */
+            --yellow-500: #fde047;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #374151;
+            color: #2d3748;
             background: #ffffff;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
         }
         
-        /* Typography System */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', Georgia, serif;
             font-weight: 600;
             line-height: 1.2;
-            color: #1f2937;
-            margin-bottom: 0.75rem;
+            letter-spacing: -0.025em;
         }
         
-        h1 { font-size: 3.5rem; }
-        h2 { font-size: 2.5rem; }
-        h3 { font-size: 1.8rem; }
-        h4 { font-size: 1.4rem; }
-        
-        p {
-            margin-bottom: 1.2rem;
-            line-height: 1.7;
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 219, 214, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
         
-        /* Layout System */
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--sage-800);
+            text-decoration: none;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: var(--sage-700);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav a:hover {
+            color: var(--sage-800);
+        }
+        
+        .cta-button {
+            background: #000000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ffffff, var(--sage-50));
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(250, 204, 21, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(134, 239, 172, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(251, 207, 232, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--sage-800);
+            line-height: 1.1;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--sage-700);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--sage-800);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--sage-600);
+            font-weight: 500;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #ffffff, var(--sage-50));
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section {
-            padding: 5rem 0;
         }
         
         .section-header {
@@ -365,204 +487,65 @@
         }
         
         .section-title {
-            color: #1f2937;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
         }
         
         .section-subtitle {
             font-size: 1.2rem;
-            color: #6b7280;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        /* Button System */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 2rem;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.2);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--sage-700);
-            border: 2px solid var(--sage-600);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--sage-600);
-            color: white;
-        }
-        
-        /* Grid System */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        
-        /* Card System */
-        .card {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f3f4f6;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            background: var(--sage-100);
-            color: var(--sage-700);
-            font-size: 1.5rem;
-        }
-        
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, var(--sage-700) 0%, var(--sage-800) 100%);
-            color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-        
-        .header-stats {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-weight: 700;
-            font-size: 1.1rem;
-            display: block;
-        }
-        
-        .stat-label {
-            opacity: 0.9;
-            font-size: 0.85rem;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--sage-50) 0%, var(--warm-50) 50%, var(--gold-50) 100%);
-            padding: 6rem 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-        
-        .hero h1 em {
-            color: var(--sage-700);
-            font-style: italic;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: #4b5563;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 4rem;
-        }
-        
-        .hero-image {
+            color: var(--sage-600);
             max-width: 600px;
             margin: 0 auto;
-            position: relative;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
             border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            border-left: 4px solid var(--sage-600);
+            box-shadow: 0 8px 30px rgba(134, 239, 172, 0.2);
+            transition: all 0.3s ease;
         }
         
-        .hero-image img {
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 99, 82, 0.1);
+        }
+        
+        .feature-image {
             width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .hero-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            color: white;
-            padding: 2rem 1.5rem 1.5rem;
-            font-style: italic;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-        
-        /* Feature Cards */
-        .feature {
-            text-align: center;
-        }
-        
-        .feature img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1.5rem;
-            border-radius: 0.75rem;
+            height: 250px;
             object-fit: cover;
+            object-position: center;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
         }
         
-        /* Steps */
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
+        }
+        
+        .feature-card p {
+            color: var(--sage-700);
+            line-height: 1.6;
+        }
+        
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: var(--warm-50);
+        }
+        
         .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -572,10 +555,6 @@
         
         .step {
             text-align: center;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             position: relative;
         }
         
@@ -583,104 +562,58 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
+            width: 3rem;
+            height: 3rem;
+            background: var(--sage-600);
             color: white;
             border-radius: 50%;
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 2rem;
+            position: relative;
+            z-index: 10;
         }
         
-        .step img {
+        .step-image {
             width: 100%;
-            max-width: 280px;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
-            border-radius: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Testimonials */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 2.5rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--sage-600);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
         }
         
-        .testimonial-stars {
-            color: #fbbf24;
-            font-size: 1.2rem;
+        .step h3 {
+            font-size: 1.8rem;
             margin-bottom: 1rem;
+            color: var(--sage-800);
         }
         
-        .testimonial-quote {
-            font-size: 1.1rem;
-            color: #1f2937;
-            margin-bottom: 2rem;
+        .step p {
+            color: var(--sage-700);
             line-height: 1.6;
-            font-style: italic;
         }
         
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--sage-600) 0%, var(--sage-700) 100%);
+        /* Bundle Offer Section */
+        .bundle-offer {
+            background: var(--sage-800);
             color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        
-        .testimonial-name {
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 0.25rem;
-        }
-        
-        .testimonial-info {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-        
-        /* Bundle Offer */
-        .bundle-section {
-            background: linear-gradient(135deg, #1f2937 0%, var(--sage-800) 100%);
-            color: white;
-            padding: 5rem 0;
+            padding: 4rem 2rem;
             text-align: center;
         }
         
-        .bundle-badge {
-            display: inline-block;
-            background: #fbbf24;
-            color: #1f2937;
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+        .bundle-offer h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
-        .bundle-features {
+        .bundle-offer .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .bundle-benefits {
             display: flex;
             justify-content: center;
             gap: 2rem;
@@ -688,588 +621,623 @@
             flex-wrap: wrap;
         }
         
-        .bundle-feature {
+        .benefit {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1rem;
+            font-weight: 500;
         }
         
-        .bundle-feature::before {
-            content: "✓";
-            color: var(--sage-300);
+        .bundle-cta {
+            background: #000000;
+            color: white;
+            font-size: 1.2rem;
             font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bundle-cta:hover {
+            background: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Showcase Section */
+        .showcase {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .showcase-item {
+            text-align: center;
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
+        }
+        
+        .showcase-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
+        }
+        
+        .showcase-item p {
+            color: var(--sage-700);
+            line-height: 1.6;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 2rem;
+            background: var(--sage-50);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 99, 82, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
+        }
+        
+        .benefit-card p {
+            color: var(--sage-700);
+            line-height: 1.6;
+        }
+        
+        /* AI Character Section */
+        .ai-character {
+            padding: 6rem 2rem;
+            background: white;
+        }
+        
+        .character-demo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+        
+        .character-before, .character-after {
+            text-align: center;
+        }
+        
+        .character-image {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin: 0 auto 1rem;
+            display: block;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
+        }
+        
+        .character-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .character-feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .character-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
+        }
+        
+        .character-feature p {
+            color: var(--sage-700);
         }
         
         /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--warm-50);
+        }
+        
         .pricing-grid {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            gap: 3rem;
-            margin-top: 4rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .pricing-card {
             background: white;
+            padding: 2.5rem 2rem;
             border-radius: 1rem;
-            padding: 3rem 2rem;
-            max-width: 400px;
-            flex: 1;
-            min-width: 300px;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
             position: relative;
-            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
         }
         
         .pricing-card.featured {
-            background: linear-gradient(135deg, #1f2937 0%, var(--sage-800) 100%);
-            color: white;
-            border: 2px solid var(--sage-600);
+            border: 3px solid var(--gold-500);
+            transform: scale(1.05);
         }
         
-        .pricing-badge {
+        .pricing-card.featured::before {
+            content: 'Best Value';
             position: absolute;
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: #fbbf24;
-            color: #1f2937;
-            padding: 0.5rem 1.5rem;
-            border-radius: 1.5rem;
+            background: var(--gold-500);
+            color: var(--sage-800);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
             font-weight: 700;
             font-size: 0.9rem;
         }
         
-        .pricing-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(74, 99, 82, 0.15);
         }
         
-        .pricing-subtitle {
-            margin-bottom: 1.5rem;
-            opacity: 0.8;
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+        
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sage-800);
         }
         
         .pricing-price {
             font-size: 3rem;
             font-weight: 700;
+            color: var(--sage-800);
             margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
         }
         
-        .pricing-save {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .pricing-subtitle {
+            color: var(--sage-600);
             margin-bottom: 2rem;
         }
         
         .pricing-features {
-            text-align: left;
+            list-style: none;
             margin-bottom: 2rem;
+            text-align: left;
         }
         
         .pricing-features li {
-            margin-bottom: 0.75rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-        
-        .pricing-footer {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        /* Genre Examples */
-        .genre-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
-        .genre-tab {
-            background: transparent;
+            padding: 0.5rem 0;
             color: var(--sage-700);
-            border: 2px solid var(--sage-300);
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .genre-tab.active,
-        .genre-tab:hover {
-            background: var(--sage-600);
-            color: white;
-            border-color: var(--sage-600);
-        }
-        
-        .genre-examples {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .genre-example {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid;
-        }
-        
-        .genre-example.romance { border-left-color: #e91e63; }
-        .genre-example.thriller { border-left-color: #f44336; }
-        .genre-example.mystery { border-left-color: #9c27b0; }
-        .genre-example.literary { border-left-color: #3f51b5; }
-        .genre-example.fantasy { border-left-color: #4caf50; }
-        .genre-example.biography { border-left-color: #ff9800; }
-        
-        .genre-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .genre-icon {
-            font-size: 1.5rem;
-            margin-right: 0.75rem;
-        }
-        
-        .genre-title {
-            color: var(--sage-800);
-            font-size: 1.25rem;
-            margin: 0;
-        }
-        
-        .genre-description {
-            color: var(--sage-700);
-            margin-bottom: 1rem;
-        }
-        
-        .genre-excerpt {
-            background: var(--sage-50);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .genre-excerpt p {
-            font-size: 0.9rem;
-            color: var(--sage-700);
-            margin-bottom: 0.5rem;
-        }
-        
-        .genre-excerpt blockquote {
-            font-size: 0.9rem;
-            color: var(--sage-600);
-            font-style: italic;
-            line-height: 1.4;
-            margin: 0;
-        }
-        
-        .genre-styles {
-            margin-bottom: 1rem;
-        }
-        
-        .genre-styles p {
-            font-size: 0.9rem;
-            color: var(--sage-700);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        .genre-tags {
-            display: flex;
-            flex-wrap: wrap;
             gap: 0.5rem;
         }
         
-        .genre-tag {
-            background: var(--sage-200);
-            color: var(--sage-800);
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.8rem;
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--sage-600);
+            font-weight: bold;
+            width: 1rem;
         }
         
-        /* Image Showcase */
-        .image-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .showcase-item {
-            text-align: center;
+        /* Comparison Table */
+        .comparison {
+            padding: 6rem 2rem;
             background: white;
-            padding: 2.5rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
         
-        .showcase-item img {
+        .comparison-table {
             width: 100%;
-            max-width: 250px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 0.75rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .showcase-title {
-            color: #1f2937;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .showcase-description {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-        
-        /* Features Grid */
-        .features-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-        
-        .feature-showcase {
-            padding: 2rem;
-            text-align: center;
-            background: #f9fafb;
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-showcase:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .feature-title {
-            color: #1f2937;
-            margin-bottom: 1rem;
-            font-size: 1.25rem;
-        }
-        
-        .feature-description {
-            color: #6b7280;
-            line-height: 1.6;
-        }
-        
-        /* Character Features */
-        .character-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .character-feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+            max-width: 900px;
+            margin: 3rem auto 0;
+            border-collapse: collapse;
             background: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
         }
         
-        .character-feature-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--sage-100);
         }
         
-        .character-feature-title {
-            color: #1f2937;
-            margin-bottom: 0.5rem;
+        .comparison-table th {
+            background: var(--sage-600);
+            color: white;
             font-weight: 600;
         }
         
-        .character-feature-description {
-            color: #6b7280;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin: 0;
+        .comparison-table tr:nth-child(even) {
+            background: var(--sage-50);
         }
         
-        /* Editorial Process */
-        .editorial-process {
+        .comparison-table .check {
+            color: var(--sage-600);
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 2rem;
+            background: var(--sage-50);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+        
+        .faq-item {
             background: white;
-            border-radius: 1rem;
-            padding: 3rem;
-            margin-top: 4rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(74, 99, 82, 0.05);
         }
         
-        .editorial-title {
-            color: #1f2937;
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.5rem;
-        }
-        
-        .editorial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-        
-        .editorial-item {
-            text-align: center;
+        .faq-question {
             padding: 1.5rem;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            color: var(--sage-800);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
         }
         
-        .editorial-icon {
+        .faq-question:hover {
+            background: var(--sage-50);
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            display: none;
+            padding: 1.5rem;
+            background: white;
+        }
+        
+        .faq-answer.show {
+            display: block;
+        }
+        
+        .faq-answer p {
+            color: var(--sage-700);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: var(--sage-800);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         
-        .editorial-item-title {
-            color: #1f2937;
-            margin-bottom: 0.75rem;
-        }
-        
-        .editorial-item-description {
-            color: #6b7280;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-        
-        .editorial-cta {
-            text-align: center;
-            margin-top: 3rem;
-        }
-        
-        .editorial-cta h4 {
-            color: #1f2937;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .editorial-cta p {
-            color: #6b7280;
+        .final-cta p {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .editorial-features {
-            margin-top: 1rem;
-            color: #6b7280;
-            font-size: 0.9rem;
+        /* Footer */
+        .footer {
+            background: var(--sage-900);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
         }
         
-        /* Responsive Design */
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            opacity: 0.7;
+        }
+        
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
-            .container { padding: 0 1rem; }
-            .section { padding: 3rem 0; }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
             
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            h3 { font-size: 1.5rem; }
-            
-            .hero { padding: 4rem 0; }
-            .hero-subtitle { font-size: 1.1rem; }
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
             
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
             
-            .btn {
-                width: 100%;
-                max-width: 300px;
+            .hero-stats {
+                gap: 2rem;
             }
             
-            .header-stats { display: none; }
-            
-            .bundle-features {
-                flex-direction: column;
-                align-items: center;
+            .section-title {
+                font-size: 2rem;
             }
             
-            .pricing-grid {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .genre-tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .testimonials-grid {
+            .character-demo {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
             
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        
-        .mb-1 { margin-bottom: 0.5rem; }
-        .mb-2 { margin-bottom: 1rem; }
-        .mb-3 { margin-bottom: 1.5rem; }
-        .mb-4 { margin-bottom: 2rem; }
-        .mb-5 { margin-bottom: 3rem; }
-        
-        .mt-1 { margin-top: 0.5rem; }
-        .mt-2 { margin-top: 1rem; }
-        .mt-3 { margin-top: 1.5rem; }
-        .mt-4 { margin-top: 2rem; }
-        .mt-5 { margin-top: 3rem; }
-        
-        .bg-white { background: white; }
-        .bg-sage-50 { background: var(--sage-50); }
-        .bg-warm-50 { background: var(--warm-50); }
-        .bg-gold-50 { background: var(--gold-50); }
-        
-        /* Loading and Animation */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-        
-        /* Focus States */
-        .btn:focus,
-        .genre-tab:focus {
-            outline: 3px solid rgba(22, 163, 74, 0.3);
-            outline-offset: 2px;
-        }
-        
-        /* Print Styles */
-        @media print {
-            .header,
-            .bundle-section,
-            .btn {
-                display: none !important;
+            .nav {
+                display: none;
             }
             
-            body {
-                font-size: 12pt;
-                line-height: 1.4;
+            .header-content {
+                padding: 1rem;
             }
             
-            h1, h2, h3 {
-                page-break-after: avoid;
+            .hero {
+                padding: 6rem 1rem 4rem;
             }
+            
+            .features, .how-it-works, .showcase, .benefits, .ai-character, .pricing, .comparison, .faq, .final-cta {
+                padding: 4rem 1rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-5px);
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Loading animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--sage-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--sage-600);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--sage-700);
         }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1424182845532872');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1424182845532872</head>ev=PageView</head>noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>Life Story Novel</h1>
-                </div>
-                <div class="header-stats">
-                    <div class="stat">
-                        <span class="stat-number">4.9/5</span>
-                        <span class="stat-label">Customer Rating</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Thousands</span>
-                        <span class="stat-label">Stories Created</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">Award-Winning</span>
-                        <span class="stat-label">AI Technology</span>
-                    </div>
-                </div>
-            </div>
+        <div class="header-content">
+            <a href="#" class="logo">Life Story Novel</a>
+            <nav class="nav">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="color: white;">Start Your Story</a>
+            </nav>
         </div>
     </header>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
+        <div class="hero-content">
             <h1>Your Life, <em>Your Novel</em></h1>
-            <p class="hero-subtitle">
-                Transform your authentic life experiences into a professionally written novel in your favorite genre. 
-                Choose thriller, romance, mystery, or any style - starring you and your real family and friends.
-            </p>
+            <p class="subtitle">Transform your authentic life experiences into a professionally written novel in your favorite genre. Choose thriller, romance, mystery, or any style - starring you and your real family and friends.</p>
             <div class="hero-buttons">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary">Start Your Story Now</a>
-                <a href="#features" class="btn btn-secondary">Features</a>
-                <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button">Start Your Story Now</a>
+                <a href="#features" class="cta-button" style="background: #000000; color: white; border: 2px solid #000000;">Features</a>
+                <a href="#how-it-works" class="cta-button" style="background: #000000; color: white; border: 2px solid #000000;">See How It Works</a>
             </div>
-            <div class="hero-image">
-                <img src="family-reading.webp.jpeg.JPG" alt="Multi-generational family reading together - preserving stories and memories" loading="eager" fetchpriority="high">
-                <div class="hero-caption">
-                    "Every family has a story worth telling. We help you tell yours beautifully."
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">4.9/5</span>
+                    <span class="stat-label">Customer Rating</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Thousands</span>
+                    <span class="stat-label">Stories Created</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Award-Winning</span>
+                    <span class="stat-label">AI Technology</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Why We're Different Section -->
-    <section class="section bg-sage-50">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Why We're Different</h2>
-                <p class="section-subtitle">
-                    Other memoir writing services charge £100+ for just a traditional memoir. We're the <strong>only service</strong> that gives you <strong>both a compelling novel AND a memoir</strong> for less than competitors charge for one book.
-                </p>
-                <p style="color: #6b7280; font-size: 1rem; margin-top: 1rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Your life story becomes an exciting thriller, heartwarming romance, gripping mystery, or any genre you choose - <strong>plus</strong> a traditional memoir. Two complete books that preserve your legacy in ways that captivate every generation of your family.
-                </p>
-            </div>
+    <!-- Hero Image -->
+    <section style="padding: 0; background: var(--sage-50);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+            <img src="https://lifestorynovel.com/family-reading.webp.jpeg.JPG" alt="Multi-generational family reading together - preserving stories and memories" loading="eager" fetchpriority="high" style="width: 100%; max-width: 1000px; height: auto; border-radius: 1rem; box-shadow: 0 10px 30px rgba(74, 99, 82, 0.2);">
+            <p style="text-align: center; font-style: italic; color: var(--sage-700); margin-top: 1rem; font-size: 1.1rem;">"Every family has a story worth telling. We help you tell yours beautifully."</p>
         </div>
     </section>
-
-    <!-- Key Features Section -->
-    <section id="features" class="section bg-white">
+    <!-- Unique Value Proposition -->
+    <section style="padding: 4rem 0; background: #f0fdf4; text-align: center;">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #1f2937; margin-bottom: 1.5rem; font-weight: 700;">Why We're Different</h2>
+            
+            <p style="font-size: 1.1rem; line-height: 1.7; color: #374151; margin-bottom: 1.5rem;">Other memoir writing services charge £100+ for just a traditional memoir. We're the <strong>only service</strong> that gives you <strong>both a compelling novel AND a memoir</strong> for less than competitors charge for one book.</p>
+            
+            <p style="font-size: 1.1rem; line-height: 1.7; color: #374151;">Your life story becomes an exciting thriller, heartwarming romance, gripping mystery, or any genre you choose - <strong>plus</strong> a traditional memoir. Two complete books that preserve your legacy in ways that captivate every generation of your family.</p>
+        </div>
+    </section>
+    <!-- Key Features -->
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Key Features</h2>
                 <p class="section-subtitle">Discover what makes Life Story Novel the perfect way to preserve and transform your life experiences</p>
             </div>
-            <div class="grid-3">
-                <div class="feature card">
-                    <img src="Family Reading .png" alt="AI Character Images" loading="lazy">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/Family%20Reading%20.png" alt="AI Character Images" class="feature-image">
                     <h3>AI Character Images</h3>
                     <p>Upload family photos for personalized character portraits</p>
                 </div>
-                <div class="feature card">
-                    <img src="Man On Phone .png" alt="Voice Controls" loading="lazy">
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/Man%20On%20Phone%20.png" alt="Voice Controls" class="feature-image">
                     <h3>Voice Controls</h3>
                     <p>Share stories naturally with voice recording – no typing needed</p>
                 </div>
-                <div class="feature card">
-                    <img src="Family Legacy.png" alt="Family Legacy" loading="lazy">
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/Family%20Legacy.png" alt="Family Legacy" class="feature-image">
                     <h3>Family Legacy</h3>
                     <p>Create lasting memories for generations – perfect gift for grandparents</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section bg-sage-50">
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">How It Works</h2>
@@ -1278,516 +1246,474 @@
             <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <img src="voice-recording.PNG" alt="Person sharing their story through voice recording" loading="lazy">
+                    <img src="https://lifestorynovel.com/voice-recording.PNG" alt="Person sharing their story through voice recording" class="step-image">
                     <h3>Share Your Story</h3>
                     <p>Answer guided questions about your life experiences. Use voice recording or typing - whatever feels natural to you.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <img src="AI Transforms.jpg" alt="AI transforming story into beautiful book content" loading="lazy">
+                    <img src="https://lifestorynovel.com/AI%20Transforms.jpg" alt="AI transforming story into beautiful book content" class="step-image">
                     <h3>AI Transforms</h3>
                     <p>Our advanced AI crafts your memories into a compelling novel, preserving your authentic voice and experiences.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <img src="Receive your book  (1).jpg" alt="Professional finished memoir book" loading="lazy">
+                    <img src="https://lifestorynovel.com/Receive%20your%20book%20%20(1).jpg" alt="Professional finished memoir book" class="step-image">
                     <h3>Receive Your Book</h3>
                     <p>Get your professionally printed A4 hardcover memoir delivered to your door - premium quality with 14mm spine and elegant layout, plus digital versions to share with family.</p>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Stories from Our Authors Section -->
-    <section class="section bg-white">
+    <section class="testimonials-section" style="padding: 4rem 0; background: #f9fafb;">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Stories from Our Authors</h2>
-                <p class="section-subtitle">Real people sharing their experiences with Life Story Novel</p>
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">Stories from Our Authors</h2>
+                <p class="section-subtitle" style="font-size: 1.2rem; color: #6b7280; max-width: 600px; margin: 0 auto;">Real people sharing their experiences with Life Story Novel</p>
             </div>
             
-            <div class="testimonials-grid">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
                 <!-- Testimonial 1 -->
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote class="testimonial-quote">
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
+                    </div>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
                         "I couldn't believe it - my ordinary life became this amazing novel! My teenage granddaughter who never reads actually finished the whole book in two days. She kept asking 'Grandma, did this really happen?' It made my stories so much more exciting for her to read."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">S</div>
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">S</div>
                         <div>
-                            <div class="testimonial-name">Sarah Chen</div>
-                            <div class="testimonial-info">Literary Fiction • Teacher</div>
+                            <div style="font-weight: 600; color: #1f2937;">Sarah Chen</div>
+                            <div style="font-size: 0.9rem; color: #6b7280;">Literary Fiction • Teacher</div>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Testimonial 2 -->
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote class="testimonial-quote">
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
+                    </div>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
                         "Seeing my life transformed into an actual novel was incredible! My kids had always found my old stories a bit boring, but when they read it as a thriller, they were completely hooked. My son said 'Dad, I had no idea your life was this exciting!' It brought us so much closer."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">M</div>
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">M</div>
                         <div>
-                            <div class="testimonial-name">Miguel Rodriguez</div>
-                            <div class="testimonial-info">Family Memoir • Engineer</div>
+                            <div style="font-weight: 600; color: #1f2937;">Miguel Rodriguez</div>
+                            <div style="font-size: 0.9rem; color: #6b7280;">Family Memoir • Engineer</div>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Testimonial 3 -->
-                <div class="testimonial">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <blockquote class="testimonial-quote">
+                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
+                    <div style="display: flex; margin-bottom: 1rem;">
+                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
+                    </div>
+                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
                         "I was amazed how they turned my farming stories into this wonderful novel! My grandkids used to roll their eyes when I talked about the old days, but now they're asking for more stories. My youngest grandson said 'Grandma, you're like a character in a real book!' It made my heart sing."
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">E</div>
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 48px; height: 48px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">E</div>
                         <div>
-                            <div class="testimonial-name">Eleanor Walsh</div>
-                            <div class="testimonial-info">Family Heritage • Retired Librarian</div>
+                            <div style="font-weight: 600; color: #1f2937;">Eleanor Walsh</div>
+                            <div style="font-size: 0.9rem; color: #6b7280;">Family Heritage • Retired Librarian</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Bundle Offer Section -->
-    <section class="bundle-section">
+    <!-- Bundle Offer -->
+    <section class="bundle-offer">
         <div class="container">
-            <div class="bundle-badge">Limited Time</div>
+            <span style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.9rem;">Limited Time</span>
             <h2>🎁 Unlock the Complete Bundle: Novel + Memoir</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Why choose one when you can have both? Get your story as a novel AND memoir for just £98</p>
-            
-            <div class="bundle-features">
-                <div class="bundle-feature">Save £40 vs individual pricing</div>
-                <div class="bundle-feature">Two unique formats</div>
-                <div class="bundle-feature">Complete family legacy preservation</div>
+            <p class="subtitle">Why choose one when you can have both? Get your story as a novel AND memoir for just £98</p>
+            <div class="bundle-benefits">
+                <div class="benefit">✓ Save £40 vs individual pricing</div>
+                <div class="benefit">✓ Two unique formats</div>
+                <div class="benefit">✓ Complete family legacy preservation</div>
             </div>
-            
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary" style="background: white; color: var(--sage-800); font-size: 1.2rem; padding: 1.25rem 2.5rem; margin-top: 1rem;">Start Your Story Today</a>
-            <p style="margin-top: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="bundle-cta">Start Your Story Today</a>
+            <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
         </div>
     </section>
-
-    <!-- See Your Story Come to Life Section -->
-    <section class="section bg-sage-50">
+    <!-- Showcase Section -->
+    <section class="showcase">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">See Your Story Come to Life</h2>
                 <p class="section-subtitle">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
             </div>
-            
-            <div class="image-showcase">
-                <!-- Professional Cover Design -->
+            <div class="showcase-grid">
                 <div class="showcase-item">
-                    <img src="Professional Cover design.jpg" alt="Professional book cover design with elegant typography" loading="lazy">
-                    <h3 class="showcase-title">Custom Cover Design</h3>
-                    <p class="showcase-description">Every book receives a professionally designed cover that reflects your unique story and personality.</p>
+                    <img src="https://lifestorynovel.com/Professional%20Cover%20design.jpg" alt="Professional book cover design with elegant typography" class="showcase-image">
+                    <h3>Custom Cover Design</h3>
+                    <p>Every book receives a professionally designed cover that reflects your unique story and personality.</p>
                 </div>
-                
-                <!-- Premium Interior Layout -->
                 <div class="showcase-item">
-                    <img src="Rich Interior Layout.jpg" alt="Beautiful interior page layout with premium typography" loading="lazy">
-                    <h3 class="showcase-title">Premium Layout</h3>
-                    <p class="showcase-description">Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
+                    <img src="https://lifestorynovel.com/Rich%20Interior%20Layout.jpg" alt="Beautiful interior page layout with premium typography" class="showcase-image">
+                    <h3>Premium Layout</h3>
+                    <p>Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
                 </div>
-                
-                <!-- Finished Book -->
                 <div class="showcase-item">
-                    <img src="Complete Memoir .webp" alt="Finished memoir book showing professional quality" loading="lazy">
-                    <h3 class="showcase-title">Your Finished Book</h3>
-                    <p class="showcase-description">A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
+                    <img src="https://lifestorynovel.com/Complete%20Memoir%20.webp" alt="Finished memoir book showing professional quality" class="showcase-image">
+                    <h3>Your Finished Book</h3>
+                    <p>A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
                 </div>
             </div>
-            
-            <div class="text-center mt-5">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary">Create Your Book Now</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button">Create Your Book Now</a>
             </div>
         </div>
     </section>
-
-    <!-- Why Choose Life Story Novel Section -->
-    <section class="section bg-white">
+    <!-- Benefits Section -->
+    <section class="benefits">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Why Choose Life Story Novel</h2>
                 <p class="section-subtitle">Complete service covering every aspect of transforming your life into a beautiful novel</p>
             </div>
-            
-            <div class="features-showcase">
-                <!-- AI-Powered Story Transformation -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">AI-Powered Story Transformation</h3>
-                    <p class="feature-description">Advanced AI technology transforms your personal stories into professionally written novels while preserving your unique voice and experiences.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="benefit-icon">🤖</span>
+                    <h3>AI-Powered Story Transformation</h3>
+                    <p>Advanced AI technology transforms your personal stories into professionally written novels while preserving your unique voice and experiences.</p>
                 </div>
-                
-                <!-- Professional Quality Writing -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">📖</div>
-                    <h3 class="feature-title">Professional Quality Writing</h3>
-                    <p class="feature-description">Get engaging, well-structured narratives that read like professionally authored books with proper pacing, dialogue, and literary techniques.</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📖</span>
+                    <h3>Professional Quality Writing</h3>
+                    <p>Get engaging, well-structured narratives that read like professionally authored books with proper pacing, dialogue, and literary techniques.</p>
                 </div>
-                
-                <!-- Beautiful Hardcover Books -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">📚</div>
-                    <h3 class="feature-title">Beautiful Hardcover Books</h3>
-                    <p class="feature-description">Premium A4 hardcover books with professional cover design, quality paper, and elegant typography that becomes a treasured family heirloom.</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📚</span>
+                    <h3>Beautiful Hardcover Books</h3>
+                    <p>Premium A4 hardcover books with professional cover design, quality paper, and elegant typography that becomes a treasured family heirloom.</p>
                 </div>
-                
-                <!-- Family Heritage Preservation -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">🏛️</div>
-                    <h3 class="feature-title">Family Heritage Preservation</h3>
-                    <p class="feature-description">Transform memories into lasting family legacy that future generations will treasure, preserving stories that would otherwise be lost.</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🏛️</span>
+                    <h3>Family Heritage Preservation</h3>
+                    <p>Transform memories into lasting family legacy that future generations will treasure, preserving stories that would otherwise be lost.</p>
                 </div>
-                
-                <!-- Multiple Genre Options -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">🎭</div>
-                    <h3 class="feature-title">Multiple Genre Options</h3>
-                    <p class="feature-description">Choose from romance, thriller, mystery, literary fiction, fantasy, and memoir formats to match your storytelling preferences.</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">🎭</span>
+                    <h3>Multiple Genre Options</h3>
+                    <p>Choose from romance, thriller, mystery, literary fiction, fantasy, and memoir formats to match your storytelling preferences.</p>
                 </div>
-                
-                <!-- AI Character Upload Facility -->
-                <div class="feature-showcase">
-                    <div class="feature-icon">📸</div>
-                    <h3 class="feature-title">AI Character Upload Facility</h3>
-                    <p class="feature-description">Upload family photos and watch AI transform them into story characters while preserving facial features and identity across different genres and time periods.</p>
+                <div class="benefit-card">
+                    <span class="benefit-icon">📸</span>
+                    <h3>AI Character Upload Facility</h3>
+                    <p>Upload family photos and watch AI transform them into story characters while preserving facial features and identity across different genres and time periods.</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Bundle Offer Section 2 -->
-    <section class="bundle-section">
+    <!-- Bundle Offer 2 -->
+    <section class="bundle-offer">
         <div class="container">
-            <div class="bundle-badge">Limited Time</div>
+            <span style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.9rem;">Limited Time</span>
             <h2>🎁 Special Bundle Offer: Novel + Memoir</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: rgba(255,255,255,0.9);">Get BOTH your novel AND memoir for just £98 • Save £40 vs individual pricing</p>
-            <p style="font-size: 1rem; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">Perfect for preserving your legacy in two beautiful formats →</p>
-            
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary" style="background: white; color: var(--sage-800); font-size: 1.2rem; padding: 1.25rem 2.5rem;">Get Both Novel & Memoir - £98</a>
+            <p class="subtitle">Get BOTH your novel AND memoir for just £98 • Save £40 vs individual pricing</p>
+            <p style="margin-top: 1rem; opacity: 0.9;">Perfect for preserving your legacy in two beautiful formats →</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="bundle-cta">Get Both Novel & Memoir - £98</a>
         </div>
     </section>
-
-    <!-- AI Character Generation Section -->
-    <section class="section bg-sage-50">
+    <!-- AI Character Generation -->
+    <section class="ai-character">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">✨ AI Character Generation</h2>
                 <p class="section-subtitle">Transform Your Photos Into Story Characters</p>
+                <p style="color: var(--sage-700); max-width: 700px; margin: 1rem auto;">Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.</p>
             </div>
-            
-            <p style="text-align: center; font-size: 1.1rem; color: #6b7280; margin-bottom: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.
-            </p>
-            
-            <div class="image-showcase">
-                <!-- Original Photo -->
-                <div class="showcase-item">
-                    <h3 style="color: #1f2937; margin-bottom: 1.5rem; font-size: 1.3rem;">📷 Original Photo</h3>
-                    <img src="Before .jpg" alt="Original family photo before AI transformation" loading="lazy">
-                    <p style="color: #6b7280; line-height: 1.6;">Your authentic family photo</p>
+            <div class="character-demo">
+                <div class="character-before">
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">📷 Original Photo</h3>
+                    <img src="https://lifestorynovel.com/Before%20.jpg" alt="Original family photo before AI transformation" class="character-image">
+                    <p style="color: var(--sage-700); font-weight: 500;">Your authentic family photo</p>
                 </div>
-                
-                <!-- Fantasy Character -->
-                <div class="showcase-item">
-                    <h3 style="color: #1f2937; margin-bottom: 1.5rem; font-size: 1.3rem;">✨ Fantasy Character</h3>
-                    <img src="Wizard.png" alt="AI-transformed fantasy wizard character" loading="lazy">
-                    <p style="color: #6b7280; line-height: 1.6;">AI-generated fantasy wizard</p>
-                </div>
-                
-                <!-- Features List -->
-                <div class="character-features">
-                    <div class="character-feature">
-                        <div class="character-feature-icon">👤</div>
-                        <div>
-                            <h4 class="character-feature-title">Facial Identity Preserved</h4>
-                            <p class="character-feature-description">Advanced AI maintains recognizable features while applying magical transformations</p>
-                        </div>
-                    </div>
-                    
-                    <div class="character-feature">
-                        <div class="character-feature-icon">🎨</div>
-                        <div>
-                            <h4 class="character-feature-title">Genre-Specific Styling</h4>
-                            <p class="character-feature-description">Characters match your story's genre - fantasy, romance, thriller, or historical</p>
-                        </div>
-                    </div>
-                    
-                    <div class="character-feature">
-                        <div class="character-feature-icon">👑</div>
-                        <div>
-                            <h4 class="character-feature-title">Professional Quality</h4>
-                            <p class="character-feature-description">High-resolution character portraits perfect for your published novel</p>
-                        </div>
-                    </div>
+                <div class="character-after">
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">✨ Fantasy Character</h3>
+                    <img src="https://lifestorynovel.com/Wizard.png" alt="AI-transformed fantasy wizard character" class="character-image">
+                    <p style="color: var(--sage-700); font-weight: 500;">AI-generated fantasy wizard</p>
                 </div>
             </div>
-            
-            <div class="text-center mt-5">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary">✨ Start Your Story Journey</a>
-                <p style="margin-top: 1rem; color: #6b7280; font-size: 0.9rem;">Transform your memories into magical characters • No design skills needed</p>
+            <div class="character-features">
+                <div class="character-feature">
+                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">👤</span>
+                    <h4>Facial Identity Preserved</h4>
+                    <p>Advanced AI maintains recognizable features while applying magical transformations</p>
+                </div>
+                <div class="character-feature">
+                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎨</span>
+                    <h4>Genre-Specific Styling</h4>
+                    <p>Characters match your story's genre - fantasy, romance, thriller, or historical</p>
+                </div>
+                <div class="character-feature">
+                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">👑</span>
+                    <h4>Professional Quality</h4>
+                    <p>High-resolution character portraits perfect for your published novel</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem;">✨ Start Your Story Journey</a>
+                <p style="margin-top: 1rem; color: var(--sage-700);">Transform your memories into magical characters • No design skills needed</p>
             </div>
         </div>
     </section>
-
-    <!-- Explore Genres Section -->
-    <section class="section bg-white">
+    <!-- Writing Styles & Genres Section -->
+    <section class="writing-styles" style="padding: 5rem 0; background: var(--sage-50);">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Explore Genres & Writing Styles</h2>
                 <p class="section-subtitle">See how the same life story transforms across different genres and author styles. Each combination creates a unique reading experience.</p>
             </div>
             
-            <div class="genre-tabs">
-                <button class="genre-tab active" onclick="showAllGenres()">All Genres</button>
-                <button class="genre-tab" onclick="showGenre('romance')">Romance</button>
-                <button class="genre-tab" onclick="showGenre('thriller')">Thriller</button>
-                <button class="genre-tab" onclick="showGenre('mystery')">Mystery</button>
-                <button class="genre-tab" onclick="showGenre('literary')">Literary Fiction</button>
-                <button class="genre-tab" onclick="showGenre('fantasy')">Fantasy</button>
-                <button class="genre-tab" onclick="showGenre('biography')">Biography</button>
+            <!-- Genre Tabs -->
+            <div style="text-align: center; margin: 3rem 0;">
+                <div style="display: inline-flex; flex-wrap: wrap; gap: 1rem; justify-content: center; background: white; padding: 0.5rem; border-radius: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <button style="background: var(--sage-600); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">All Genres</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Romance</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Thriller</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Mystery</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Literary Fiction</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Fantasy</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Biography</button>
+                </div>
             </div>
-            
-            <div class="genre-examples" id="genre-examples">
+            <!-- Genre Examples Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                
                 <!-- Romance Example -->
-                <div class="genre-example romance" data-genre="romance">
-                    <div class="genre-header">
-                        <span class="genre-icon">💕</span>
-                        <h3 class="genre-title">Romance</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">💕</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Romance</h3>
                     </div>
-                    <p class="genre-description">Transform your love story into a heartwarming romance novel with emotional depth and passion.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>When Eleanor moved into the care home, she didn't expect to find love again at eighty-three. But watching Harold tend to the garden every morning, she felt her heart flutter like a schoolgirl—the same way it had when she first met late husband sixty years ago...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your love story into a heartwarming romance novel with emotional depth and passion.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">When Eleanor moved into the care home, she didn't expect to find love again at eighty-three. But watching Harold tend to the garden every morning, she felt her heart flutter like a schoolgirl—the same way it had when she first met late husband sixty years ago...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">Jane Austen</span>
-                            <span class="genre-tag">Nicholas Sparks</span>
-                            <span class="genre-tag">Julia Quinn</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jane Austen</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Nicholas Sparks</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Julia Quinn</span>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Thriller Example -->
-                <div class="genre-example thriller" data-genre="thriller">
-                    <div class="genre-header">
-                        <span class="genre-icon">⚡</span>
-                        <h3 class="genre-title">Thriller</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #f44336;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">⚡</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Thriller</h3>
                     </div>
-                    <p class="genre-description">Turn your challenging experiences into edge-of-your-seat suspense with psychological depth.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>Eleanor's memory lapses weren't random—someone was deliberately triggering them. The medication switches, the missing photographs, the way staff avoided her questions. Someone in the care home wanted her to forget what she'd witnessed that night...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Turn your challenging experiences into edge-of-your-seat suspense with psychological depth.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's memory lapses weren't random—someone was deliberately triggering them. The medication switches, the missing photographs, the way staff avoided her questions. Someone in the care home wanted her to forget what she'd witnessed that night...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">Stephen King</span>
-                            <span class="genre-tag">Gillian Flynn</span>
-                            <span class="genre-tag">John Grisham</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Stephen King</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Gillian Flynn</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">John Grisham</span>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Mystery Example -->
-                <div class="genre-example mystery" data-genre="mystery">
-                    <div class="genre-header">
-                        <span class="genre-icon">🔍</span>
-                        <h3 class="genre-title">Mystery</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🔍</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Mystery</h3>
                     </div>
-                    <p class="genre-description">Weave intrigue and discovery into your personal journey with compelling plot twists.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>The letter arrived fifty years too late, addressed to Eleanor's maiden name. Inside, a key and a map to a house she'd never seen—except in her childhood dreams. Someone had been waiting decades for her to come home...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Weave intrigue and discovery into your personal journey with compelling plot twists.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">The letter arrived fifty years too late, addressed to Eleanor's maiden name. Inside, a key and a map to a house she'd never seen—except in her childhood dreams. Someone had been waiting decades for her to come home...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">Agatha Christie</span>
-                            <span class="genre-tag">Louise Penny</span>
-                            <span class="genre-tag">Tana French</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Agatha Christie</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Louise Penny</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Tana French</span>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Literary Fiction Example -->
-                <div class="genre-example literary" data-genre="literary">
-                    <div class="genre-header">
-                        <span class="genre-icon">📖</span>
-                        <h3 class="genre-title">Literary Fiction</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #3f51b5;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">📖</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Literary Fiction</h3>
                     </div>
-                    <p class="genre-description">Craft your story with beautiful prose and deep character development that explores life's complexities.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>Eleanor's hands, once steady enough to thread the finest needles, now trembled as she turned the pages of her photo album. Each image was a doorway to a different version of herself—the mother, the daughter, the woman she'd been, now crystallized in fading memories...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Craft your story with beautiful prose and deep character development that explores life's complexities.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's hands, once steady enough to thread the finest needles, now trembled as she turned the pages of her photo album. Each image was a doorway to a different version of herself—the mother, the daughter, the woman she'd been, now crystallized in fading memories...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">Virginia Woolf</span>
-                            <span class="genre-tag">Toni Morrison</span>
-                            <span class="genre-tag">Margaret Atwood</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Virginia Woolf</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Toni Morrison</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Margaret Atwood</span>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Fantasy Example -->
-                <div class="genre-example fantasy" data-genre="fantasy">
-                    <div class="genre-header">
-                        <span class="genre-icon">🍀</span>
-                        <h3 class="genre-title">Fantasy</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🍀</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Fantasy</h3>
                     </div>
-                    <p class="genre-description">Transform your experiences into an enchanting tale of magic and wonder.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>Eleanor discovered that the stories she'd told her grandchildren weren't just tales—they were memories from another realm. The talking animals, the magical forest, the wise old woman who granted wishes—all real, all waiting for her to remember and find the doorway home...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your experiences into an enchanting tale of magic and wonder.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor discovered that the stories she'd told her grandchildren weren't just tales—they were memories from another realm. The talking animals, the magical forest, the wise old woman who granted wishes—all real, all waiting for her to remember and find the doorway home...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">J.K. Rowling</span>
-                            <span class="genre-tag">Brandon Sanderson</span>
-                            <span class="genre-tag">Neil Gaiman</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">J.K. Rowling</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Brandon Sanderson</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Neil Gaiman</span>
                         </div>
                     </div>
                 </div>
-                
                 <!-- Biography Example -->
-                <div class="genre-example biography" data-genre="biography">
-                    <div class="genre-header">
-                        <span class="genre-icon">👤</span>
-                        <h3 class="genre-title">Biography</h3>
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #4caf50;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">👤</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Biography</h3>
                     </div>
-                    <p class="genre-description">Present your life story with historical accuracy and compelling narrative structure.</p>
-                    <div class="genre-excerpt">
-                        <p><strong>Sample excerpt:</strong></p>
-                        <blockquote>Eleanor Margaret Thompson was born in 1941, the youngest of seven children in a household where resilience was learned by necessity. Her journey from a war-torn childhood to becoming a beloved teacher would touch three generations of students...</blockquote>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Present your life story with historical accuracy and compelling narrative structure.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor Margaret Thompson was born in 1941, the youngest of seven children in a household where resilience was learned by necessity. Her journey from a war-torn childhood to becoming a beloved teacher would touch three generations of students...</p>
                     </div>
-                    <div class="genre-styles">
-                        <p>Popular styles:</p>
-                        <div class="genre-tags">
-                            <span class="genre-tag">Maya Angelou</span>
-                            <span class="genre-tag">Frank McCourt</span>
-                            <span class="genre-tag">Jeannette Walls</span>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Maya Angelou</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Frank McCourt</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jeannette Walls</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <!-- Call to Action -->
-            <div class="text-center mt-5 card">
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
                 <h3 style="color: var(--sage-800); margin-bottom: 1rem; font-size: 1.5rem;">Ready to Transform Your Story?</h3>
                 <p style="color: var(--sage-700); margin-bottom: 2rem; font-size: 1.1rem;">Choose from 6+ genres and 20+ author styles to create your perfect novel</p>
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">🎭 Explore All Styles & Start Writing</a>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">🎭 Explore All Styles & Start Writing</a>
                 <p style="margin-top: 1rem; color: var(--sage-600); font-size: 0.9rem;">Same life story • Multiple genres • Unlimited creativity</p>
             </div>
         </div>
     </section>
-
     <!-- Full Editing Section -->
-    <section class="section bg-sage-50">
+    <section class="full-editing" style="padding: 6rem 0; background: linear-gradient(135deg, var(--warm-50) 0%, var(--sage-50) 50%, var(--cream-50) 100%);">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Full Editing & Professional Publishing</h2>
-                <p class="section-subtitle">Transform your memories into beautifully crafted books with unlimited color photos, AI characters, and professional finishing</p>
+                <h2 class="section-title" style="color: var(--sage-800);">Full Editing & Professional Publishing</h2>
+                <p class="section-subtitle" style="color: var(--sage-700);">Transform your memories into beautifully crafted books with unlimited color photos, AI characters, and professional finishing</p>
             </div>
             
-            <div class="text-center mb-5">
-                <img src="Design - Your Story - design for a website-01.jpg" alt="Professional book editing and design process" style="max-width: 800px; width: 100%; height: 400px; object-fit: cover; border-radius: 1rem; box-shadow: 0 20px 60px rgba(0,0,0,0.15);" loading="lazy">
+            <!-- Main Feature Image -->
+            <div style="text-align: center; margin: 4rem 0;">
+                <img src="Design - Your Story - design for a website-01.jpg" alt="Professional book editing and design process" style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
             </div>
             
-            <div class="image-showcase">
-                <!-- Family Legacy Preservation -->
-                <div class="showcase-item">
-                    <img src="Family Legacy_1754485911413.png" alt="Family reading together" style="width: 80px; height: 80px; margin-bottom: 1.5rem; border-radius: 0.5rem;" loading="lazy">
-                    <h3 class="showcase-title">Family Legacy Preservation</h3>
-                    <p class="showcase-description">Create lasting family treasures that will be cherished for generations. Your stories become heirloom books that preserve memories, wisdom, and family history in beautiful, professional format.</p>
-                </div>
+            <!-- Colorful Features Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0;">
                 
-                <!-- AI-Generated Characters -->
-                <div class="showcase-item">
-                    <img src="Man On Phone _1754485908487.png" alt="Person sharing their story" style="width: 80px; height: 80px; margin-bottom: 1.5rem; border-radius: 0.5rem;" loading="lazy">
-                    <h3 class="showcase-title">AI-Generated Characters</h3>
-                    <p class="showcase-description">Bring your loved ones to life with AI-generated character illustrations based on your descriptions. Add visual depth to your story with custom characters that represent the important people in your life.</p>
+                <!-- Family Legacy Feature -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--gold-500);">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <img src="Family Legacy_1754485911413.png" alt="Family reading together" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
+                    </div>
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Family Legacy Preservation</h3>
+                    <p style="color: var(--sage-700); line-height: 1.6;">Create lasting family treasures that will be cherished for generations. Your stories become heirloom books that preserve memories, wisdom, and family history in beautiful, professional format.</p>
                 </div>
-                
-                <!-- Professional Quality -->
-                <div class="showcase-item">
-                    <img src="Family Reading _1754485910192.png" alt="Beautiful finished book" style="width: 80px; height: 80px; margin-bottom: 1.5rem; border-radius: 0.5rem;" loading="lazy">
-                    <h3 class="showcase-title">Professional Quality</h3>
-                    <p class="showcase-description">Premium hardcover books with full-color printing throughout. Every page is professionally designed with high-quality finishes that rival traditional publishers.</p>
+                <!-- AI Characters Feature -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <img src="Man On Phone _1754485908487.png" alt="Person sharing their story" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
+                    </div>
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">AI-Generated Characters</h3>
+                    <p style="color: var(--sage-700); line-height: 1.6;">Bring your loved ones to life with AI-generated character illustrations based on your descriptions. Add visual depth to your story with custom characters that represent the important people in your life.</p>
+                </div>
+                <!-- Professional Quality Feature -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--sage-600);">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <img src="Family Reading _1754485910192.png" alt="Beautiful finished book" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
+                    </div>
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Professional Quality</h3>
+                    <p style="color: var(--sage-700); line-height: 1.6;">Premium hardcover books with full-color printing throughout. Every page is professionally designed with high-quality finishes that rival traditional publishers.</p>
                 </div>
             </div>
-            
-            <!-- Complete Editorial Process -->
-            <div class="editorial-process">
-                <h3 class="editorial-title">Complete Editorial Process</h3>
+            <!-- Editing Process Features -->
+            <div style="background: white; border-radius: 1rem; padding: 3rem; margin: 4rem 0; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); position: relative; z-index: 1;">
+                <h3 style="color: var(--sage-800); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Complete Editorial Process</h3>
                 
-                <div class="editorial-grid">
-                    <!-- Story Development -->
-                    <div class="editorial-item">
-                        <div class="editorial-icon">✍️</div>
-                        <h4 class="editorial-item-title">Story Development</h4>
-                        <p class="editorial-item-description">Professional narrative structure and pacing to make your story compelling and engaging</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="background: var(--sage-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">✍️</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Story Development</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Professional narrative structure and pacing to make your story compelling and engaging</p>
                     </div>
                     
-                    <!-- Visual Design -->
-                    <div class="editorial-item">
-                        <div class="editorial-icon">🎨</div>
-                        <h4 class="editorial-item-title">Visual Design</h4>
-                        <p class="editorial-item-description">Beautiful layouts, custom typography, and seamless integration of photos and illustrations</p>
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="background: var(--cream-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🎨</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Visual Design</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Beautiful layouts, custom typography, and seamless integration of photos and illustrations</p>
                     </div>
                     
-                    <!-- Unlimited Photos -->
-                    <div class="editorial-item">
-                        <div class="editorial-icon">📸</div>
-                        <h4 class="editorial-item-title">Unlimited Photos</h4>
-                        <p class="editorial-item-description">Include as many personal photos as you want, professionally edited and placed throughout your story</p>
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="background: var(--sage-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">📸</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Unlimited Photos</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Include as many personal photos as you want, professionally edited and placed throughout your story</p>
                     </div>
                     
-                    <!-- Quality Assurance -->
-                    <div class="editorial-item">
-                        <div class="editorial-icon">⭐</div>
-                        <h4 class="editorial-item-title">Quality Assurance</h4>
-                        <p class="editorial-item-description">Multiple rounds of editing and review to ensure your story is perfect before printing</p>
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="background: var(--cream-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">⭐</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Quality Assurance</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Multiple rounds of editing and review to ensure your story is perfect before printing</p>
                     </div>
+                    
                 </div>
-                
-                <div class="editorial-cta">
-                    <h4>Ready for Professional Publishing?</h4>
-                    <p>Get the full editorial treatment with unlimited revisions until your story is perfect</p>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary">Start Your Professional Story</a>
-                    <p class="editorial-features">✓ Full editing included • ✓ Unlimited photos • ✓ AI characters • ✓ Professional finish</p>
-                </div>
+            </div>
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--sage-800); color: white; border-radius: 1rem;">
+                <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Ready for Professional Publishing?</h3>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Get the full editorial treatment with unlimited revisions until your story is perfect</p>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="background: #000000; color: white; font-size: 1.2rem; padding: 1rem 2rem;">Start Your Professional Story</a>
+                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ Full editing included • ✓ Unlimited photos • ✓ AI characters • ✓ Professional finish</p>
             </div>
         </div>
     </section>
-
-    <!-- Simple Transparent Pricing Section -->
-    <section class="section bg-white">
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
                 <p class="section-subtitle">Everything included - no hidden fees, no subscriptions</p>
             </div>
-            
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Your Complete Package</h3>
+                <p style="color: var(--sage-700);">Individual Pricing:</p>
+                <p style="color: var(--sage-700); margin-bottom: 2rem;"><strong>Novel: £69 + Memoir: £69 = £138</strong></p>
+            </div>
             <div class="pricing-grid">
-                <!-- Your Complete Package -->
                 <div class="pricing-card">
-                    <h3 class="pricing-title">Your Complete Package</h3>
-                    <p style="color: #6b7280; margin-bottom: 1.5rem;">Individual Pricing:</p>
-                    <p style="color: #6b7280; font-size: 1.1rem; margin-bottom: 2rem;"><strong>Novel: £69 + Memoir: £69 = £138</strong></p>
-                    
+                    <div style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem; border-radius: 0.5rem; font-weight: 700; margin-bottom: 1rem; font-size: 0.9rem;">🎁</div>
+                    <h3 class="pricing-title">Bundle Deal</h3>
                     <ul class="pricing-features">
                         <li>AI-guided story collection with voice recording</li>
                         <li>Professional editing and story development</li>
@@ -1796,200 +1722,315 @@
                         <li>Free shipping anywhere in the UK</li>
                         <li>Fill your story with AI generated characters based on you and your loved ones</li>
                     </ul>
-                    
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=US&currency=USD" class="btn btn-secondary" style="display: block; margin-bottom: 1rem;">Choose Your Package</a>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=US&currency=USD" class="cta-button" style="width: 100%; display: block; text-align: center;">Choose Your Package</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="pricing-title">Novel + Memoir</div>
+                    <p style="color: var(--sage-600); margin-bottom: 1rem;">Get both your novel AND memoir using the same source material</p>
+                    <div class="pricing-price">£98</div>
+                    <p class="pricing-subtitle">(Save £40!)</p>
+                    <ul class="pricing-features">
+                        <li>AI-guided story collection with voice recording</li>
+                        <li>Professional editing and story development</li>
+                        <li>Premium Hardcover Casebound A4 Book with Full Colour Print</li>
+                        <li>Custom cover design</li>
+                        <li>Free shipping anywhere in the UK</li>
+                        <li>Fill your story with AI generated characters based on you and your loved ones</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; display: block; text-align: center; background: var(--gold-500); color: var(--sage-800);">Get Both Novel & Memoir - £98</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--sage-700); font-weight: 600;">✓ 30-day money-back guarantee • ✓ Secure payment • ✓ No recurring charges</p>
+        </div>
+    </section>
+    <!-- Comparison Table -->
+    <section class="comparison">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Compare Your Options</h2>
+            </div>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Life Story Novel</th>
+                        <th>Remento</th>
+                        <th>StoryWorth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Transform life into a novel</td>
+                        <td class="check">✓</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Create a memoir</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Use voice to answer questions</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Create character images from your pictures</td>
+                        <td class="check">✓</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Weekly prompts delivered via</td>
+                        <td>Email & SMS</td>
+                        <td>Email & SMS</td>
+                        <td>Email</td>
+                    </tr>
+                    <tr>
+                        <td>Size of book</td>
+                        <td>A4 (8.3" × 11.7")</td>
+                        <td>8" × 10"</td>
+                        <td>6" × 9"</td>
+                    </tr>
+                    <tr>
+                        <td>Price</td>
+                        <td>£98 (2 books)</td>
+                        <td>£95</td>
+                        <td>£95</td>
+                    </tr>
+                    <tr>
+                        <td>Price for additional copy of book</td>
+                        <td>£45</td>
+                        <td>£69</td>
+                        <td>£79</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 4rem; text-align: center;">
+                <h3 style="color: var(--sage-800); margin-bottom: 2rem;">Prefer Just a Novel?</h3>
+                <p style="color: var(--sage-700); margin-bottom: 2rem;">If you'd rather have just the novel format, you can purchase the novel-only version of our service.</p>
+                
+                <div style="max-width: 400px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);">
+                    <div class="pricing-price" style="margin-bottom: 1rem;">£69</div>
+                    <h4 style="color: var(--sage-800); margin-bottom: 1rem;">Novel Only</h4>
+                    <ul style="list-style: none; margin-bottom: 2rem; text-align: left;">
+                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• AI-guided novel creation</li>
+                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• A4 hardcover book</li>
+                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• Digital formats included</li>
+                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• Free UK shipping</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?novel-only=true&region=UK&currency=GBP" class="cta-button" style="display: block; text-align: center;">Order Novel Only - £69</a>
+                    <p style="color: var(--sage-700); font-size: 0.9rem; margin-top: 1rem;">Experience your life story transformed into your favorite genre</p>
                 </div>
                 
-                <!-- Bundle Deal -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">🎁</div>
-                    
-                    <h3 class="pricing-title">Novel + Memoir</h3>
-                    <p class="pricing-subtitle">Get both your novel AND memoir using the same source material</p>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <div class="pricing-price">£98</div>
-                        <div class="pricing-save">(Save £40!)</div>
+                <div style="margin-top: 3rem; padding: 2rem; background: var(--sage-50); border-radius: 1rem;">
+                    <h4 style="color: var(--sage-800); margin-bottom: 1rem;">Why Choose Life Story Novel?</h4>
+                    <p style="color: var(--sage-700);">Get TWO books (novel + memoir) for less than competitors charge for just one memoir. Plus, experience your life as fiction in thriller, romance, mystery, or any genre you love!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about transforming your life story into a beautiful novel</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">How long does the process take?</button>
+                    <div class="faq-answer">
+                        <p>The complete process typically takes 4-5 weeks from your first conversation to receiving your finished books. This includes story collection (1-2 weeks), AI transformation and writing (1-2 weeks), your review and revisions (1 week), and printing/shipping (1 week).</p>
                     </div>
-                    
-                    <ul class="pricing-features">
-                        <li>AI-guided story collection with voice recording</li>
-                        <li>Professional editing and story development</li>
-                        <li>Premium Hardcover Casebound A4 Book with Full Colour Print</li>
-                        <li>Custom cover design</li>
-                        <li>Free shipping anywhere in the UK</li>
-                        <li>Fill your story with AI generated characters based on you and your loved ones</li>
-                    </ul>
-                    
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="btn btn-primary" style="display: block; background: white; color: var(--sage-800); margin-bottom: 1rem;">Get Both Novel & Memoir - £98</a>
-                    
-                    <div class="pricing-footer">
-                        <div>✓ After the order form</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What's included in the £98 bundle package?</button>
+                    <div class="faq-answer">
+                        <p>Your complete package includes:<br><br>
+                        - AI-guided story collection with voice recording support<br>
+                        - Professional novel version in your chosen genre (thriller, romance, etc.)<br>
+                        - Traditional memoir version using the same content<br>
+                        - Premium A4 hardcover book with professional cover design<br>
+                        - Digital formats (PDF & ePub) for easy sharing<br>
+                        - Unlimited revisions until you're completely satisfied<br>
+                        - Free UK shipping (or discounted international shipping)</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">How does the AI story collection work?</button>
+                    <div class="faq-answer">
+                        <p>Our AI guides you through gentle, conversational questions about your life experiences. You can respond by typing, voice recording, or uploading existing documents. The AI asks follow-up questions to capture important details, emotions, and relationships, ensuring no precious memories are missed.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Can I choose different genres for my story?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely! You can transform your life story into any genre: romance, thriller, mystery, fantasy, literary fiction, or family saga. Each genre version maintains the core truth of your experiences while adapting the storytelling style to match your preferred reading experience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What if I'm not satisfied with the final result?</button>
+                    <div class="faq-answer">
+                        <p>We offer unlimited revisions until your story is perfect, plus a 30-day money-back guarantee. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. If you're not satisfied within 30 days, we'll provide a full refund. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Is my personal information secure and private?</button>
+                    <div class="faq-answer">
+                        <p>Absolutely. Your stories and personal information are encrypted and stored securely. We never share your content with third parties, and you retain full ownership of your story. Our AI processing happens in secure environments with enterprise-grade protection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">Can I order additional copies for family members?</button>
+                    <div class="faq-answer">
+                        <p>Yes! Once your book is complete, you can order additional printed copies at cost (typically £15-25 per book depending on length). Digital versions can be shared unlimited with family members at no extra charge.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">What makes this different from traditional memoir services?</button>
+                    <div class="faq-answer">
+                        <p>Traditional memoir services give you one format at high cost (£200-500). We provide both novel AND memoir versions for £98, with AI-guided collection that makes the process enjoyable rather than overwhelming. Plus, your family gets an exciting story they'll actually want to read alongside the traditional memoir.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Story?</h2>
+            <p>Join thousands who've preserved their legacy in beautiful, professionally written books. Your family will treasure these stories forever.</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="background: #000000; color: white; font-size: 1.2rem;">Start Your Story Today</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#pricing">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="#faq">FAQ</a>
+                <a href="mailto:hello@lifestorynovel.com">Contact</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Life Story Novel. All rights reserved. Transform your memories into lasting stories.</p>
+            </div>
+        </div>
+    </footer>
     <script>
-        // Genre filtering functionality
-        function showAllGenres() {
-            const examples = document.querySelectorAll('.genre-example');
-            const tabs = document.querySelectorAll('.genre-tab');
+        // Simple FAQ toggle function
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
             
-            examples.forEach(example => {
-                example.style.display = 'block';
-                example.style.animation = 'fadeIn 0.5s ease-out';
-            });
+            // Close all other FAQs
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            const allButtons = document.querySelectorAll('.faq-question');
             
-            tabs.forEach(tab => tab.classList.remove('active'));
-            document.querySelector('.genre-tab').classList.add('active');
-        }
-        
-        function showGenre(genre) {
-            const examples = document.querySelectorAll('.genre-example');
-            const tabs = document.querySelectorAll('.genre-tab');
+            allAnswers.forEach(a => a.classList.remove('show'));
+            allButtons.forEach(b => b.classList.remove('active'));
             
-            examples.forEach(example => {
-                if (example.dataset.genre === genre) {
-                    example.style.display = 'block';
-                    example.style.animation = 'fadeIn 0.5s ease-out';
-                } else {
-                    example.style.display = 'none';
-                }
-            });
-            
-            tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-        
-        // Auto-detect user region and currency
-        document.addEventListener('DOMContentLoaded', function() {
-            function detectUserRegion() {
-                // Get user's timezone
-                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                
-                // UK timezone indicators
-                const ukTimezones = ['Europe/London', 'Europe/Belfast', 'Europe/Dublin'];
-                const isUK = ukTimezones.includes(timezone);
-                
-                if (!isUK) {
-                    // Convert to USD pricing for non-UK users
-                    document.querySelectorAll('[data-price-gbp]').forEach(priceEl => {
-                        const gbpPrice = parseInt(priceEl.dataset.priceGbp);
-                        const usdPrice = Math.round(gbpPrice * 1.31); // Approximate conversion
-                        priceEl.textContent = `$${usdPrice}`;
-                    });
-                    
-                    // Update text mentions of pricing
-                    document.body.innerHTML = document.body.innerHTML
-                        .replace(/£98/g, '$129')
-                        .replace(/£69/g, '$89')
-                        .replace(/£138/g, '$181')
-                        .replace(/£40/g, '$52');
-                    
-                    // Update purchase links to include region parameter
-                    document.querySelectorAll('a[href*="purchase"]').forEach(link => {
-                        const url = new URL(link.href);
-                        url.searchParams.set('region', 'US');
-                        url.searchParams.set('currency', 'USD');
-                        link.href = url.toString();
-                    });
-                    
-                    console.log('Pricing converted to USD for US market');
-                } else {
-                    // UK market - ensure GBP pricing and links
-                    document.querySelectorAll('a[href*="purchase"]').forEach(link => {
-                        const url = new URL(link.href);
-                        url.searchParams.set('region', 'UK');
-                        url.searchParams.set('currency', 'GBP');
-                        link.href = url.toString();
-                    });
-                    
-                    console.log('Displaying GBP pricing for UK market');
-                }
-                
-                // Store the detected region for future use
-                sessionStorage.setItem('detectedRegion', isUK ? 'UK' : 'US');
-                sessionStorage.setItem('detectedCurrency', isUK ? 'GBP' : 'USD');
+            // Toggle current FAQ
+            if (!answer.classList.contains('show')) {
+                answer.classList.add('show');
+                button.classList.add('active');
             }
-            
-            // Call currency detection
-            detectUserRegion();
-            
-            // Add smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Add fade-in animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe elements for animation
-            document.querySelectorAll('.card, .step, .testimonial, .showcase-item, .feature-showcase').forEach(el => {
-                observer.observe(el);
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        
-        // Add purchase conversion tracking
-        function trackPurchase(value, currency = 'GBP') {
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'purchase', {
-                    transaction_id: Date.now().toString(),
-                    value: value,
-                    currency: currency,
-                    items: [{
-                        item_id: 'bundle',
-                        item_name: 'Novel + Memoir Bundle',
-                        category: 'Life Story Transformation',
-                        quantity: 1,
-                        price: value
-                    }]
+        // Currency conversion based on user location
+        function detectUserRegion() {
+            // Detect user's region based on timezone and locale
+            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const locale = navigator.language || navigator.languages[0];
+            
+            // Check if user is likely from UK/Europe
+            const isUK = timezone.includes('London') || 
+                        timezone.includes('Europe') || 
+                        locale.includes('en-GB') ||
+                        locale.includes('en-IE');
+            
+            console.log('Detected timezone:', timezone);
+            console.log('Detected locale:', locale);
+            console.log('Is UK user:', isUK);
+            
+            if (!isUK) {
+                // Convert GBP to USD pricing for US users
+                document.querySelectorAll('.pricing-price').forEach(priceEl => {
+                    if (priceEl.textContent === '£98') {
+                        priceEl.textContent = '$129';
+                    } else if (priceEl.textContent === '£69') {
+                        priceEl.textContent = '$89';
+                    }
                 });
+                
+                // Update text mentions of pricing
+                document.querySelectorAll('*').forEach(el => {
+                    if (el.textContent && el.textContent.includes('£98')) {
+                        el.textContent = el.textContent.replace(/£98/g, '$129');
+                    }
+                    if (el.textContent && el.textContent.includes('£69')) {
+                        el.textContent = el.textContent.replace(/£69/g, '$89');
+                    }
+                    if (el.textContent && el.textContent.includes('£95')) {
+                        el.textContent = el.textContent.replace(/£95/g, '$125');
+                    }
+                });
+                
+                // Update purchase links to include region parameter
+                document.querySelectorAll('a[href*="purchase"]').forEach(link => {
+                    const url = new URL(link.href);
+                    url.searchParams.set('region', 'US');
+                    url.searchParams.set('currency', 'USD');
+                    link.href = url.toString();
+                });
+                
+                console.log('Pricing converted to USD for US market');
+            } else {
+                // UK market - ensure GBP pricing and links
+                document.querySelectorAll('a[href*="purchase"]').forEach(link => {
+                    const url = new URL(link.href);
+                    url.searchParams.set('region', 'UK');
+                    url.searchParams.set('currency', 'GBP');
+                    link.href = url.toString();
+                });
+                
+                console.log('Displaying GBP pricing for UK market');
             }
+            
+            // Store the detected region for future use
+            sessionStorage.setItem('detectedRegion', isUK ? 'UK' : 'US');
+            sessionStorage.setItem('detectedCurrency', isUK ? 'GBP' : 'USD');
         }
-    </script>
-
-    <!-- Google Ads Conversion Tracking -->
-    <script>
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof(url) != 'undefined') {
-                    window.location = url;
-                }
-            };
-            gtag('event', 'conversion', {
-                'send_to': 'AW-17491922940/abcd1234',
-                'value': 98.0,
-                'currency': 'GBP',
-                'event_callback': callback
-            });
-            return false;
-        }
+        
+        // Call currency detection
+        detectUserRegion();
+    });
     </script>
 </body>
 </html>
+
 
 
 
