@@ -657,8 +657,7 @@
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
         }
         
         .showcase-item {
@@ -667,11 +666,16 @@
         
         .showcase-image {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 30px rgba(134, 239, 172, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .showcase-item:hover .showcase-image {
+            transform: translateY(-5px);
         }
         
         .showcase-item h3 {
@@ -682,20 +686,18 @@
         
         .showcase-item p {
             color: var(--sage-700);
-            line-height: 1.6;
         }
         
         /* Benefits Section */
         .benefits {
             padding: 6rem 2rem;
-            background: var(--sage-50);
+            background: var(--cream-50);
         }
         
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .benefit-card {
@@ -703,7 +705,7 @@
             padding: 2rem;
             border-radius: 1rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.05);
+            border: 1px solid var(--sage-200);
             transition: all 0.3s ease;
         }
         
@@ -714,8 +716,8 @@
         
         .benefit-icon {
             font-size: 3rem;
-            margin-bottom: 1rem;
             display: block;
+            margin-bottom: 1rem;
         }
         
         .benefit-card h3 {
@@ -726,155 +728,151 @@
         
         .benefit-card p {
             color: var(--sage-700);
-            line-height: 1.6;
         }
         
         /* AI Character Section */
         .ai-character {
             padding: 6rem 2rem;
-            background: white;
+            background: linear-gradient(135deg, var(--sage-50), white);
         }
         
         .character-demo {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
         }
         
-        .character-before, .character-after {
+        .character-before,
+        .character-after {
             text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 8px 30px rgba(134, 239, 172, 0.15);
         }
         
         .character-image {
             width: 100%;
-            max-width: 300px;
             height: 300px;
             object-fit: cover;
             border-radius: 1rem;
-            margin: 0 auto 1rem;
-            display: block;
-            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
+            margin-bottom: 1rem;
         }
         
         .character-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin: 3rem 0;
         }
         
         .character-feature {
             text-align: center;
-            padding: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--sage-200);
         }
         
         .character-feature h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
             color: var(--sage-800);
+            margin-bottom: 0.5rem;
         }
         
         .character-feature p {
             color: var(--sage-700);
+            font-size: 0.9rem;
         }
         
         /* Pricing Section */
         .pricing {
             padding: 6rem 2rem;
-            background: var(--warm-50);
+            background: var(--sage-50);
         }
         
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
         .pricing-card {
             background: white;
-            padding: 2.5rem 2rem;
             border-radius: 1rem;
+            padding: 3rem 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
             position: relative;
+            border: 2px solid transparent;
             transition: all 0.3s ease;
-        }
-        
-        .pricing-card.featured {
-            border: 3px solid var(--gold-500);
-            transform: scale(1.05);
-        }
-        
-        .pricing-card.featured::before {
-            content: 'Best Value';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold-500);
-            color: var(--sage-800);
-            padding: 0.5rem 1rem;
-            border-radius: 1rem;
-            font-weight: 700;
-            font-size: 0.9rem;
         }
         
         .pricing-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(74, 99, 82, 0.15);
+            box-shadow: 0 15px 40px rgba(74, 99, 82, 0.15);
         }
         
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-5px);
+        .pricing-card.featured {
+            border-color: var(--sage-600);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(74, 99, 82, 0.2);
         }
         
-        .pricing-title {
-            font-size: 1.5rem;
+        .pricing-badge {
+            background: var(--sage-600);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
             color: var(--sage-800);
+            margin-bottom: 0.5rem;
         }
         
         .pricing-price {
             font-size: 3rem;
             font-weight: 700;
             color: var(--sage-800);
-            margin-bottom: 0.5rem;
             font-family: 'Playfair Display', serif;
         }
         
-        .pricing-subtitle {
+        .pricing-description {
             color: var(--sage-600);
-            margin-bottom: 2rem;
+            margin: 1rem 0 2rem;
         }
         
         .pricing-features {
             list-style: none;
-            margin-bottom: 2rem;
-            text-align: left;
+            padding: 0;
+            margin: 2rem 0;
         }
         
         .pricing-features li {
             padding: 0.5rem 0;
+            border-bottom: 1px solid var(--sage-100);
             color: var(--sage-700);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
         
-        .pricing-features li::before {
-            content: '✓';
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
             color: var(--sage-600);
             font-weight: bold;
-            width: 1rem;
+            margin-right: 0.5rem;
         }
         
-        /* Comparison Table */
+        /* Comparison Section */
         .comparison {
             padding: 6rem 2rem;
             background: white;
@@ -882,13 +880,13 @@
         
         .comparison-table {
             width: 100%;
-            max-width: 900px;
-            margin: 3rem auto 0;
+            max-width: 800px;
+            margin: 3rem auto;
             border-collapse: collapse;
             background: white;
             border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);
+            box-shadow: 0 8px 30px rgba(134, 239, 172, 0.15);
         }
         
         .comparison-table th,
@@ -899,62 +897,69 @@
         }
         
         .comparison-table th {
-            background: var(--sage-600);
+            background: var(--sage-800);
             color: white;
             font-weight: 600;
         }
         
-        .comparison-table tr:nth-child(even) {
-            background: var(--sage-50);
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--sage-800);
         }
         
         .comparison-table .check {
             color: var(--sage-600);
             font-weight: bold;
-            text-align: center;
+        }
+        
+        .comparison-table .cross {
+            color: #dc2626;
+            font-weight: bold;
         }
         
         /* FAQ Section */
         .faq {
             padding: 6rem 2rem;
-            background: var(--sage-50);
-        }
-        
-        .faq-grid {
-            max-width: 800px;
-            margin: 3rem auto 0;
+            background: var(--cream-50);
         }
         
         .faq-item {
             background: white;
-            border-radius: 0.5rem;
             margin-bottom: 1rem;
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(74, 99, 82, 0.05);
+            box-shadow: 0 2px 10px rgba(134, 239, 172, 0.1);
         }
         
         .faq-question {
-            padding: 1.5rem;
-            background: white;
-            border: none;
             width: 100%;
+            padding: 2rem;
             text-align: left;
+            background: transparent;
+            border: none;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--sage-800);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         
         .faq-question:hover {
             background: var(--sage-50);
         }
         
+        .faq-question.active {
+            background: var(--sage-100);
+        }
+        
         .faq-question::after {
-            content: '+';
+            content: "+";
             font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--sage-600);
             transition: transform 0.3s ease;
         }
         
@@ -963,13 +968,13 @@
         }
         
         .faq-answer {
-            display: none;
-            padding: 1.5rem;
-            background: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
         
         .faq-answer.show {
-            display: block;
+            max-height: 500px;
         }
         
         .faq-answer p {
@@ -1210,6 +1215,161 @@
             <p style="font-size: 1.1rem; line-height: 1.7; color: #374151;">Your life story becomes an exciting thriller, heartwarming romance, gripping mystery, or any genre you choose - <strong>plus</strong> a traditional memoir. Two complete books that preserve your legacy in ways that captivate every generation of your family.</p>
         </div>
     </section>
+
+    <!-- Writing Styles & Genres Section - MOVED HERE -->
+    <section class="writing-styles" style="padding: 5rem 0; background: var(--sage-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Genres & Writing Styles</h2>
+                <p class="section-subtitle">See how the same life story transforms across different genres and author styles. Each combination creates a unique reading experience.</p>
+            </div>
+            
+            <!-- Genre Tabs -->
+            <div style="text-align: center; margin: 3rem 0;">
+                <div style="display: inline-flex; flex-wrap: wrap; gap: 1rem; justify-content: center; background: white; padding: 0.5rem; border-radius: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                    <button style="background: var(--sage-600); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">All Genres</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Romance</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Thriller</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Mystery</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Literary Fiction</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Fantasy</button>
+                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Biography</button>
+                </div>
+            </div>
+            <!-- Genre Examples Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                
+                <!-- Romance Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">💕</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Romance</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your love story into a heartwarming romance novel with emotional depth and passion.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">When Eleanor moved into the care home, she didn't expect to find love again at eighty-three. But watching Harold tend to the garden every morning, she felt her heart flutter like a schoolgirl—the same way it had when she first met late husband sixty years ago...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jane Austen</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Nicholas Sparks</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Julia Quinn</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thriller Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #f44336;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">⚡</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Thriller</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Turn your challenging experiences into edge-of-your-seat suspense with psychological depth.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's memory lapses weren't random—someone was deliberately triggering them. The medication switches, the missing photographs, the way staff avoided her questions. Someone in the care home wanted her to forget what she'd witnessed that night...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Stephen King</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Gillian Flynn</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">John Grisham</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mystery Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🔍</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Mystery</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Weave intrigue and discovery into your personal journey with compelling plot twists.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">The letter arrived fifty years too late, addressed to Eleanor's maiden name. Inside, a key and a map to a house she'd never seen—except in her childhood dreams. Someone had been waiting decades for her to come home...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Agatha Christie</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Louise Penny</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Tana French</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Literary Fiction Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #3f51b5;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">📖</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Literary Fiction</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Craft your story with beautiful prose and deep character development that explores life's complexities.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's hands, once steady enough to thread the finest needles, now trembled as she turned the pages of her photo album. Each image was a doorway to a different version of herself—the mother, the daughter, the woman she'd been, now crystallized in fading memories...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Virginia Woolf</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Toni Morrison</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Margaret Atwood</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fantasy Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🍀</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Fantasy</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your experiences into an enchanting tale of magic and wonder.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor discovered that the stories she'd told her grandchildren weren't just tales—they were memories from another realm. The talking animals, the magical forest, the wise old woman who granted wishes—all real, all waiting for her to remember and find the doorway home...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">J.K. Rowling</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Brandon Sanderson</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Neil Gaiman</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Biography Example -->
+                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #4caf50;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">👤</span>
+                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Biography</h3>
+                    </div>
+                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Present your life story with historical accuracy and compelling narrative structure.</p>
+                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
+                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor Margaret Thompson was born in 1941, the youngest of seven children in a household where resilience was learned by necessity. Her journey from a war-torn childhood to becoming a beloved teacher would touch three generations of students...</p>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Maya Angelou</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Frank McCourt</span>
+                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jeannette Walls</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                <h3 style="color: var(--sage-800); margin-bottom: 1rem; font-size: 1.5rem;">Ready to Transform Your Story?</h3>
+                <p style="color: var(--sage-700); margin-bottom: 2rem; font-size: 1.1rem;">Choose from 6+ genres and 20+ author styles to create your perfect novel</p>
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">🎭 Explore All Styles & Start Writing</a>
+                <p style="margin-top: 1rem; color: var(--sage-600); font-size: 0.9rem;">Same life story • Multiple genres • Unlimited creativity</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Key Features -->
     <section id="features" class="features">
         <div class="container">
@@ -1463,159 +1623,7 @@
             </div>
         </div>
     </section>
-    <!-- Writing Styles & Genres Section -->
-    <section class="writing-styles" style="padding: 5rem 0; background: var(--sage-50);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Explore Genres & Writing Styles</h2>
-                <p class="section-subtitle">See how the same life story transforms across different genres and author styles. Each combination creates a unique reading experience.</p>
-            </div>
-            
-            <!-- Genre Tabs -->
-            <div style="text-align: center; margin: 3rem 0;">
-                <div style="display: inline-flex; flex-wrap: wrap; gap: 1rem; justify-content: center; background: white; padding: 0.5rem; border-radius: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                    <button style="background: var(--sage-600); color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">All Genres</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Romance</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Thriller</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Mystery</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Literary Fiction</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Fantasy</button>
-                    <button style="background: transparent; color: var(--sage-700); border: none; padding: 0.75rem 1.5rem; border-radius: 1.5rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;">Biography</button>
-                </div>
-            </div>
-            <!-- Genre Examples Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                
-                <!-- Romance Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">💕</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Romance</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your love story into a heartwarming romance novel with emotional depth and passion.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">When Eleanor moved into the care home, she didn't expect to find love again at eighty-three. But watching Harold tend to the garden every morning, she felt her heart flutter like a schoolgirl—the same way it had when she first met late husband sixty years ago...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jane Austen</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Nicholas Sparks</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Julia Quinn</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Thriller Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #f44336;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">⚡</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Thriller</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Turn your challenging experiences into edge-of-your-seat suspense with psychological depth.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's memory lapses weren't random—someone was deliberately triggering them. The medication switches, the missing photographs, the way staff avoided her questions. Someone in the care home wanted her to forget what she'd witnessed that night...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Stephen King</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Gillian Flynn</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">John Grisham</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Mystery Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🔍</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Mystery</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Weave intrigue and discovery into your personal journey with compelling plot twists.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">The letter arrived fifty years too late, addressed to Eleanor's maiden name. Inside, a key and a map to a house she'd never seen—except in her childhood dreams. Someone had been waiting decades for her to come home...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Agatha Christie</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Louise Penny</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Tana French</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Literary Fiction Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #3f51b5;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">📖</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Literary Fiction</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Craft your story with beautiful prose and deep character development that explores life's complexities.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor's hands, once steady enough to thread the finest needles, now trembled as she turned the pages of her photo album. Each image was a doorway to a different version of herself—the mother, the daughter, the woman she'd been, now crystallized in fading memories...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Virginia Woolf</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Toni Morrison</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Margaret Atwood</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fantasy Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #9c27b0;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">🍀</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Fantasy</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Transform your experiences into an enchanting tale of magic and wonder.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor discovered that the stories she'd told her grandchildren weren't just tales—they were memories from another realm. The talking animals, the magical forest, the wise old woman who granted wishes—all real, all waiting for her to remember and find the doorway home...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">J.K. Rowling</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Brandon Sanderson</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Neil Gaiman</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Biography Example -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #4caf50;">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <span style="font-size: 1.5rem; margin-right: 0.75rem;">👤</span>
-                        <h3 style="color: var(--sage-800); font-size: 1.25rem; margin: 0;">Biography</h3>
-                    </div>
-                    <p style="color: var(--sage-700); margin-bottom: 1rem;">Present your life story with historical accuracy and compelling narrative structure.</p>
-                    <div style="background: var(--sage-50); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem;"><strong>Sample excerpt:</strong></p>
-                        <p style="font-size: 0.9rem; color: var(--sage-600); font-style: italic; line-height: 1.4; margin: 0;">Eleanor Margaret Thompson was born in 1941, the youngest of seven children in a household where resilience was learned by necessity. Her journey from a war-torn childhood to becoming a beloved teacher would touch three generations of students...</p>
-                    </div>
-                    <div style="margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; color: var(--sage-700); margin-bottom: 0.5rem; font-weight: 600;">Popular styles:</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Maya Angelou</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Frank McCourt</span>
-                            <span style="background: var(--sage-200); color: var(--sage-800); padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.8rem;">Jeannette Walls</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Call to Action -->
-            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                <h3 style="color: var(--sage-800); margin-bottom: 1rem; font-size: 1.5rem;">Ready to Transform Your Story?</h3>
-                <p style="color: var(--sage-700); margin-bottom: 2rem; font-size: 1.1rem;">Choose from 6+ genres and 20+ author styles to create your perfect novel</p>
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">🎭 Explore All Styles & Start Writing</a>
-                <p style="margin-top: 1rem; color: var(--sage-600); font-size: 0.9rem;">Same life story • Multiple genres • Unlimited creativity</p>
-            </div>
-        </div>
-    </section>
+    
     <!-- Full Editing Section -->
     <section class="full-editing" style="padding: 6rem 0; background: linear-gradient(135deg, var(--warm-50) 0%, var(--sage-50) 50%, var(--cream-50) 100%);">
         <div class="container">
@@ -1640,274 +1648,264 @@
                     <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Family Legacy Preservation</h3>
                     <p style="color: var(--sage-700); line-height: 1.6;">Create lasting family treasures that will be cherished for generations. Your stories become heirloom books that preserve memories, wisdom, and family history in beautiful, professional format.</p>
                 </div>
+                
                 <!-- AI Characters Feature -->
                 <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
                     <div style="text-align: center; margin-bottom: 1.5rem;">
                         <img src="Man On Phone _1754485908487.png" alt="Person sharing their story" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
                     </div>
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">AI-Generated Characters</h3>
-                    <p style="color: var(--sage-700); line-height: 1.6;">Bring your loved ones to life with AI-generated character illustrations based on your descriptions. Add visual depth to your story with custom characters that represent the important people in your life.</p>
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Voice-Powered Story Collection</h3>
+                    <p style="color: var(--sage-700); line-height: 1.6;">Share your experiences naturally through voice recording. Our AI listens, understands, and asks thoughtful follow-up questions to capture every meaningful detail of your journey.</p>
                 </div>
+                
                 <!-- Professional Quality Feature -->
                 <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--sage-600);">
                     <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <img src="Family Reading _1754485910192.png" alt="Beautiful finished book" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
+                        <img src="Family Reading _1754485904770.png" alt="Family enjoying their story together" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
                     </div>
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Professional Quality</h3>
-                    <p style="color: var(--sage-700); line-height: 1.6;">Premium hardcover books with full-color printing throughout. Every page is professionally designed with high-quality finishes that rival traditional publishers.</p>
+                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Professional Quality Results</h3>
+                    <p style="color: var(--sage-700); line-height: 1.6;">Every book is professionally edited, designed, and printed to publishing industry standards. Your family story becomes a treasured heirloom that rivals bestselling novels in quality and presentation.</p>
                 </div>
             </div>
-            <!-- Editing Process Features -->
-            <div style="background: white; border-radius: 1rem; padding: 3rem; margin: 4rem 0; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); position: relative; z-index: 1;">
-                <h3 style="color: var(--sage-800); text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Complete Editorial Process</h3>
+            
+            <!-- Feature Highlights -->
+            <div style="background: white; border-radius: 1rem; padding: 3rem; margin: 4rem 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
+                <h3 style="text-align: center; color: var(--sage-800); margin-bottom: 2rem; font-size: 1.8rem;">✨ What Makes Your Book Special</h3>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="background: var(--sage-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">✍️</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Story Development</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Professional narrative structure and pacing to make your story compelling and engaging</p>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📸</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Unlimited Color Photos</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Include as many family photos as you want - all beautifully integrated into your story</p>
                     </div>
                     
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="background: var(--cream-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">🎨</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Visual Design</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Beautiful layouts, custom typography, and seamless integration of photos and illustrations</p>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">AI Character Art</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Transform family photos into beautiful character portraits that match your story's genre</p>
                     </div>
                     
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="background: var(--sage-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">📸</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Unlimited Photos</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Include as many personal photos as you want, professionally edited and placed throughout your story</p>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✍️</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Professional Editing</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">Expert editors refine your story with proper pacing, dialogue, and literary techniques</p>
                     </div>
                     
-                    <div style="text-align: center; padding: 1.5rem;">
-                        <div style="background: var(--cream-100); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem;">⭐</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Quality Assurance</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Multiple rounds of editing and review to ensure your story is perfect before printing</p>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📖</div>
+                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Premium Binding</h4>
+                        <p style="color: var(--sage-700); font-size: 0.9rem;">A4 hardcover with 14mm spine, premium paper, and elegant typography</p>
                     </div>
-                    
                 </div>
             </div>
-            <!-- Call to Action -->
-            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--sage-800); color: white; border-radius: 1rem;">
-                <h3 style="margin-bottom: 1rem; font-size: 1.8rem;">Ready for Professional Publishing?</h3>
-                <p style="margin-bottom: 2rem; font-size: 1.1rem; opacity: 0.9;">Get the full editorial treatment with unlimited revisions until your story is perfect</p>
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="background: #000000; color: white; font-size: 1.2rem; padding: 1rem 2rem;">Start Your Professional Story</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">✓ Full editing included • ✓ Unlimited photos • ✓ AI characters • ✓ Professional finish</p>
+            
+            <div style="text-align: center;">
+                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">📚 Create Your Legacy Book</a>
+                <p style="margin-top: 1rem; color: var(--sage-600);">Professional quality • Unlimited photos • AI character art • Expert editing</p>
             </div>
         </div>
     </section>
+
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Everything included - no hidden fees, no subscriptions</p>
-            </div>
-            <div style="text-align: center; margin-bottom: 2rem;">
-                <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Your Complete Package</h3>
-                <p style="color: var(--sage-700);">Individual Pricing:</p>
-                <p style="color: var(--sage-700); margin-bottom: 2rem;"><strong>Novel: £69 + Memoir: £69 = £138</strong></p>
+                <p class="section-subtitle">Choose the perfect package for your story. No hidden fees, no surprises.</p>
             </div>
             <div class="pricing-grid">
-                <div class="pricing-card">
-                    <div style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem; border-radius: 0.5rem; font-weight: 700; margin-bottom: 1rem; font-size: 0.9rem;">🎁</div>
-                    <h3 class="pricing-title">Bundle Deal</h3>
-                    <ul class="pricing-features">
-                        <li>AI-guided story collection with voice recording</li>
-                        <li>Professional editing and story development</li>
-                        <li>Premium Hardcover Casebound A4 Book with Full Colour Print</li>
-                        <li>Custom cover design</li>
-                        <li>Free shipping anywhere in the UK</li>
-                        <li>Fill your story with AI generated characters based on you and your loved ones</li>
-                    </ul>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=US&currency=USD" class="cta-button" style="width: 100%; display: block; text-align: center;">Choose Your Package</a>
-                </div>
                 <div class="pricing-card featured">
-                    <div class="pricing-title">Novel + Memoir</div>
-                    <p style="color: var(--sage-600); margin-bottom: 1rem;">Get both your novel AND memoir using the same source material</p>
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Complete Bundle</h3>
                     <div class="pricing-price">£98</div>
-                    <p class="pricing-subtitle">(Save £40!)</p>
+                    <p class="pricing-description">Your story as both a novel AND memoir</p>
                     <ul class="pricing-features">
-                        <li>AI-guided story collection with voice recording</li>
-                        <li>Professional editing and story development</li>
-                        <li>Premium Hardcover Casebound A4 Book with Full Colour Print</li>
-                        <li>Custom cover design</li>
-                        <li>Free shipping anywhere in the UK</li>
-                        <li>Fill your story with AI generated characters based on you and your loved ones</li>
+                        <li>AI-guided story conversation</li>
+                        <li>Your story as a novel (any genre)</li>
+                        <li>Traditional memoir version</li>
+                        <li>Professional editing & design</li>
+                        <li>A4 hardcover books (both versions)</li>
+                        <li>Unlimited revisions</li>
+                        <li>AI character images from photos</li>
+                        <li>Free UK shipping</li>
                     </ul>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; display: block; text-align: center; background: var(--gold-500); color: var(--sage-800);">Get Both Novel & Memoir - £98</a>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; text-align: center; margin-top: 2rem;">Start Your Story</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Novel Only</h3>
+                    <div class="pricing-price">£69</div>
+                    <p class="pricing-description">Your life story as an engaging novel</p>
+                    <ul class="pricing-features">
+                        <li>AI-guided story conversation</li>
+                        <li>Genre selection (romance, thriller, etc.)</li>
+                        <li>Professional editing & design</li>
+                        <li>A4 hardcover book</li>
+                        <li>Unlimited revisions</li>
+                        <li>AI character images from photos</li>
+                        <li>Free UK shipping</li>
+                    </ul>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; text-align: center; margin-top: 2rem; background: var(--sage-600);">Choose Novel</a>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 2rem; color: var(--sage-700); font-weight: 600;">✓ 30-day money-back guarantee • ✓ Secure payment • ✓ No recurring charges</p>
         </div>
     </section>
-    <!-- Comparison Table -->
+
+    <!-- Comparison Section -->
     <section class="comparison">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Compare Your Options</h2>
+                <h2 class="section-title">How We Compare</h2>
+                <p class="section-subtitle">See why Life Story Novel offers the best value for preserving your family legacy</p>
             </div>
             <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th>Feature</th>
                         <th>Life Story Novel</th>
-                        <th>Remento</th>
-                        <th>StoryWorth</th>
+                        <th>Traditional Memoir Services</th>
+                        <th>Self-Publishing</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Transform life into a novel</td>
-                        <td class="check">✓</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Create a memoir</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Use voice to answer questions</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Create character images from your pictures</td>
-                        <td class="check">✓</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Weekly prompts delivered via</td>
-                        <td>Email & SMS</td>
-                        <td>Email & SMS</td>
-                        <td>Email</td>
-                    </tr>
-                    <tr>
-                        <td>Size of book</td>
-                        <td>A4 (8.3" × 11.7")</td>
-                        <td>8" × 10"</td>
-                        <td>6" × 9"</td>
-                    </tr>
-                    <tr>
                         <td>Price</td>
-                        <td>£98 (2 books)</td>
-                        <td>£95</td>
-                        <td>£95</td>
+                        <td class="check">£98 for both books</td>
+                        <td class="cross">£150-300 for memoir only</td>
+                        <td class="check">£50-200 (DIY)</td>
                     </tr>
                     <tr>
-                        <td>Price for additional copy of book</td>
-                        <td>£45</td>
-                        <td>£69</td>
-                        <td>£79</td>
+                        <td>Professional Writing</td>
+                        <td class="check">✓ AI + Human editing</td>
+                        <td class="check">✓ Human ghostwriter</td>
+                        <td class="cross">✗ DIY only</td>
+                    </tr>
+                    <tr>
+                        <td>Multiple Formats</td>
+                        <td class="check">✓ Novel + Memoir</td>
+                        <td class="cross">✗ Memoir only</td>
+                        <td class="cross">✗ One format</td>
+                    </tr>
+                    <tr>
+                        <td>Genre Options</td>
+                        <td class="check">✓ 6+ genres</td>
+                        <td class="cross">✗ Traditional memoir only</td>
+                        <td class="check">✓ Any genre (if skilled)</td>
+                    </tr>
+                    <tr>
+                        <td>Professional Design</td>
+                        <td class="check">✓ Included</td>
+                        <td class="check">✓ Usually included</td>
+                        <td class="cross">✗ Extra cost</td>
+                    </tr>
+                    <tr>
+                        <td>AI Character Images</td>
+                        <td class="check">✓ From your photos</td>
+                        <td class="cross">✗ Not available</td>
+                        <td class="cross">✗ Not available</td>
+                    </tr>
+                    <tr>
+                        <td>Turnaround Time</td>
+                        <td class="check">✓ 4-5 weeks</td>
+                        <td class="cross">✗ 3-6 months</td>
+                        <td class="check">✓ Your timeline</td>
                     </tr>
                 </tbody>
             </table>
-            
-            <div style="margin-top: 4rem; text-align: center;">
-                <h3 style="color: var(--sage-800); margin-bottom: 2rem;">Prefer Just a Novel?</h3>
-                <p style="color: var(--sage-700); margin-bottom: 2rem;">If you'd rather have just the novel format, you can purchase the novel-only version of our service.</p>
-                
-                <div style="max-width: 400px; margin: 0 auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(74, 99, 82, 0.1);">
-                    <div class="pricing-price" style="margin-bottom: 1rem;">£69</div>
-                    <h4 style="color: var(--sage-800); margin-bottom: 1rem;">Novel Only</h4>
-                    <ul style="list-style: none; margin-bottom: 2rem; text-align: left;">
-                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• AI-guided novel creation</li>
-                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• A4 hardcover book</li>
-                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• Digital formats included</li>
-                        <li style="padding: 0.25rem 0; color: var(--sage-700);">• Free UK shipping</li>
-                    </ul>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?novel-only=true&region=UK&currency=GBP" class="cta-button" style="display: block; text-align: center;">Order Novel Only - £69</a>
-                    <p style="color: var(--sage-700); font-size: 0.9rem; margin-top: 1rem;">Experience your life story transformed into your favorite genre</p>
-                </div>
-                
-                <div style="margin-top: 3rem; padding: 2rem; background: var(--sage-50); border-radius: 1rem;">
-                    <h4 style="color: var(--sage-800); margin-bottom: 1rem;">Why Choose Life Story Novel?</h4>
-                    <p style="color: var(--sage-700);">Get TWO books (novel + memoir) for less than competitors charge for just one memoir. Plus, experience your life as fiction in thriller, romance, mystery, or any genre you love!</p>
-                </div>
-            </div>
         </div>
     </section>
+
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about transforming your life story into a beautiful novel</p>
+                <p class="section-subtitle">Everything you need to know about transforming your life story into a novel</p>
             </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">How long does the process take?</button>
-                    <div class="faq-answer">
-                        <p>The complete process typically takes 4-5 weeks from your first conversation to receiving your finished books. This includes story collection (1-2 weeks), AI transformation and writing (1-2 weeks), your review and revisions (1 week), and printing/shipping (1 week).</p>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How long does the whole process take?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
+                        <p>The entire process typically takes 4-5 weeks from start to finish. You'll spend 1-2 hours sharing your story with our AI, then we transform it into your novel and memoir versions. You'll receive drafts for review throughout, and once approved, your books are printed and shipped within 1-2 weeks.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">What's included in the £98 bundle package?</button>
-                    <div class="faq-answer">
-                        <p>Your complete package includes:<br><br>
-                        - AI-guided story collection with voice recording support<br>
-                        - Professional novel version in your chosen genre (thriller, romance, etc.)<br>
-                        - Traditional memoir version using the same content<br>
-                        - Premium A4 hardcover book with professional cover design<br>
-                        - Digital formats (PDF & ePub) for easy sharing<br>
-                        - Unlimited revisions until you're completely satisfied<br>
-                        - Free UK shipping (or discounted international shipping)</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What's the difference between the novel and memoir versions?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
+                        <p>The memoir version presents your life story in traditional autobiography format - straightforward, chronological, and factual. The novel version transforms the same experiences into an engaging story with your chosen genre elements (romance, thriller, mystery, etc.) while maintaining the truth of your experiences. Both honor your authentic story but appeal to different reading preferences.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">How does the AI story collection work?</button>
-                    <div class="faq-answer">
-                        <p>Our AI guides you through gentle, conversational questions about your life experiences. You can respond by typing, voice recording, or uploading existing documents. The AI asks follow-up questions to capture important details, emotions, and relationships, ensuring no precious memories are missed.</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How does the AI guided conversation work?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
+                        <p>Our AI acts like a thoughtful interviewer, asking questions about different periods of your life, important relationships, challenges you've overcome, and moments that shaped you. You can respond by speaking (voice recording) or typing. The AI asks natural follow-up questions to help you remember details and ensures we capture the full richness of your experiences.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">Can I choose different genres for my story?</button>
-                    <div class="faq-answer">
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Can I choose different genres for my story?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
                         <p>Absolutely! You can transform your life story into any genre: romance, thriller, mystery, fantasy, literary fiction, or family saga. Each genre version maintains the core truth of your experiences while adapting the storytelling style to match your preferred reading experience.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">What if I'm not satisfied with the final result?</button>
-                    <div class="faq-answer">
-                        <p>We offer unlimited revisions until your story is perfect, plus a 30-day money-back guarantee. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. If you're not satisfied within 30 days, we'll provide a full refund. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    What if I'm not satisfied with the final result?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
+                        <p>We offer unlimited revisions until your story is perfect. You'll receive draft chapters for review throughout the process, and we'll make changes until you're completely happy. Your memories are precious, and we're committed to honoring them exactly as you envision.</p>
                     </div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">Is my personal information secure and private?</button>
-                    <div class="faq-answer">
-                        <p>Absolutely. Your stories and personal information are encrypted and stored securely. We never share your content with third parties, and you retain full ownership of your story. Our AI processing happens in secure environments with enterprise-grade protection.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">Can I order additional copies for family members?</button>
-                    <div class="faq-answer">
-                        <p>Yes! Once your book is complete, you can order additional printed copies at cost (typically £15-25 per book depending on length). Digital versions can be shared unlimited with family members at no extra charge.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question" onclick="toggleFAQ(this)">What makes this different from traditional memoir services?</button>
-                    <div class="faq-answer">
-                        <p>Traditional memoir services give you one format at high cost (£200-500). We provide both novel AND memoir versions for £98, with AI-guided collection that makes the process enjoyable rather than overwhelming. Plus, your family gets an exciting story they'll actually want to read alongside the traditional memoir.</p>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Do you ship internationally?
+                </button>
+                <div class="faq-answer">
+                    <div style="padding: 0 2rem 2rem;">
+                        <p>Yes! We ship worldwide. UK shipping is free, and international shipping costs are calculated at checkout based on your location. All books are professionally printed and bound to the same high standards regardless of destination.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Final CTA -->
     <section class="final-cta">
         <div class="container">
-            <h2>Ready to Transform Your Story?</h2>
-            <p>Join thousands who've preserved their legacy in beautiful, professionally written books. Your family will treasure these stories forever.</p>
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="background: #000000; color: white; font-size: 1.2rem;">Start Your Story Today</a>
+            <h2>Ready to Transform Your Life Story?</h2>
+            <p>Join thousands of people who have already preserved their legacy with Life Story Novel</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.3rem; padding: 1rem 2rem; margin-top: 2rem;">Start Your Story Today</a>
+            <div style="margin-top: 2rem; opacity: 0.8;">
+                <span style="margin: 0 1rem;">4.9/5 Customer Rating</span>
+                <span style="margin: 0 1rem;">•</span>
+                <span style="margin: 0 1rem;">Thousands of Stories Created</span>
+                <span style="margin: 0 1rem;">•</span>
+                <span style="margin: 0 1rem;">Professional Quality Guaranteed</span>
+            </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
@@ -1918,16 +1916,17 @@
                 <a href="blog.html">Blog</a>
                 <a href="#faq">FAQ</a>
                 <a href="mailto:hello@lifestorynovel.com">Contact</a>
-                <a href="privacy-policy.html">Privacy Policy</a>
-                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Life Story Novel. All rights reserved. Transform your memories into lasting stories.</p>
+                <p>&copy; 2024 Life Story Novel. All rights reserved. Transform your life into a beautiful novel.</p>
             </div>
         </div>
     </footer>
+
     <script>
-        // Simple FAQ toggle function
+        // FAQ functionality
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
             
@@ -2030,6 +2029,7 @@
     </script>
 </body>
 </html>
+
 
 
 
