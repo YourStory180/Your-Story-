@@ -450,6 +450,7 @@
             gap: 3rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-bottom: 3rem;
         }
         
         .stat {
@@ -468,6 +469,133 @@
             font-size: 0.9rem;
             color: var(--sage-600);
             font-weight: 500;
+        }
+
+        /* Benefits Carousel */
+        .benefits-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 25px rgba(22, 163, 74, 0.15);
+            border: 1px solid var(--sage-200);
+        }
+
+        .carousel-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .carousel-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--sage-800);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .carousel-subtitle {
+            font-size: 0.9rem;
+            color: var(--sage-600);
+            opacity: 0.8;
+        }
+
+        .carousel-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+
+        .benefit-slide {
+            min-width: 100%;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .benefit-content {
+            flex-grow: 1;
+        }
+
+        .benefit-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--sage-800);
+            margin-bottom: 0.25rem;
+        }
+
+        .benefit-description {
+            font-size: 0.9rem;
+            color: var(--sage-600);
+            line-height: 1.4;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--sage-300);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--sage-600);
+            transform: scale(1.2);
+        }
+
+        /* Mobile-first responsive design */
+        @media (max-width: 768px) {
+            .benefits-carousel {
+                margin: 0 1rem;
+                padding: 1rem;
+            }
+
+            .benefit-slide {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            .benefit-icon {
+                font-size: 2rem;
+            }
+
+            .carousel-title {
+                font-size: 1.1rem;
+            }
+
+            .benefit-title {
+                font-size: 1rem;
+            }
+
+            .benefit-description {
+                font-size: 0.85rem;
+            }
         }
         
         /* Features Section */
@@ -1196,6 +1324,68 @@
                     <span class="stat-label">AI Technology</span>
                 </div>
             </div>
+            
+            <!-- Benefits Carousel -->
+            <div class="benefits-carousel">
+                <div class="carousel-header">
+                    <h3 class="carousel-title">Why Choose Life Story Novel?</h3>
+                    <p class="carousel-subtitle">6 key advantages that make us different</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">📚</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">Novel + Memoir Bundle</div>
+                                <div class="benefit-description">Get both a compelling novel AND traditional memoir - two complete books for the price competitors charge for one.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">No Login Required</div>
+                                <div class="benefit-description">Start immediately with no account creation, passwords, or complicated setup. Just begin sharing your story.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">💌</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">Email Questions</div>
+                                <div class="benefit-description">Share your story through guided email conversations at your own pace - no pressure, no deadlines.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">Photo Characters</div>
+                                <div class="benefit-description">Upload family photos to create AI-generated character illustrations that bring your loved ones to life in your story.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">✍️</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">Choose Your Author</div>
+                                <div class="benefit-description">Pick from famous writing styles - from Jane Austen's romance to Stephen King's suspense. Your story, their voice.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-slide">
+                            <div class="benefit-icon">🎁</div>
+                            <div class="benefit-content">
+                                <div class="benefit-title">Two Books, One Price</div>
+                                <div class="benefit-description">While others charge £100+ for just one memoir, you get both professional books plus custom covers for just £98.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <div class="indicator active" onclick="goToSlide(0)"></div>
+                    <div class="indicator" onclick="goToSlide(1)"></div>
+                    <div class="indicator" onclick="goToSlide(2)"></div>
+                    <div class="indicator" onclick="goToSlide(3)"></div>
+                    <div class="indicator" onclick="goToSlide(4)"></div>
+                    <div class="indicator" onclick="goToSlide(5)"></div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Hero Image -->
@@ -1360,392 +1550,248 @@
                     </div>
                 </div>
             </div>
-            <!-- Call to Action -->
-            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: white; border-radius: 1rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                <h3 style="color: var(--sage-800); margin-bottom: 1rem; font-size: 1.5rem;">Ready to Transform Your Story?</h3>
-                <p style="color: var(--sage-700); margin-bottom: 2rem; font-size: 1.1rem;">Choose from 6+ genres and 20+ author styles to create your perfect novel</p>
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2rem;">🎭 Explore All Styles & Start Writing</a>
-                <p style="margin-top: 1rem; color: var(--sage-600); font-size: 0.9rem;">Same life story • Multiple genres • Unlimited creativity</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Transform Your Story</h2>
+                <p class="section-subtitle">From memory to memoir to novel - we handle every step of preserving your legacy</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/ai-conversation.webp" alt="AI-guided conversation for collecting life stories" class="feature-image" loading="lazy">
+                    <h3>AI-Guided Conversation</h3>
+                    <p>Our thoughtful AI asks the right questions to uncover your most meaningful memories. Share through voice recordings or typing - whatever feels natural.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/genre-transformation.webp" alt="Story transformation across different genres" class="feature-image" loading="lazy">
+                    <h3>Genre Transformation</h3>
+                    <p>Your life becomes a thrilling adventure, romantic saga, or any genre you choose. Same experiences, different storytelling magic.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/dual-format.webp" alt="Novel and memoir format books" class="feature-image" loading="lazy">
+                    <h3>Dual Format Output</h3>
+                    <p>Receive both a compelling novel version and a traditional memoir - two complete books that appeal to different reading preferences.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/character-creation.webp" alt="AI-generated character illustrations from photos" class="feature-image" loading="lazy">
+                    <h3>Photo Character Creation</h3>
+                    <p>Upload family photos and watch them transform into beautiful character illustrations that bring your loved ones to life in your story.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/cover-design.webp" alt="Custom book cover design" class="feature-image" loading="lazy">
+                    <h3>Custom Cover Design</h3>
+                    <p>Each book gets a professionally designed cover that captures the essence of your story and looks beautiful on any shelf.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://lifestorynovel.com/print-quality.webp" alt="Professional book printing and binding" class="feature-image" loading="lazy">
+                    <h3>Professional Printing</h3>
+                    <p>Museum-quality printing on premium paper with durable binding ensures your story will be treasured for generations.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Features -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Key Features</h2>
-                <p class="section-subtitle">Discover what makes Life Story Novel the perfect way to preserve and transform your life experiences</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <img src="https://lifestorynovel.com/Family%20Reading%20.png" alt="AI Character Images" class="feature-image">
-                    <h3>AI Character Images</h3>
-                    <p>Upload family photos for personalized character portraits</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://lifestorynovel.com/Man%20On%20Phone%20.png" alt="Voice Controls" class="feature-image">
-                    <h3>Voice Controls</h3>
-                    <p>Share stories naturally with voice recording – no typing needed</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://lifestorynovel.com/Family%20Legacy.png" alt="Family Legacy" class="feature-image">
-                    <h3>Family Legacy</h3>
-                    <p>Create lasting memories for generations – perfect gift for grandparents</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- How It Works -->
-    <section id="how-it-works" class="how-it-works">
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Transform your life story into a beautiful novel in three simple steps</p>
+                <p class="section-subtitle">From conversation to printed book in just a few simple steps</p>
             </div>
             <div class="steps-grid">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <img src="https://lifestorynovel.com/voice-recording.PNG" alt="Person sharing their story through voice recording" class="step-image">
+                    <img src="https://lifestorynovel.com/step-conversation.webp" alt="Person sharing life stories through conversation" class="step-image" loading="lazy">
                     <h3>Share Your Story</h3>
-                    <p>Answer guided questions about your life experiences. Use voice recording or typing - whatever feels natural to you.</p>
+                    <p>Begin a guided conversation with our AI. Answer questions about your life, relationships, and experiences at your own pace through voice or text.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
-                    <img src="https://lifestorynovel.com/AI%20Transforms.jpg" alt="AI transforming story into beautiful book content" class="step-image">
-                    <h3>AI Transforms</h3>
-                    <p>Our advanced AI crafts your memories into a compelling novel, preserving your authentic voice and experiences.</p>
+                    <img src="https://lifestorynovel.com/step-customization.webp" alt="Choosing genres and writing styles" class="step-image" loading="lazy">
+                    <h3>Choose Your Style</h3>
+                    <p>Select your preferred genre and author style. Want your life as a thriller like Stephen King or a romance like Jane Austen? The choice is yours.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
-                    <img src="https://lifestorynovel.com/Receive%20your%20book%20%20(1).jpg" alt="Professional finished memoir book" class="step-image">
-                    <h3>Receive Your Book</h3>
-                    <p>Get your professionally printed A4 hardcover memoir delivered to your door - premium quality with 14mm spine and elegant layout, plus digital versions to share with family.</p>
+                    <img src="https://lifestorynovel.com/step-creation.webp" alt="AI creating novel and memoir versions" class="step-image" loading="lazy">
+                    <h3>We Create Your Books</h3>
+                    <p>Our AI transforms your story into both a compelling novel and traditional memoir. You'll receive drafts to review and request changes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <img src="https://lifestorynovel.com/step-delivery.webp" alt="Professional printed books being delivered" class="step-image" loading="lazy">
+                    <h3>Receive Your Legacy</h3>
+                    <p>Your beautifully printed books arrive at your door. Share them with family, friends, or keep them as treasured keepsakes of your life journey.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Stories from Our Authors Section -->
-    <section class="testimonials-section" style="padding: 4rem 0; background: #f9fafb;">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
-                <h2 class="section-title" style="font-size: 2.5rem; font-weight: 700; color: #1f2937; margin-bottom: 1rem;">Stories from Our Authors</h2>
-                <p class="section-subtitle" style="font-size: 1.2rem; color: #6b7280; max-width: 600px; margin: 0 auto;">Real people sharing their experiences with Life Story Novel</p>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto;">
-                <!-- Testimonial 1 -->
-                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
-                    <div style="display: flex; margin-bottom: 1rem;">
-                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
-                    </div>
-                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
-                        "I couldn't believe it - my ordinary life became this amazing novel! My teenage granddaughter who never reads actually finished the whole book in two days. She kept asking 'Grandma, did this really happen?' It made my stories so much more exciting for her to read."
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; background: #16a34a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">S</div>
-                        <div>
-                            <div style="font-weight: 600; color: #1f2937;">Sarah Chen</div>
-                            <div style="font-size: 0.9rem; color: #6b7280;">Literary Fiction • Teacher</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
-                    <div style="display: flex; margin-bottom: 1rem;">
-                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
-                    </div>
-                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
-                        "Seeing my life transformed into an actual novel was incredible! My kids had always found my old stories a bit boring, but when they read it as a thriller, they were completely hooked. My son said 'Dad, I had no idea your life was this exciting!' It brought us so much closer."
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; background: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">M</div>
-                        <div>
-                            <div style="font-weight: 600; color: #1f2937;">Miguel Rodriguez</div>
-                            <div style="font-size: 0.9rem; color: #6b7280;">Family Memoir • Engineer</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); border: 1px solid #e5e7eb;">
-                    <div style="display: flex; margin-bottom: 1rem;">
-                        <span style="color: #fbbf24; font-size: 1.2rem;">★★★★★</span>
-                    </div>
-                    <p style="font-size: 1rem; line-height: 1.6; color: #374151; margin-bottom: 1.5rem; font-style: italic;">
-                        "I was amazed how they turned my farming stories into this wonderful novel! My grandkids used to roll their eyes when I talked about the old days, but now they're asking for more stories. My youngest grandson said 'Grandma, you're like a character in a real book!' It made my heart sing."
-                    </p>
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="width: 48px; height: 48px; background: #7c3aed; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 1.2rem;">E</div>
-                        <div>
-                            <div style="font-weight: 600; color: #1f2937;">Eleanor Walsh</div>
-                            <div style="font-size: 0.9rem; color: #6b7280;">Family Heritage • Retired Librarian</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Bundle Offer -->
+
+    <!-- Bundle Offer Section -->
     <section class="bundle-offer">
         <div class="container">
-            <span style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.9rem;">Limited Time</span>
-            <h2>🎁 Unlock the Complete Bundle: Novel + Memoir</h2>
-            <p class="subtitle">Why choose one when you can have both? Get your story as a novel AND memoir for just £98</p>
+            <h2>Complete Story Package</h2>
+            <p class="subtitle">Everything you need to preserve your legacy in beautiful books</p>
             <div class="bundle-benefits">
-                <div class="benefit">✓ Save £40 vs individual pricing</div>
-                <div class="benefit">✓ Two unique formats</div>
-                <div class="benefit">✓ Complete family legacy preservation</div>
+                <div class="benefit">✨ Novel + Memoir Versions</div>
+                <div class="benefit">🎨 Custom Covers</div>
+                <div class="benefit">📚 Professional Printing</div>
+                <div class="benefit">🚚 Worldwide Shipping</div>
+                <div class="benefit">🔄 Unlimited Revisions</div>
+                <div class="benefit">👨‍👩‍👧‍👦 Character Illustrations</div>
             </div>
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="bundle-cta">Start Your Story Today</a>
-            <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">No writing experience needed • Voice recording available • Family legacy preserved forever</p>
+            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="bundle-cta">Transform My Story - £98</a>
+            <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">Two complete books for less than competitors charge for one memoir</p>
         </div>
     </section>
+
+    <!-- Character Creation Showcase -->
+    <section class="ai-character">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI Character Creation</h2>
+                <p class="section-subtitle">Transform your family photos into beautiful character illustrations</p>
+            </div>
+            
+            <div class="character-demo">
+                <div class="character-before">
+                    <h3 style="margin-bottom: 1rem; color: var(--sage-800);">Your Family Photos</h3>
+                    <img src="https://lifestorynovel.com/family-photo-before.webp" alt="Original family photograph" class="character-image" loading="lazy">
+                    <p style="color: var(--sage-700);">Upload your cherished family photographs from any era</p>
+                </div>
+                
+                <div class="character-after">
+                    <h3 style="margin-bottom: 1rem; color: var(--sage-800);">AI-Generated Characters</h3>
+                    <img src="https://lifestorynovel.com/family-character-after.webp" alt="AI-generated character illustration based on family photo" class="character-image" loading="lazy">
+                    <p style="color: var(--sage-700);">Become beautiful character illustrations in your novel</p>
+                </div>
+            </div>
+
+            <div class="character-features">
+                <div class="character-feature">
+                    <h4>Face Recognition</h4>
+                    <p>Advanced AI analyzes facial features to create accurate character representations</p>
+                </div>
+                <div class="character-feature">
+                    <h4>Style Adaptation</h4>
+                    <p>Characters match your chosen genre - realistic for memoir, stylized for fantasy</p>
+                </div>
+                <div class="character-feature">
+                    <h4>Multiple Generations</h4>
+                    <p>Include family members of all ages in your story with consistent character design</p>
+                </div>
+                <div class="character-feature">
+                    <h4>Custom Scenes</h4>
+                    <p>Characters appear in key scenes throughout your novel, bringing memories to life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Showcase Section -->
     <section class="showcase">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">See Your Story Come to Life</h2>
-                <p class="section-subtitle">From precious memories to professionally bound books - see how we transform real life stories into beautiful novels</p>
+                <h2 class="section-title">Beautiful Results</h2>
+                <p class="section-subtitle">See the stunning books our customers receive</p>
             </div>
             <div class="showcase-grid">
                 <div class="showcase-item">
-                    <img src="https://lifestorynovel.com/Professional%20Cover%20design.jpg" alt="Professional book cover design with elegant typography" class="showcase-image">
-                    <h3>Custom Cover Design</h3>
-                    <p>Every book receives a professionally designed cover that reflects your unique story and personality.</p>
+                    <img src="https://lifestorynovel.com/showcase-romance.webp" alt="Romance genre life story novel with elegant cover design" class="showcase-image" loading="lazy">
+                    <h3>Romance Novel</h3>
+                    <p>Eleanor's love story transformed into a heartwarming romance with custom illustrations and elegant typography.</p>
                 </div>
                 <div class="showcase-item">
-                    <img src="https://lifestorynovel.com/Rich%20Interior%20Layout.jpg" alt="Beautiful interior page layout with premium typography" class="showcase-image">
-                    <h3>Premium Layout</h3>
-                    <p>Elegant typography and thoughtful formatting make your story a pleasure to read and treasure forever.</p>
+                    <img src="https://lifestorynovel.com/showcase-thriller.webp" alt="Thriller genre life story novel with dramatic cover" class="showcase-image" loading="lazy">
+                    <h3>Thriller Novel</h3>
+                    <p>A wartime childhood becomes an edge-of-your-seat thriller with suspenseful pacing and dramatic character development.</p>
                 </div>
                 <div class="showcase-item">
-                    <img src="https://lifestorynovel.com/Complete%20Memoir%20.webp" alt="Finished memoir book showing professional quality" class="showcase-image">
-                    <h3>Your Finished Book</h3>
-                    <p>A beautiful A4 hardcover memoir with professional binding and premium finishing that preserves your legacy as a treasured family heirloom.</p>
+                    <img src="https://lifestorynovel.com/showcase-memoir.webp" alt="Traditional memoir with classic design" class="showcase-image" loading="lazy">
+                    <h3>Traditional Memoir</h3>
+                    <p>The same life story presented as a classic memoir with chronological structure and family photographs.</p>
                 </div>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button">Create Your Book Now</a>
             </div>
         </div>
     </section>
+
     <!-- Benefits Section -->
     <section class="benefits">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Why Choose Life Story Novel</h2>
-                <p class="section-subtitle">Complete service covering every aspect of transforming your life into a beautiful novel</p>
+                <h2 class="section-title">Why Families Choose Us</h2>
+                <p class="section-subtitle">The benefits that make Life Story Novel the preferred choice</p>
             </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <span class="benefit-icon">🤖</span>
-                    <h3>AI-Powered Story Transformation</h3>
-                    <p>Advanced AI technology transforms your personal stories into professionally written novels while preserving your unique voice and experiences.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">⚡</span>
+                    <h3>Start Immediately</h3>
+                    <p>No account creation or complex setup. Begin sharing your story within minutes of visiting our site.</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">📖</span>
-                    <h3>Professional Quality Writing</h3>
-                    <p>Get engaging, well-structured narratives that read like professionally authored books with proper pacing, dialogue, and literary techniques.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">💝</span>
+                    <h3>Perfect Gift</h3>
+                    <p>Give the gift of preserved memories. Ideal for birthdays, anniversaries, or any occasion celebrating family.</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">📚</span>
-                    <h3>Beautiful Hardcover Books</h3>
-                    <p>Premium A4 hardcover books with professional cover design, quality paper, and elegant typography that becomes a treasured family heirloom.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">🌍</span>
+                    <h3>Worldwide Shipping</h3>
+                    <p>We ship globally with careful packaging to ensure your precious books arrive safely anywhere in the world.</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">🏛️</span>
-                    <h3>Family Heritage Preservation</h3>
-                    <p>Transform memories into lasting family legacy that future generations will treasure, preserving stories that would otherwise be lost.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">🔒</span>
+                    <h3>Privacy Protected</h3>
+                    <p>Your story remains completely private. We never share or sell your personal information or family memories.</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">🎭</span>
-                    <h3>Multiple Genre Options</h3>
-                    <p>Choose from romance, thriller, mystery, literary fiction, fantasy, and memoir formats to match your storytelling preferences.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">🎨</span>
+                    <h3>Unlimited Creativity</h3>
+                    <p>Mix and match genres, try different author styles, or request specific themes. Your story, your way.</p>
                 </div>
                 <div class="benefit-card">
-                    <span class="benefit-icon">📸</span>
-                    <h3>AI Character Upload Facility</h3>
-                    <p>Upload family photos and watch AI transform them into story characters while preserving facial features and identity across different genres and time periods.</p>
+                    <span class="benefit-icon" style="color: var(--sage-600);">💯</span>
+                    <h3>Satisfaction Guaranteed</h3>
+                    <p>Unlimited revisions until you're completely happy. We're not satisfied until your story is perfect.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- Bundle Offer 2 -->
-    <section class="bundle-offer">
-        <div class="container">
-            <span style="background: var(--gold-500); color: var(--sage-800); padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.9rem;">Limited Time</span>
-            <h2>🎁 Special Bundle Offer: Novel + Memoir</h2>
-            <p class="subtitle">Get BOTH your novel AND memoir for just £98 • Save £40 vs individual pricing</p>
-            <p style="margin-top: 1rem; opacity: 0.9;">Perfect for preserving your legacy in two beautiful formats →</p>
-            <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="bundle-cta">Get Both Novel & Memoir - £98</a>
-        </div>
-    </section>
-    <!-- AI Character Generation -->
-    <section class="ai-character">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">✨ AI Character Generation</h2>
-                <p class="section-subtitle">Transform Your Photos Into Story Characters</p>
-                <p style="color: var(--sage-700); max-width: 700px; margin: 1rem auto;">Watch how our advanced AI transforms your family photos into beautiful story characters while preserving facial identity and adding magical elements from your chosen genre.</p>
-            </div>
-            <div class="character-demo">
-                <div class="character-before">
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">📷 Original Photo</h3>
-                    <img src="https://lifestorynovel.com/Before%20.jpg" alt="Original family photo before AI transformation" class="character-image">
-                    <p style="color: var(--sage-700); font-weight: 500;">Your authentic family photo</p>
-                </div>
-                <div class="character-after">
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">✨ Fantasy Character</h3>
-                    <img src="https://lifestorynovel.com/Wizard.png" alt="AI-transformed fantasy wizard character" class="character-image">
-                    <p style="color: var(--sage-700); font-weight: 500;">AI-generated fantasy wizard</p>
-                </div>
-            </div>
-            <div class="character-features">
-                <div class="character-feature">
-                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">👤</span>
-                    <h4>Facial Identity Preserved</h4>
-                    <p>Advanced AI maintains recognizable features while applying magical transformations</p>
-                </div>
-                <div class="character-feature">
-                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">🎨</span>
-                    <h4>Genre-Specific Styling</h4>
-                    <p>Characters match your story's genre - fantasy, romance, thriller, or historical</p>
-                </div>
-                <div class="character-feature">
-                    <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">👑</span>
-                    <h4>Professional Quality</h4>
-                    <p>High-resolution character portraits perfect for your published novel</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.1rem;">✨ Start Your Story Journey</a>
-                <p style="margin-top: 1rem; color: var(--sage-700);">Transform your memories into magical characters • No design skills needed</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Full Editing Section -->
-    <section class="full-editing" style="padding: 6rem 0; background: linear-gradient(135deg, var(--warm-50) 0%, var(--sage-50) 50%, var(--cream-50) 100%);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: var(--sage-800);">Full Editing & Professional Publishing</h2>
-                <p class="section-subtitle" style="color: var(--sage-700);">Transform your memories into beautifully crafted books with unlimited color photos, AI characters, and professional finishing</p>
-            </div>
-            
-            <!-- Main Feature Image -->
-            <div style="text-align: center; margin: 4rem 0;">
-                <img src="Design - Your Story - design for a website-01.jpg" alt="Professional book editing and design process" style="max-width: 100%; height: auto; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);">
-            </div>
-            
-            <!-- Colorful Features Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 4rem 0;">
-                
-                <!-- Family Legacy Feature -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--gold-500);">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <img src="Family Legacy_1754485911413.png" alt="Family reading together" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
-                    </div>
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Family Legacy Preservation</h3>
-                    <p style="color: var(--sage-700); line-height: 1.6;">Create lasting family treasures that will be cherished for generations. Your stories become heirloom books that preserve memories, wisdom, and family history in beautiful, professional format.</p>
-                </div>
-                
-                <!-- AI Characters Feature -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid #e91e63;">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <img src="Man On Phone _1754485908487.png" alt="Person sharing their story" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
-                    </div>
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Voice-Powered Story Collection</h3>
-                    <p style="color: var(--sage-700); line-height: 1.6;">Share your experiences naturally through voice recording. Our AI listens, understands, and asks thoughtful follow-up questions to capture every meaningful detail of your journey.</p>
-                </div>
-                
-                <!-- Professional Quality Feature -->
-                <div style="background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-left: 4px solid var(--sage-600);">
-                    <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <img src="Family Reading _1754485904770.png" alt="Family enjoying their story together" style="width: 100%; max-width: 250px; height: auto; border-radius: 0.5rem;">
-                    </div>
-                    <h3 style="color: var(--sage-800); margin-bottom: 1rem;">Professional Quality Results</h3>
-                    <p style="color: var(--sage-700); line-height: 1.6;">Every book is professionally edited, designed, and printed to publishing industry standards. Your family story becomes a treasured heirloom that rivals bestselling novels in quality and presentation.</p>
-                </div>
-            </div>
-            
-            <!-- Feature Highlights -->
-            <div style="background: white; border-radius: 1rem; padding: 3rem; margin: 4rem 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);">
-                <h3 style="text-align: center; color: var(--sage-800); margin-bottom: 2rem; font-size: 1.8rem;">✨ What Makes Your Book Special</h3>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📸</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Unlimited Color Photos</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Include as many family photos as you want - all beautifully integrated into your story</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎨</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">AI Character Art</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Transform family photos into beautiful character portraits that match your story's genre</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">✍️</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Professional Editing</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">Expert editors refine your story with proper pacing, dialogue, and literary techniques</p>
-                    </div>
-                    
-                    <div style="text-align: center;">
-                        <div style="font-size: 2.5rem; margin-bottom: 1rem;">📖</div>
-                        <h4 style="color: var(--sage-800); margin-bottom: 0.5rem;">Premium Binding</h4>
-                        <p style="color: var(--sage-700); font-size: 0.9rem;">A4 hardcover with 14mm spine, premium paper, and elegant typography</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center;">
-                <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">📚 Create Your Legacy Book</a>
-                <p style="margin-top: 1rem; color: var(--sage-600);">Professional quality • Unlimited photos • AI character art • Expert editing</p>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
+    <section class="pricing" id="pricing">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Simple, Transparent Pricing</h2>
-                <p class="section-subtitle">Choose the perfect package for your story. No hidden fees, no surprises.</p>
+                <p class="section-subtitle">Everything included with no hidden costs</p>
             </div>
             <div class="pricing-grid">
                 <div class="pricing-card featured">
-                    <span class="pricing-badge">Most Popular</span>
-                    <h3>Complete Bundle</h3>
+                    <div class="pricing-badge">Most Popular</div>
+                    <h3>Complete Story Package</h3>
                     <div class="pricing-price">£98</div>
-                    <p class="pricing-description">Your story as both a novel AND memoir</p>
+                    <p class="pricing-description">Everything you need to transform your life into beautiful books</p>
                     <ul class="pricing-features">
-                        <li>AI-guided story conversation</li>
-                        <li>Your story as a novel (any genre)</li>
+                        <li>AI-guided story collection</li>
+                        <li>Novel version in your chosen genre</li>
                         <li>Traditional memoir version</li>
-                        <li>Professional editing & design</li>
-                        <li>A4 hardcover books (both versions)</li>
+                        <li>Custom character illustrations</li>
+                        <li>Professional cover design</li>
+                        <li>Premium printing & binding</li>
+                        <li>Worldwide shipping included</li>
                         <li>Unlimited revisions</li>
-                        <li>AI character images from photos</li>
-                        <li>Free UK shipping</li>
+                        <li>Family photo integration</li>
+                        <li>Multiple author styles available</li>
                     </ul>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; text-align: center; margin-top: 2rem;">Start Your Story</a>
+                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem;">Start Your Story</a>
                 </div>
-                <div class="pricing-card">
-                    <h3>Novel Only</h3>
-                    <div class="pricing-price">£69</div>
-                    <p class="pricing-description">Your life story as an engaging novel</p>
-                    <ul class="pricing-features">
-                        <li>AI-guided story conversation</li>
-                        <li>Genre selection (romance, thriller, etc.)</li>
-                        <li>Professional editing & design</li>
-                        <li>A4 hardcover book</li>
-                        <li>Unlimited revisions</li>
-                        <li>AI character images from photos</li>
-                        <li>Free UK shipping</li>
-                    </ul>
-                    <a href="https://life-narrative-engine-grace119.replit.app/purchase?region=UK&currency=GBP" class="cta-button" style="width: 100%; text-align: center; margin-top: 2rem; background: var(--sage-600);">Choose Novel</a>
-                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; color: var(--sage-600);">
+                <p>🎁 <strong>Gift packages available</strong> - Perfect for birthdays, anniversaries, and holidays</p>
+                <p style="margin-top: 0.5rem;">💳 Secure payment processing with Stripe</p>
             </div>
         </div>
     </section>
@@ -1755,59 +1801,46 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">How We Compare</h2>
-                <p class="section-subtitle">See why Life Story Novel offers the best value for preserving your family legacy</p>
+                <p class="section-subtitle">See why families choose Life Story Novel over traditional memoir services</p>
             </div>
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Feature</th>
                         <th>Life Story Novel</th>
-                        <th>Traditional Memoir Services</th>
-                        <th>Self-Publishing</th>
+                        <th>Traditional Services</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        <td>Number of books included</td>
+                        <td class="check">2 Books (Novel + Memoir)</td>
+                        <td class="cross">1 Book Only</td>
+                    </tr>
+                    <tr>
+                        <td>Genre options</td>
+                        <td class="check">6+ Genres Available</td>
+                        <td class="cross">Memoir Only</td>
+                    </tr>
+                    <tr>
+                        <td>Character illustrations</td>
+                        <td class="check">✓ AI-Generated</td>
+                        <td class="cross">✗ Not Available</td>
+                    </tr>
+                    <tr>
+                        <td>Author style choices</td>
+                        <td class="check">✓ 12+ Famous Authors</td>
+                        <td class="cross">✗ Limited Options</td>
+                    </tr>
+                    <tr>
+                        <td>Setup time</td>
+                        <td class="check">✓ Start Immediately</td>
+                        <td class="cross">✗ Account Required</td>
+                    </tr>
+                    <tr>
                         <td>Price</td>
-                        <td class="check">£98 for both books</td>
-                        <td class="cross">£150-300 for memoir only</td>
-                        <td class="check">£50-200 (DIY)</td>
-                    </tr>
-                    <tr>
-                        <td>Professional Writing</td>
-                        <td class="check">✓ AI + Human editing</td>
-                        <td class="check">✓ Human ghostwriter</td>
-                        <td class="cross">✗ DIY only</td>
-                    </tr>
-                    <tr>
-                        <td>Multiple Formats</td>
-                        <td class="check">✓ Novel + Memoir</td>
-                        <td class="cross">✗ Memoir only</td>
-                        <td class="cross">✗ One format</td>
-                    </tr>
-                    <tr>
-                        <td>Genre Options</td>
-                        <td class="check">✓ 6+ genres</td>
-                        <td class="cross">✗ Traditional memoir only</td>
-                        <td class="check">✓ Any genre (if skilled)</td>
-                    </tr>
-                    <tr>
-                        <td>Professional Design</td>
-                        <td class="check">✓ Included</td>
-                        <td class="check">✓ Usually included</td>
-                        <td class="cross">✗ Extra cost</td>
-                    </tr>
-                    <tr>
-                        <td>AI Character Images</td>
-                        <td class="check">✓ From your photos</td>
-                        <td class="cross">✗ Not available</td>
-                        <td class="cross">✗ Not available</td>
-                    </tr>
-                    <tr>
-                        <td>Turnaround Time</td>
-                        <td class="check">✓ 4-5 weeks</td>
-                        <td class="cross">✗ 3-6 months</td>
-                        <td class="check">✓ Your timeline</td>
+                        <td class="check">£98 for 2 Books</td>
+                        <td class="cross">£100+ for 1 Book</td>
                     </tr>
                 </tbody>
             </table>
@@ -1815,13 +1848,13 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq">
+    <section class="faq" id="faq">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about transforming your life story into a novel</p>
+                <p class="section-subtitle">Everything you need to know about preserving your story</p>
             </div>
-            
+
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFAQ(this)">
                     How long does the whole process take?
@@ -1926,6 +1959,53 @@
     </footer>
 
     <script>
+        // Benefits Carousel functionality
+        let currentSlide = 0;
+        const totalSlides = 6;
+        const autoplayInterval = 4000; // 4 seconds
+        let autoplayTimer;
+
+        function updateCarousel() {
+            const track = document.getElementById('carouselTrack');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+            resetAutoplay();
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function startAutoplay() {
+            autoplayTimer = setInterval(nextSlide, autoplayInterval);
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            startAutoplay();
+        }
+
+        // Start autoplay when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            startAutoplay();
+            
+            // Pause autoplay on hover
+            const carousel = document.querySelector('.benefits-carousel');
+            carousel.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+            carousel.addEventListener('mouseleave', startAutoplay);
+        });
+
         // FAQ functionality
         function toggleFAQ(button) {
             const answer = button.nextElementSibling;
@@ -2025,10 +2105,10 @@
         
         // Call currency detection
         detectUserRegion();
-    });
     </script>
 </body>
 </html>
+
 
 
 
