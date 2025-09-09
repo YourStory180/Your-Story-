@@ -3,361 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FREE Family Story Preservation Checklist - Life Story Novel</title>
-    <meta name="description" content="Download our FREE Family Story Preservation Checklist with 47 carefully crafted questions to capture precious memories before they're lost forever.">
+    <title>FREE Family Story Preservation Checklist - 47 Questions That Will Save Your Family's History Forever</title>
+    <meta name="description" content="Download your free family story preservation checklist. 47 powerful questions to capture precious memories before they're lost forever. Instant PDF download.">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17491922940"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-17491922940');
+    </script>
     
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1424182345532872');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1424182345532872&ev=PageView&noscript=1"
+    /></noscript>
     
-    <!-- Custom CSS Variables to match your brand -->
     <style>
-        :root {
-            --sage-50: #f0fdf4;
-            --sage-100: #dcfce7;
-            --sage-200: #bbf7d0;
-            --sage-300: #86efac;
-            --sage-600: #16a34a;
-            --sage-700: #15803d;
-            --sage-800: #166534;
-            --sage-900: #14532d;
-            --warm-50: #fdf2f8;
-            --warm-100: #fce7f3;
-            --warm-200: #fbcfe8;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background-color: #fafafa;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.025em;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .btn-primary {
-            background: #16a34a;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            background: #15803d;
-            transform: translateY(-1px);
-        }
-        
-        .btn-primary:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        .card {
+        /* Header */
+        .header {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-            overflow: hidden;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        .input-field {
+        .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #2d5016;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1a202c;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 20px;
+            color: #4a5568;
+            margin-bottom: 32px;
+        }
+        
+        .hero-image {
+            background: #e2e8f0;
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0aec0;
+            font-size: 18px;
+        }
+        
+        /* Email Form */
+        .email-form {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-top: 32px;
+        }
+        
+        .email-form h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #2d3748;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2d3748;
+        }
+        
+        .form-group input {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.2s;
+            transition: border-color 0.3s ease;
         }
         
-        .input-field:focus {
+        .form-group input:focus {
             outline: none;
-            border-color: #16a34a;
-            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+            border-color: #68d391;
         }
         
-        .success-state {
-            display: none;
-        }
-        
-        .form-state.success .form-content {
-            display: none;
-        }
-        
-        .form-state.success .success-state {
+        /* CTA Button */
+        .cta-button {
+            background: #68d391;
+            color: white;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
             display: block;
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #48bb78;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(104, 211, 145, 0.4);
+        }
+        
+        .free-badge {
+            background: #f56565;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+        
+        /* Problem Section */
+        .problem-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .problem-text {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 24px;
+            color: #2d3748;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .solution-text {
+            font-size: 18px;
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: #f7fafc;
+            padding: 60px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: #68d391;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .benefit-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+        
+        .benefit-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* How It Works */
+        .how-it-works {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: #e6fffa;
+            border: 3px solid #68d391;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 28px;
+            color: #2d5016;
+        }
+        
+        .step-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #2d3748;
+        }
+        
+        .step-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: #2d5016;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-button-white {
+            background: white;
+            color: #2d5016;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-white:hover {
+            background: #f7fafc;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .problem-text {
+                font-size: 24px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <h1 class="text-2xl font-bold" style="color: #16a34a;">Life Story Novel</h1>
-                </div>
-                <nav>
-                    <a href="https://lifestorynovel.com" class="text-gray-600 hover:text-gray-900 px-3 py-2">← Back to Main Site</a>
-                </nav>
-            </div>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Life Story Novel</div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="py-16 px-4">
-        <div class="max-w-4xl mx-auto">
-            <!-- Hero Section -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium mb-6" style="background: var(--sage-50); color: var(--sage-700);">
-                    <span>💝</span>
-                    Free Family Legacy Resource
-                </div>
-                
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                    Get Your <span style="color: #16a34a;">FREE</span> Family Story 
-                    <br />Preservation Checklist
-                </h1>
-                
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-                    47 carefully crafted questions that will unlock forgotten memories and preserve your family's most precious stories forever.
-                </p>
-
-                <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-500 mb-12">
-                    <div class="flex items-center gap-2">
-                        <span>⏰</span>
-                        <span>5-minute download</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span>📥</span>
-                        <span>Instant PDF access</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span>📚</span>
-                        <span>Professionally designed</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="free-badge">100% FREE DOWNLOAD</div>
+                    <h1>Get Your FREE Family Story Preservation Checklist</h1>
+                    <p class="subtitle">47 powerful questions that will unlock your family's most precious memories and save them before they're lost forever. Download your free PDF checklist now.</p>
+                    
+                    <!-- Email Capture Form -->
+                    <div class="email-form">
+                        <h3>Download Your Free Checklist</h3>
+                        <form id="checklistForm" action="/api/capture-email" method="POST">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <button type="submit" class="cta-button" onclick="gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_ACTION'}); fbq('track', 'Lead');">Download Your Free Checklist Now</button>
+                        </form>
+                        <p style="font-size: 12px; color: #718096; text-align: center; margin-top: 12px;">🔒 Your email is safe with us. We'll never spam you.</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-12 items-start">
-                <!-- Left Column - Benefits -->
-                <div class="space-y-8">
-                    <div>
-                        <h2 class="text-2xl font-semibold text-gray-900 mb-6">
-                            What You'll Discover:
-                        </h2>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <span class="text-green-600 mt-1">✓</span>
-                                <p class="text-gray-600">Unlock forgotten childhood memories that shaped your loved one's character</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-green-600 mt-1">✓</span>
-                                <p class="text-gray-600">Preserve love stories and relationship wisdom from different generations</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-green-600 mt-1">✓</span>
-                                <p class="text-gray-600">Capture career achievements and life lessons learned along the way</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-green-600 mt-1">✓</span>
-                                <p class="text-gray-600">Document family traditions and cultural stories before they're lost</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-green-600 mt-1">✓</span>
-                                <p class="text-gray-600">Create a lasting legacy that grandchildren will treasure forever</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="background: var(--sage-50);" class="p-6 rounded-lg">
-                        <h3 class="font-semibold text-gray-900 mb-3">
-                            "Don't let their stories die with them."
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                            Every family has incredible stories waiting to be preserved. This checklist gives you the exact questions to ask to capture those memories before it's too late.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Right Column - Form -->
-                <div class="relative">
-                    <div class="card">
-                        <div class="p-6 text-center border-b">
-                            <h3 class="text-2xl font-semibold mb-2">Download Your Free Checklist</h3>
-                            <p class="text-gray-600">
-                                Enter your details below and we'll send the checklist to your inbox immediately.
-                            </p>
-                        </div>
-                        
-                        <div class="p-6">
-                            <div class="form-state" id="formContainer">
-                                <form id="checklistForm" class="form-content space-y-4">
-                                    <div>
-                                        <input
-                                            type="text"
-                                            id="name"
-                                            placeholder="Your first name"
-                                            required
-                                            class="input-field"
-                                        />
-                                    </div>
-                                    
-                                    <div>
-                                        <input
-                                            type="email"
-                                            id="email"
-                                            placeholder="Your email address"
-                                            required
-                                            class="input-field"
-                                        />
-                                    </div>
-                                    
-                                    <button type="submit" class="btn-primary w-full text-lg py-3" id="submitBtn">
-                                        Get My Free Checklist Now
-                                    </button>
-                                    
-                                    <p class="text-xs text-gray-500 text-center">
-                                        We respect your privacy. No spam, just valuable family story resources.
-                                    </p>
-                                </form>
-                                
-                                <div class="success-state text-center py-8">
-                                    <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: rgba(22, 163, 74, 0.1);">
-                                        <span class="text-2xl">✓</span>
-                                    </div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
-                                        Check Your Email!
-                                    </h3>
-                                    <p class="text-gray-600 mb-6" id="successEmail">
-                                        Your Family Story Preservation Checklist is on its way to your inbox.
-                                    </p>
-                                    <div style="background: var(--sage-50);" class="p-4 rounded-lg">
-                                        <p class="text-sm text-gray-700">
-                                            <strong>Next steps:</strong> Use the checklist to capture family stories, then transform them into a beautiful novel with Life Story Novel.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sample Questions Section -->
-            <div class="mt-20">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                        Sample Questions from the Checklist
-                    </h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        Here's a preview of the thoughtful questions designed to unlock meaningful memories:
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="card">
-                        <div class="p-6">
-                            <h4 class="text-lg font-semibold mb-4" style="color: #16a34a;">Childhood Memories</h4>
-                            <ul class="space-y-3 text-sm text-gray-600">
-                                <li>"What's your earliest childhood memory?"</li>
-                                <li>"What was your most embarrassing childhood moment?"</li>
-                                <li>"What did you want to be when you grew up?"</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="p-6">
-                            <h4 class="text-lg font-semibold mb-4" style="color: #16a34a;">Love & Relationships</h4>
-                            <ul class="space-y-3 text-sm text-gray-600">
-                                <li>"How did you meet your spouse/partner?"</li>
-                                <li>"When did you know they were 'the one'?"</li>
-                                <li>"What's the secret to a lasting relationship?"</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="p-6">
-                            <h4 class="text-lg font-semibold mb-4" style="color: #16a34a;">Wisdom & Legacy</h4>
-                            <ul class="space-y-3 text-sm text-gray-600">
-                                <li>"What's the most important lesson life has taught you?"</li>
-                                <li>"What would you tell your 20-year-old self?"</li>
-                                <li>"What do you hope people remember about you?"</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="mt-20 text-center">
-                <div class="p-8 rounded-2xl" style="background: linear-gradient(135deg, var(--sage-50) 0%, var(--warm-50) 100%);">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">
-                        Ready to Transform Stories into Beautiful Books?
-                    </h2>
-                    <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
-                        Once you've captured these precious memories, Life Story Novel can transform them into professionally written novels and memoirs that your family will treasure forever.
-                    </p>
-                    <a href="https://lifestorynovel.com" class="btn-primary inline-block">Learn More About Life Story Novel</a>
+                <div class="hero-image">
+                    <div>📋 47 Questions That Unlock Family Stories</div>
                 </div>
             </div>
         </div>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h3 class="text-xl font-semibold mb-4">Life Story Novel</h3>
-            <p class="text-gray-400">Preserving Stories, Creating Legacies</p>
-        </div>
-    </footer>
+    </section>
 
+    <!-- Problem/Solution Section -->
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="problem-text">Every day, precious family memories disappear forever — stories that could have been preserved with the right questions.</h2>
+            <p class="solution-text">Our researched checklist gives you the exact questions that unlock the most meaningful stories, organized by life stages for maximum impact.</p>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">What You'll Get in Your Free Checklist</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧒</div>
+                    <h3 class="benefit-title">Childhood & Early Years</h3>
+                    <p class="benefit-description">12 powerful questions that unlock forgotten childhood memories, family traditions, and formative experiences.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💫</div>
+                    <h3 class="benefit-title">Coming of Age Stories</h3>
+                    <p class="benefit-description">10 questions about teenage years, first jobs, dreams, and the moments that shaped them into adults.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h3 class="benefit-title">Love & Relationships</h3>
+                    <p class="benefit-description">8 intimate questions about meeting their partner, first dates, and the secrets to lasting love.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Career & Achievements</h3>
+                    <p class="benefit-description">9 questions about professional life, proudest moments, and lessons learned through successes and failures.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3 class="benefit-title">Wisdom & Legacy</h3>
+                    <p class="benefit-description">8 deep questions about life lessons, advice for future generations, and what they want to be remembered for.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📝</div>
+                    <h3 class="benefit-title">Ready-to-Use Format</h3>
+                    <p class="benefit-description">Printable PDF organized by sections, perfect for recording answers and creating lasting family memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How to Use Your Checklist</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-icon">📧</div>
+                    <h3 class="step-title">Download Instantly</h3>
+                    <p class="step-description">Enter your email above and get immediate access to your PDF checklist. Print it out or use it on your device.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">💬</div>
+                    <h3 class="step-title">Start the Conversations</h3>
+                    <p class="step-description">Use the questions to guide meaningful conversations with your parents or grandparents. Record their answers or take notes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">💎</div>
+                    <h3 class="step-title">Preserve Forever</h3>
+                    <p class="step-description">Keep these precious memories safe. Consider turning them into a beautiful book that your family will treasure for generations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Don't let their stories fade away.</h2>
+            <p>Download your free checklist and start preserving family memories today.</p>
+            <a href="#checklistForm" class="cta-button-white" onclick="document.getElementById('firstName').focus(); gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/CONVERSION_ACTION'}); fbq('track', 'Lead');">Get Your Free Checklist Now</a>
+        </div>
+    </section>
+
+    <!-- Trust Signals -->
+    <section style="background: white; padding: 40px 0; text-align: center; border-top: 1px solid #e2e8f0;">
+        <div class="container">
+            <p style="color: #718096; font-size: 14px;">🔒 Your Privacy Protected | 📧 No Spam Ever | 📞 Support Available</p>
+        </div>
+    </section>
+
+    <!-- Analytics -->
     <script>
-        document.getElementById('checklistForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            // Disable button and show loading
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            try {
-                // Updated to use your production API endpoint
-                const response = await fetch('https://life-narrative-engine-grace119.replit.app/api/checklist-signup', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, name }),
+        // Track form submission
+        document.getElementById('checklistForm').addEventListener('submit', function(e) {
+            // Google Analytics event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'lead', {
+                    'event_category': 'Email Capture',
+                    'event_label': 'Facebook Landing Page'
                 });
-                
-                if (response.ok) {
-                    // Show success state
-                    document.getElementById('formContainer').classList.add('success');
-                    document.getElementById('successEmail').textContent = 
-                        `Your Family Story Preservation Checklist is on its way to ${email}`;
-                } else {
-                    throw new Error('Failed to send checklist');
+            }
+            
+            // Facebook Pixel event
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'Lead');
+            }
+        });
+        
+        // Track scroll depth
+        let maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > maxScroll) {
+                maxScroll = scrollPercent;
+                if (maxScroll === 25 || maxScroll === 50 || maxScroll === 75 || maxScroll === 100) {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'scroll', {
+                            'event_category': 'Engagement',
+                            'event_label': maxScroll + '% Scroll'
+                        });
+                    }
                 }
-            } catch (error) {
-                alert('Something went wrong. Please try again.');
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Get My Free Checklist Now';
             }
         });
     </script>
 </body>
-</html>
+</html>l>
