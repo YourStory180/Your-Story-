@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -110,7 +110,7 @@
         .nav a:hover {
             color: var(--sage-600);
         }
-        
+
         .cta-button {
             background: var(--sage-600);
             color: white;
@@ -120,42 +120,42 @@
             font-weight: 600;
             transition: all 0.3s ease;
         }
-        
+
         .cta-button:hover {
             background: var(--sage-700);
             transform: translateY(-2px);
         }
-        
+
         /* Main Content */
         .main {
             margin-top: 100px;
             padding: 2rem;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .blog-header {
             text-align: center;
             margin-bottom: 4rem;
             padding: 2rem 0;
         }
-        
+
         .blog-title {
             font-size: 3rem;
             color: var(--sage-800);
             margin-bottom: 1rem;
         }
-        
+
         .blog-subtitle {
             font-size: 1.2rem;
             color: var(--sage-700);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         /* Blog Grid */
         .blog-grid {
             display: grid;
@@ -164,7 +164,7 @@
             margin-bottom: 4rem;
             min-height: auto;
         }
-        
+
         .blog-card {
             background: white;
             border-radius: 15px;
@@ -173,12 +173,12 @@
             border: 1px solid var(--sage-200);
             transition: all 0.3s ease;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(90, 117, 99, 0.15);
         }
-        
+
         .blog-image {
             width: 100%;
             height: 200px;
@@ -189,11 +189,11 @@
             font-size: 3rem;
             color: var(--sage-600);
         }
-        
+
         .blog-content {
             padding: 1.5rem;
         }
-        
+
         .blog-category {
             color: var(--sage-600);
             font-size: 0.9rem;
@@ -202,39 +202,37 @@
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
-        
+
         .blog-post-title {
             font-size: 1.3rem;
             color: var(--sage-800);
             margin-bottom: 0.75rem;
             font-weight: 600;
         }
-        
+
         .blog-excerpt {
             color: var(--sage-700);
             line-height: 1.6;
             margin-bottom: 1rem;
-        }
-        
-        .blog-meta {
+        }        .blog-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.9rem;
             color: var(--sage-600);
         }
-        
+
         .read-more {
             color: var(--sage-600);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
-        
+
         .read-more:hover {
             color: var(--sage-800);
         }
-        
+
         /* Footer */
         .footer {
             background: var(--sage-800);
@@ -243,31 +241,31 @@
             padding: 2rem;
             margin-top: 4rem;
         }
-        
+
         .footer a {
             color: var(--sage-200);
             text-decoration: none;
         }
-        
+
         .footer a:hover {
             color: white;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .blog-title {
                 font-size: 2rem;
             }
-            
+
             .blog-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
             }
-            
+
             .nav {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -301,7 +299,7 @@
 
             <!-- Blog Grid -->
             <div class="blog-grid" id="blog">
-                
+
                 <!-- Featured Blog Post - EXISTING -->
                 <article class="blog-card" style="grid-column: 1 / -1; border: 2px solid var(--gold-500); background: linear-gradient(135deg, #fefcfb 0%, #faf6f0 100%);">
                     <div class="blog-image" style="background: linear-gradient(135deg, var(--gold-500) 0%, var(--gold-600) 100%); color: white;">📚</div>
@@ -316,91 +314,33 @@
                     </div>
                 </article>
 
-                <!-- NEW BLOG POST TODAY 1 - Gift Comparison -->
+                <!-- NEW BLOG POST - Top 5 Gifts for Grandparents -->
                 <article class="blog-card">
-                    <div class="blog-image">💎</div>
-                    <div class="blog-content">
-                        <div class="blog-category">Christmas Comparison</div>
-                        <h2 class="blog-post-title">Why Life Story Books Make Better Christmas Gifts Than Jewelry or Tech (2025 Gift Guide)</h2>
-                        <p class="blog-excerpt">Move beyond expensive gadgets and jewelry that gather dust. Discover why personalized life story books create lasting emotional impact and become treasured family heirlooms that appreciate in value over time.</p>
-                        <div class="blog-meta">
-                            <span>9 min read • September 8, 2025</span>
-                            <a href="life-story-books-better-christmas-gifts-2025.html" class="read-more">Read Full Article →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- NEW BLOG POST TODAY 2 - Buying Guide -->
-                <article class="blog-card">
-                    <div class="blog-image">🛍️</div>
-                    <div class="blog-content">
-                        <div class="blog-category">Buying Guide</div>
-                        <h2 class="blog-post-title">How to Gift a Life Story Book: Complete Guide for Adult Children Buying for Parents</h2>
-                        <p class="blog-excerpt">Step-by-step guide for adult children wanting to give their parents the gift of their life story. Learn how to approach the conversation, what information to gather, and how to surprise them with the perfect personalized book.</p>
-                        <div class="blog-meta">
-                            <span>11 min read • September 8, 2025</span>
-                            <a href="how-to-gift-life-story-book-adult-children-guide.html" class="read-more">Read Full Article →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- NEW BLOG POST 1 - Autumn Family Memories -->
-                <article class="blog-card">
-                    <div class="blog-image">🍂</div>
-                    <div class="blog-content">
-                        <div class="blog-category">Family Memory</div>
-                        <h2 class="blog-post-title">Preserving Autumn Family Memories: Why September is Perfect for Starting Your Life Story</h2>
-                        <p class="blog-excerpt">Discover why September's reflective atmosphere makes it the ideal time to start preserving family memories and creating meaningful family memory books during autumn's contemplative season.</p>
-                        <div class="blog-meta">
-                            <span>7 min read • September 4, 2025</span>
-                            <a href="preserving-autumn-family-memories-september-2025.html" class="read-more">Read Full Article →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- NEW BLOG POST 2 - Multi-Generational Stories -->
-                <article class="blog-card">
-                    <div class="blog-image">👨‍👩‍👧‍👦</div>
-                    <div class="blog-content">
-                        <div class="blog-category">Multi-Generational</div>
-                        <h2 class="blog-post-title">How to Capture Three Generations of Family Stories: A Complete Guide</h2>
-                        <p class="blog-excerpt">Learn proven strategies for preserving multi-generational family stories that bridge past wisdom with present experiences. Create meaningful family legacy books that honor all generations.</p>
-                        <div class="blog-meta">
-                            <span>10 min read • September 4, 2025</span>
-                            <a href="three-generations-family-stories-guide-2025.html" class="read-more">Read Full Article →</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- NEW BLOG POST 3 - Gift Guide -->
-                <article class="blog-card">
-                    <div class="blog-image">🎁</div>
+                    <div class="blog-image">🎅</div>
                     <div class="blog-content">
                         <div class="blog-category">Gift Guide</div>
-                        <h2 class="blog-post-title">Life Story Books as Gifts: The Perfect Present for Parents & Grandparents</h2>
-                        <p class="blog-excerpt">Discover why life story books make the most meaningful gift for family members and how to create the perfect family keepsake. Perfect for birthdays, holidays, and special occasions.</p>
+                        <h2 class="blog-post-title">Top 5 Life Story Book Gifts for Grandparents This Christmas</h2>
+                        <p class="blog-excerpt">Discover the most meaningful gifts for grandparents this Christmas—from memoir bundles to legacy letters. Give a present that lasts forever.</p>
                         <div class="blog-meta">
-                            <span>8 min read • September 1, 2025</span>
-                            <a href="life-story-books-as-gifts-2025.html" class="read-more">Read Full Article →</a>
+                            <span>7 min read • September 23, 2025</span>
+                            <a href="life-story-book-gift.html" class="read-more">Read More →</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- NEW BLOG POST 4 - Christmas -->
+                <!-- NEW BLOG POST - My Life in a Book -->
                 <article class="blog-card">
-                    <div class="blog-image">🎄</div>
+                    <div class="blog-image">📖</div>
                     <div class="blog-content">
-                        <div class="blog-category">Christmas 2025</div>
-                        <h2 class="blog-post-title">Christmas Gift Ideas 2025: Why a Life Story Book Is the Perfect Present</h2>
-                        <p class="blog-excerpt">Move beyond traditional Christmas gifts and give something truly meaningful. Discover unique Christmas gift ideas that preserve family memories for generations.</p>
+                        <div class="blog-category">Memoir Inspiration</div>
+                        <h2 class="blog-post-title">My Life in a Book: How to Turn Your Memories into a Legacy</h2>
+                        <p class="blog-excerpt">Thinking about writing your life story? Learn how to turn your memories into a beautifully written book—no writing experience needed.</p>
                         <div class="blog-meta">
-                            <span>10 min read • September 1, 2025</span>
-                            <a href="christmas-gift-ideas-2025-life-story-book.html" class="read-more">Read Full Article →</a>
+                            <span>6 min read • September 23, 2025</span>
+                            <a href="my-life-in-a-book.html" class="read-more">Read More →</a>
                         </div>
                     </div>
-                </article>
-                
-                <!-- Blog Post 1 - EXISTING -->
+                </article>                <!-- Blog Post 1 - EXISTING -->
                 <article class="blog-card">
                     <div class="blog-image">📝</div>
                     <div class="blog-content">
@@ -487,4 +427,3 @@
     </footer>
 </body>
 </html>
-                  
