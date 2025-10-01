@@ -1,4 +1,4 @@
-
+/* Hero Section Layout */
 .hero-content {
   display: flex;
   align-items: center;
@@ -6,19 +6,86 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+  padding: 2rem 1rem;
 }
 
+/* Left column: text */
 .hero-text {
-  flex: 1 1 500px; /* left column */
+  flex: 1 1 500px; /* grows, shrinks, starts at ~500px */
 }
 
+/* Right column: image */
 .hero-image {
-  flex: 1 1 400px; /* right column */
+  flex: 1 1 400px; /* grows, shrinks, starts at ~400px */
   text-align: center;
 }
 
 .hero-image img {
   max-width: 100%;
   height: auto;
+  border-radius: 6px; /* optional: soft corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optional: subtle depth */
+}
+
+/* Subtitle styling */
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #31415f;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Benefits list */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 2rem 0;
+}
+
+.hero-benefits li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #1655a9;
+}
+
+/* CTA button */
+.cta-button {
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #218838;
+}
+
+/* Trust line */
+.hero-trust {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text, .hero-image {
+    flex: 1 1 100%;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+    margin: 1rem auto 0;
+  }
 }
